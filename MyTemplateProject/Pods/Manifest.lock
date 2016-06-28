@@ -14,22 +14,25 @@ PODS:
   - AFNetworking/Serialization (3.1.0)
   - AFNetworking/UIKit (3.1.0):
     - AFNetworking/NSURLSession
-  - Masonry (1.0.0)
-  - SDWebImage (3.7.5):
-    - SDWebImage/Core (= 3.7.5)
-  - SDWebImage/Core (3.7.5)
+  - Masonry (1.0.1)
+  - MJRefresh (3.1.9)
+  - SDWebImage (3.7.6):
+    - SDWebImage/Core (= 3.7.6)
+  - SDWebImage/Core (3.7.6)
   - UITableView+FDTemplateLayoutCell (1.5.beta)
 
 DEPENDENCIES:
   - AFNetworking (~> 3.1.0)
   - Masonry (~> 1.0.0)
+  - MJRefresh (~> 3.1.0)
   - SDWebImage (~> 3.7.5)
   - UITableView+FDTemplateLayoutCell (~> 1.5.beta)
 
 SPEC CHECKSUMS:
   AFNetworking: 5e0e199f73d8626b11e79750991f5d173d1f8b67
-  Masonry: b529bb169217897b6354d4b56b1fada6d475b13d
-  SDWebImage: 69c6303e3348fba97e03f65d65d4fbc26740f461
+  Masonry: a1a931a0d08870ed8ae415a2ea5ea68ebcac77df
+  MJRefresh: c5f1f1653e5a1b932c90f78074f2bc86f3f9bd5e
+  SDWebImage: c325cf02c30337336b95beff20a13df489ec0ec9
   UITableView+FDTemplateLayoutCell: 02b508ab1cb4cea16a8c17ac83d2cd1fd72124f9
 
 COCOAPODS: 0.39.0
