@@ -14,19 +14,12 @@
 		BC321BEF1D2260520092A91B /* UIViewController+CYLTabBarControllerExtention.m in Sources */ = {isa = PBXBuildFile; fileRef = BC321BEB1D2260520092A91B /* UIViewController+CYLTabBarControllerExtention.m */; };
 		BC321BF21D2260920092A91B /* MSBaseTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = BC321BF11D2260920092A91B /* MSBaseTabBarController.m */; };
 		BC321BF51D22634B0092A91B /* MSTabBarControllerConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = BC321BF41D22634B0092A91B /* MSTabBarControllerConfig.m */; };
-		BC321C111D22700F0092A91B /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BC321BF81D22700F0092A91B /* AppDelegate.m */; };
-		BC321C121D22700F0092A91B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BC321BF91D22700F0092A91B /* Assets.xcassets */; };
-		BC321C131D22700F0092A91B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BC321BFA1D22700F0092A91B /* LaunchScreen.storyboard */; };
-		BC321C141D22700F0092A91B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BC321BFC1D22700F0092A91B /* Main.storyboard */; };
-		BC321C151D22700F0092A91B /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = BC321BFE1D22700F0092A91B /* Info.plist */; };
-		BC321C161D22700F0092A91B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = BC321BFF1D22700F0092A91B /* main.m */; };
 		BC321C171D22700F0092A91B /* ZCApiAction.m in Sources */ = {isa = PBXBuildFile; fileRef = BC321C021D22700F0092A91B /* ZCApiAction.m */; };
 		BC321C181D22700F0092A91B /* ZCApiDownloadAction.m in Sources */ = {isa = PBXBuildFile; fileRef = BC321C041D22700F0092A91B /* ZCApiDownloadAction.m */; };
 		BC321C191D22700F0092A91B /* ZCApiRunner.m in Sources */ = {isa = PBXBuildFile; fileRef = BC321C071D22700F0092A91B /* ZCApiRunner.m */; };
 		BC321C1A1D22700F0092A91B /* ZCApiUploadAction.m in Sources */ = {isa = PBXBuildFile; fileRef = BC321C091D22700F0092A91B /* ZCApiUploadAction.m */; };
 		BC321C1B1D22700F0092A91B /* ZCChainProcessor.m in Sources */ = {isa = PBXBuildFile; fileRef = BC321C0C1D22700F0092A91B /* ZCChainProcessor.m */; };
 		BC321C1C1D22700F0092A91B /* ZCNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = BC321C0E1D22700F0092A91B /* ZCNetworking.m */; };
-		BC321C1D1D22700F0092A91B /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BC321C101D22700F0092A91B /* ViewController.m */; };
 		BC321C201D2270630092A91B /* MSNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = BC321C1F1D2270630092A91B /* MSNetworking.m */; };
 		BC41D0FB1D1D090A00AA3695 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = BC41D0FA1D1D090A00AA3695 /* main.m */; };
 		BC41D0FE1D1D090A00AA3695 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BC41D0FD1D1D090A00AA3695 /* AppDelegate.m */; };
@@ -36,6 +29,9 @@
 		BC41D1091D1D090A00AA3695 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BC41D1071D1D090A00AA3695 /* LaunchScreen.storyboard */; };
 		BC41D1141D1D090A00AA3695 /* MyTemplateProjectTests.m in Sources */ = {isa = PBXBuildFile; fileRef = BC41D1131D1D090A00AA3695 /* MyTemplateProjectTests.m */; };
 		BC41D11F1D1D090A00AA3695 /* MyTemplateProjectUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = BC41D11E1D1D090A00AA3695 /* MyTemplateProjectUITests.m */; };
+		BCA6A74C1D2B4E64007F3B5E /* NSDate+MSExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = BCA6A74B1D2B4E64007F3B5E /* NSDate+MSExtension.m */; };
+		BCA6A7551D2B898A007F3B5E /* UIDevice+AuthorizationStatus.m in Sources */ = {isa = PBXBuildFile; fileRef = BCA6A7541D2B898A007F3B5E /* UIDevice+AuthorizationStatus.m */; };
+		BCA6A7591D2B8ADF007F3B5E /* NSObject+MSJSON.m in Sources */ = {isa = PBXBuildFile; fileRef = BCA6A7581D2B8ADF007F3B5E /* NSObject+MSJSON.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -70,13 +66,6 @@
 		BC321BF11D2260920092A91B /* MSBaseTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSBaseTabBarController.m; sourceTree = "<group>"; };
 		BC321BF31D22634B0092A91B /* MSTabBarControllerConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSTabBarControllerConfig.h; sourceTree = "<group>"; };
 		BC321BF41D22634B0092A91B /* MSTabBarControllerConfig.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSTabBarControllerConfig.m; sourceTree = "<group>"; };
-		BC321BF71D22700F0092A91B /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
-		BC321BF81D22700F0092A91B /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		BC321BF91D22700F0092A91B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		BC321BFB1D22700F0092A91B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		BC321BFD1D22700F0092A91B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		BC321BFE1D22700F0092A91B /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		BC321BFF1D22700F0092A91B /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		BC321C011D22700F0092A91B /* ZCApiAction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZCApiAction.h; sourceTree = "<group>"; };
 		BC321C021D22700F0092A91B /* ZCApiAction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZCApiAction.m; sourceTree = "<group>"; };
 		BC321C031D22700F0092A91B /* ZCApiDownloadAction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZCApiDownloadAction.h; sourceTree = "<group>"; };
@@ -91,8 +80,6 @@
 		BC321C0C1D22700F0092A91B /* ZCChainProcessor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZCChainProcessor.m; sourceTree = "<group>"; };
 		BC321C0D1D22700F0092A91B /* ZCNetworking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZCNetworking.h; sourceTree = "<group>"; };
 		BC321C0E1D22700F0092A91B /* ZCNetworking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZCNetworking.m; sourceTree = "<group>"; };
-		BC321C0F1D22700F0092A91B /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		BC321C101D22700F0092A91B /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		BC321C1E1D2270630092A91B /* MSNetworking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSNetworking.h; sourceTree = "<group>"; };
 		BC321C1F1D2270630092A91B /* MSNetworking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSNetworking.m; sourceTree = "<group>"; };
 		BC41D0F61D1D090A00AA3695 /* MyTemplateProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyTemplateProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -111,6 +98,12 @@
 		BC41D11A1D1D090A00AA3695 /* MyTemplateProjectUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MyTemplateProjectUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		BC41D11E1D1D090A00AA3695 /* MyTemplateProjectUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MyTemplateProjectUITests.m; sourceTree = "<group>"; };
 		BC41D1201D1D090A00AA3695 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BCA6A74A1D2B4E64007F3B5E /* NSDate+MSExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+MSExtension.h"; sourceTree = "<group>"; };
+		BCA6A74B1D2B4E64007F3B5E /* NSDate+MSExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+MSExtension.m"; sourceTree = "<group>"; };
+		BCA6A7531D2B898A007F3B5E /* UIDevice+AuthorizationStatus.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIDevice+AuthorizationStatus.h"; sourceTree = "<group>"; };
+		BCA6A7541D2B898A007F3B5E /* UIDevice+AuthorizationStatus.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIDevice+AuthorizationStatus.m"; sourceTree = "<group>"; };
+		BCA6A7571D2B8ADF007F3B5E /* NSObject+MSJSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+MSJSON.h"; sourceTree = "<group>"; };
+		BCA6A7581D2B8ADF007F3B5E /* NSObject+MSJSON.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+MSJSON.m"; sourceTree = "<group>"; };
 		DEA20A85AE9AE2803FBDE810 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -204,6 +197,11 @@
 		BC321BDE1D225B1C0092A91B /* Tools */ = {
 			isa = PBXGroup;
 			children = (
+				BCA6A7561D2B898F007F3B5E /* NSString+MSExtension */,
+				BCA6A7521D2B898A007F3B5E /* UIDevice+MSAddition */,
+				BCA6A7461D2B4DB7007F3B5E /* NSDate+MSExtension */,
+				BCA6A7471D2B4DB7007F3B5E /* NSObject+MSJSON */,
+				BCA6A7481D2B4DB7007F3B5E /* UIImage+MSExtension */,
 			);
 			path = Tools;
 			sourceTree = "<group>";
@@ -249,16 +247,7 @@
 		BC321BF61D22700F0092A91B /* ZCNetworking */ = {
 			isa = PBXGroup;
 			children = (
-				BC321BF71D22700F0092A91B /* AppDelegate.h */,
-				BC321BF81D22700F0092A91B /* AppDelegate.m */,
-				BC321BF91D22700F0092A91B /* Assets.xcassets */,
-				BC321BFA1D22700F0092A91B /* LaunchScreen.storyboard */,
-				BC321BFC1D22700F0092A91B /* Main.storyboard */,
-				BC321BFE1D22700F0092A91B /* Info.plist */,
-				BC321BFF1D22700F0092A91B /* main.m */,
 				BC321C001D22700F0092A91B /* Sources */,
-				BC321C0F1D22700F0092A91B /* ViewController.h */,
-				BC321C101D22700F0092A91B /* ViewController.m */,
 			);
 			path = ZCNetworking;
 			sourceTree = "<group>";
@@ -352,6 +341,47 @@
 				BC41D1201D1D090A00AA3695 /* Info.plist */,
 			);
 			path = MyTemplateProjectUITests;
+			sourceTree = "<group>";
+		};
+		BCA6A7461D2B4DB7007F3B5E /* NSDate+MSExtension */ = {
+			isa = PBXGroup;
+			children = (
+				BCA6A74A1D2B4E64007F3B5E /* NSDate+MSExtension.h */,
+				BCA6A74B1D2B4E64007F3B5E /* NSDate+MSExtension.m */,
+			);
+			path = "NSDate+MSExtension";
+			sourceTree = "<group>";
+		};
+		BCA6A7471D2B4DB7007F3B5E /* NSObject+MSJSON */ = {
+			isa = PBXGroup;
+			children = (
+				BCA6A7571D2B8ADF007F3B5E /* NSObject+MSJSON.h */,
+				BCA6A7581D2B8ADF007F3B5E /* NSObject+MSJSON.m */,
+			);
+			path = "NSObject+MSJSON";
+			sourceTree = "<group>";
+		};
+		BCA6A7481D2B4DB7007F3B5E /* UIImage+MSExtension */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "UIImage+MSExtension";
+			sourceTree = "<group>";
+		};
+		BCA6A7521D2B898A007F3B5E /* UIDevice+MSAddition */ = {
+			isa = PBXGroup;
+			children = (
+				BCA6A7531D2B898A007F3B5E /* UIDevice+AuthorizationStatus.h */,
+				BCA6A7541D2B898A007F3B5E /* UIDevice+AuthorizationStatus.m */,
+			);
+			path = "UIDevice+MSAddition";
+			sourceTree = "<group>";
+		};
+		BCA6A7561D2B898F007F3B5E /* NSString+MSExtension */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "NSString+MSExtension";
 			sourceTree = "<group>";
 		};
 		CEA9ED2B1D0BE00AB04A924F /* Frameworks */ = {
@@ -473,11 +503,7 @@
 			files = (
 				BC41D1091D1D090A00AA3695 /* LaunchScreen.storyboard in Resources */,
 				BC41D1061D1D090A00AA3695 /* Assets.xcassets in Resources */,
-				BC321C121D22700F0092A91B /* Assets.xcassets in Resources */,
-				BC321C141D22700F0092A91B /* Main.storyboard in Resources */,
-				BC321C131D22700F0092A91B /* LaunchScreen.storyboard in Resources */,
 				BC41D1041D1D090A00AA3695 /* Main.storyboard in Resources */,
-				BC321C151D22700F0092A91B /* Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -550,21 +576,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BC321C1D1D22700F0092A91B /* ViewController.m in Sources */,
 				BC41D1011D1D090A00AA3695 /* ViewController.m in Sources */,
 				BC321C191D22700F0092A91B /* ZCApiRunner.m in Sources */,
 				BC321C171D22700F0092A91B /* ZCApiAction.m in Sources */,
 				BC321BF51D22634B0092A91B /* MSTabBarControllerConfig.m in Sources */,
+				BCA6A7591D2B8ADF007F3B5E /* NSObject+MSJSON.m in Sources */,
 				BC41D0FE1D1D090A00AA3695 /* AppDelegate.m in Sources */,
 				BC321BEE1D2260520092A91B /* CYLTabBarController.m in Sources */,
-				BC321C111D22700F0092A91B /* AppDelegate.m in Sources */,
 				BC321C181D22700F0092A91B /* ZCApiDownloadAction.m in Sources */,
 				BC321BEC1D2260520092A91B /* CYLPlusButton.m in Sources */,
 				BC321BED1D2260520092A91B /* CYLTabBar.m in Sources */,
 				BC321BEF1D2260520092A91B /* UIViewController+CYLTabBarControllerExtention.m in Sources */,
 				BC321BF21D2260920092A91B /* MSBaseTabBarController.m in Sources */,
 				BC321C201D2270630092A91B /* MSNetworking.m in Sources */,
-				BC321C161D22700F0092A91B /* main.m in Sources */,
+				BCA6A74C1D2B4E64007F3B5E /* NSDate+MSExtension.m in Sources */,
+				BCA6A7551D2B898A007F3B5E /* UIDevice+AuthorizationStatus.m in Sources */,
 				BC321C1B1D22700F0092A91B /* ZCChainProcessor.m in Sources */,
 				BC321C1C1D22700F0092A91B /* ZCNetworking.m in Sources */,
 				BC41D0FB1D1D090A00AA3695 /* main.m in Sources */,
@@ -604,22 +630,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		BC321BFA1D22700F0092A91B /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				BC321BFB1D22700F0092A91B /* Base */,
-			);
-			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
-		BC321BFC1D22700F0092A91B /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				BC321BFD1D22700F0092A91B /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		BC41D1021D1D090A00AA3695 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (

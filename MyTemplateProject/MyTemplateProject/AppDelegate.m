@@ -9,7 +9,7 @@
 #import "AppDelegate.h"
 #import "MSBaseTabBarController.h"
 #import "MSTabBarControllerConfig.h"
-
+#import "NSObject+MSJSON.h"
 @interface AppDelegate ()
 
 @end
@@ -19,15 +19,25 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
-    self.window = [[UIWindow alloc]initWithFrame:[UIScreen mainScreen].bounds];
-    self.window.backgroundColor = [UIColor whiteColor];
+//    self.window = [[UIWindow alloc]initWithFrame:[UIScreen mainScreen].bounds];
+//    self.window.backgroundColor = [UIColor whiteColor];
+//    
+//    MSTabBarControllerConfig *tabBarConfig = [[MSTabBarControllerConfig alloc]init];
+//    MSBaseTabBarController *tabBarVC = tabBarConfig.tabBarController;
+//    [self.window setRootViewController:tabBarVC];
+//    
+//    
+//    [self.window makeKeyAndVisible];
     
-    MSTabBarControllerConfig *tabBarConfig = [[MSTabBarControllerConfig alloc]init];
-    MSBaseTabBarController *tabBarVC = tabBarConfig.tabBarController;
-    [self.window setRootViewController:tabBarVC];
-    
-    
-    [self.window makeKeyAndVisible];
+    NSArray *array = @[@"1",@"2"];
+    NSDictionary *dic = @{@"id":@"123",
+                          @"name":@"dlw",
+                          @"data":@[@"da1",@"da2"]};
+    NSString *jsonString = [dic ms_jsonStringFromDic:dic];
+    NSLog(@"string%@",jsonString);
+
+    NSDictionary *dic1 = [jsonString ms_dicFromJsonString:jsonString];
+    NSLog(@"%@",dic1);
     return YES;
 }
 
