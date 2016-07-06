@@ -14,9 +14,27 @@
  *  1.使用 NSJSONSerialization 进行转换，则需要设置 MS_USE_JSONKIT 为YES
  *  2.使用普通的data 与 string 通过NSUTF8编码转换，则需要设置 MS_USE_JSONKIT 为NO
  */
-#define MS_USE_JSONKIT YES
+#define MS_USE_JSONKIT NO
 
 @implementation NSObject (MSJSON)
+
+#pragma mark - jsonString <--> Data 相互转换
+- (NSString *)ms_jsonStringFromJsonData:(NSData *)jsonData {
+    NSString *jsonString;
+    if (MS_USE_JSONKIT) {
+        /**
+         data --> jsonString 有两种方式
+         1.使用 NSJSONSerialization 转换成 string，在反响转换时 也需要使用 NSJSONSerialization 的方法
+         */
+        NSError *error = nil;
+        jsonString = [NSJSONSerialization JSONObjectWithData:jsonData options:(NSJSONReadingMutableLeaves) error:&error];
+        NSAssert(!error, @"dic-->jsonString 失败");
+    }else {
+        //2.使用 initWithData: ,在反向转换时需要使用 dataUsingEncoding:NSUTF8StringEncoding 方法
+        jsonString = [[NSString alloc]initWithData:jsonData encoding:NSUTF8StringEncoding];
+    }
+    return jsonString;
+}
 
 - (NSData *)ms_jsonDataFromJsonString:(NSString *)jsonString {
     NSData *data;
@@ -85,24 +103,6 @@
     NSDictionary *jsonDic = [NSJSONSerialization JSONObjectWithData:jsonData options:(NSJSONReadingMutableContainers) error:&error];
     NSAssert(!error, @"jsonData-->Dic转换失败");
     return jsonDic;
-}
-
-#pragma mark - jsonString <--> Data 相互转换
-- (NSString *)ms_jsonStringFromJsonData:(NSData *)jsonData {
-    NSString *jsonString;
-    if (MS_USE_JSONKIT) {
-        /**
-         data --> jsonString 有两种方式
-         1.使用 NSJSONSerialization 转换成 string，在反响转换时 也需要使用 NSJSONSerialization 的方法
-         */
-        NSError *error = nil;
-        jsonString = [NSJSONSerialization JSONObjectWithData:jsonData options:(NSJSONReadingMutableLeaves) error:&error];
-        NSAssert(!error, @"dic-->jsonString 失败");
-    }else {
-        //2.使用 initWithData: ,在反向转换时需要使用 dataUsingEncoding:NSUTF8StringEncoding 方法
-        jsonString = [[NSString alloc]initWithData:jsonData encoding:NSUTF8StringEncoding];
-    }
-    return jsonString;
 }
 
 @end
