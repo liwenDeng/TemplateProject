@@ -30,12 +30,15 @@
 
  */
 
+@interface MSTabBarControllerConfig ()
+
+@end
+
 @implementation MSTabBarControllerConfig
 
 - (instancetype)init {
     if (self = [super init]) {
         MSBaseTabBarController *tabBarVC = [[MSBaseTabBarController alloc]initWithViewControllers:self.viewControllers tabBarItemsAttributes:self.tabBarItemsAttributesForController];
-        
         //设置tabBarItem 按钮样式
 //        [self customizeTabBarAppearance:tabBarVC];
         
@@ -151,4 +154,5 @@
     return tabBarItemsAttributes;
 }
 
+#pragma mark - UITabBarControllerDelegate
 @end

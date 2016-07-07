@@ -13,7 +13,7 @@
 
 @implementation NSString (Util)
 
-- (BOOL)ty_containsString:(NSString *)string {
+- (BOOL)ms_containsString:(NSString *)string {
     // ios8以后 使用contains方法
     if (kIOS8Later) {
         return [self containsString:string];
@@ -68,5 +68,25 @@
     return [self stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
 }
 
++ (BOOL)ms_containsChineseInString:(NSString *)string{
+    for(NSInteger i = 0; i < [string length]; i++){
+        int a = [string characterAtIndex:i];
+        if (a > 0x4e00 && a < 0x9fff) {
+            return YES;
+        }
+    }
+    return NO;
+}
+
++ (BOOL)ms_isAllNum:(NSString *)string{
+    unichar c;
+    for (int i=0; i<string.length; i++) {
+        c=[string characterAtIndex:i];
+        if (!isdigit(c)) {
+            return NO;
+        }
+    }
+    return YES;
+}
 
 @end

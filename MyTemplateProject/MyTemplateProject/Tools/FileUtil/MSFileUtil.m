@@ -25,7 +25,7 @@
     }
 }
 
-+ (unsigned long long)ms_fileSizeForDir:(NSString *)path {
++ (unsigned long long)ms_folderSizeForDir:(NSString *)path {
     // 文件管理者
     NSFileManager *mgr = [NSFileManager defaultManager];
     // 文件类型
@@ -46,6 +46,12 @@
     }
     // 文件
     return attrs.fileSize;
+}
+
++ (unsigned long long)ms_fileSizeAtPath:(NSString *)filePath{
+    NSFileManager *fileManager = [NSFileManager defaultManager];
+    if (![fileManager fileExistsAtPath:filePath]) return 0;
+    return [[fileManager attributesOfItemAtPath:filePath error:nil] fileSize];
 }
 
 + (BOOL)ms_fileExists:(NSString*)aFilePath {

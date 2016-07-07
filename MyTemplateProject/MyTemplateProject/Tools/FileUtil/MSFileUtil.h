@@ -22,9 +22,13 @@
 +(void)ms_deleteFileWithDirPath:(NSString*)dirPath extension:(NSString*)extension;
 
 /**
- *  计算文件大小
+ *  计算目录下所有文件大小
  */
-+ (unsigned long long)ms_fileSizeForDir:(NSString *)path;
++ (unsigned long long)ms_folderSizeForDir:(NSString *)path;
+/**
+ *  计算指定路径下某个文件大小
+ */
++ (unsigned long long)ms_fileSizeAtPath:(NSString *)filePath;
 
 + (BOOL)ms_deleteFileWithPath:(NSString*)filePath;
 + (BOOL)ms_fileExists:(NSString*)aFilePath;

@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		4579492A252AEF9340DCA664 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A91E60E0F812616746082232 /* libPods.a */; };
+		BC123CC51D2DFD030039F60A /* UIColor+MSUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = BC123CC41D2DFD030039F60A /* UIColor+MSUtil.m */; };
+		BC123CC81D2DFD5E0039F60A /* UIImage+MSUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = BC123CC71D2DFD5E0039F60A /* UIImage+MSUtil.m */; };
+		BC123CCC1D2DFFE80039F60A /* UIView+MSUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = BC123CCB1D2DFFE80039F60A /* UIView+MSUtil.m */; };
 		BC321BEC1D2260520092A91B /* CYLPlusButton.m in Sources */ = {isa = PBXBuildFile; fileRef = BC321BE51D2260520092A91B /* CYLPlusButton.m */; };
 		BC321BED1D2260520092A91B /* CYLTabBar.m in Sources */ = {isa = PBXBuildFile; fileRef = BC321BE71D2260520092A91B /* CYLTabBar.m */; };
 		BC321BEE1D2260520092A91B /* CYLTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = BC321BE91D2260520092A91B /* CYLTabBarController.m */; };
@@ -58,6 +61,14 @@
 /* Begin PBXFileReference section */
 		57424E2B3DCFE57E1F81A07E /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		A91E60E0F812616746082232 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		BC123CC31D2DFD030039F60A /* UIColor+MSUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+MSUtil.h"; sourceTree = "<group>"; };
+		BC123CC41D2DFD030039F60A /* UIColor+MSUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+MSUtil.m"; sourceTree = "<group>"; };
+		BC123CC61D2DFD5E0039F60A /* UIImage+MSUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+MSUtil.h"; sourceTree = "<group>"; };
+		BC123CC71D2DFD5E0039F60A /* UIImage+MSUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+MSUtil.m"; sourceTree = "<group>"; };
+		BC123CCA1D2DFFE80039F60A /* UIView+MSUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+MSUtil.h"; sourceTree = "<group>"; };
+		BC123CCB1D2DFFE80039F60A /* UIView+MSUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+MSUtil.m"; sourceTree = "<group>"; };
+		BC123D531D2E3E5B0039F60A /* msconsts.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = msconsts.h; sourceTree = "<group>"; };
+		BC123D541D2E446E0039F60A /* MSPrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSPrefixHeader.pch; sourceTree = "<group>"; };
 		BC321BE41D2260520092A91B /* CYLPlusButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CYLPlusButton.h; sourceTree = "<group>"; };
 		BC321BE51D2260520092A91B /* CYLPlusButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CYLPlusButton.m; sourceTree = "<group>"; };
 		BC321BE61D2260520092A91B /* CYLTabBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CYLTabBar.h; sourceTree = "<group>"; };
@@ -154,6 +165,24 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		BC123CC21D2DFCDC0039F60A /* UIColor+MSExtension */ = {
+			isa = PBXGroup;
+			children = (
+				BC123CC31D2DFD030039F60A /* UIColor+MSUtil.h */,
+				BC123CC41D2DFD030039F60A /* UIColor+MSUtil.m */,
+			);
+			path = "UIColor+MSExtension";
+			sourceTree = "<group>";
+		};
+		BC123CC91D2DFFD50039F60A /* UIView+MSUtil */ = {
+			isa = PBXGroup;
+			children = (
+				BC123CCA1D2DFFE80039F60A /* UIView+MSUtil.h */,
+				BC123CCB1D2DFFE80039F60A /* UIView+MSUtil.m */,
+			);
+			path = "UIView+MSUtil";
+			sourceTree = "<group>";
+		};
 		BC321BD81D225B1C0092A91B /* Base */ = {
 			isa = PBXGroup;
 			children = (
@@ -209,6 +238,8 @@
 		BC321BDE1D225B1C0092A91B /* Tools */ = {
 			isa = PBXGroup;
 			children = (
+				BC123CC91D2DFFD50039F60A /* UIView+MSUtil */,
+				BC123CC21D2DFCDC0039F60A /* UIColor+MSExtension */,
 				BC7D28631D2D0E6800901080 /* UITextField+MSExtension */,
 				BC7D285F1D2CEAA300901080 /* FileUtil */,
 				BCA6A7561D2B898F007F3B5E /* NSString+MSExtension */,
@@ -322,6 +353,8 @@
 				BC41D0FD1D1D090A00AA3695 /* AppDelegate.m */,
 				BC41D0FF1D1D090A00AA3695 /* ViewController.h */,
 				BC41D1001D1D090A00AA3695 /* ViewController.m */,
+				BC123D531D2E3E5B0039F60A /* msconsts.h */,
+				BC123D541D2E446E0039F60A /* MSPrefixHeader.pch */,
 				BC41D0F91D1D090A00AA3695 /* Supporting Files */,
 			);
 			path = MyTemplateProject;
@@ -396,6 +429,8 @@
 		BCA6A7481D2B4DB7007F3B5E /* UIImage+MSExtension */ = {
 			isa = PBXGroup;
 			children = (
+				BC123CC61D2DFD5E0039F60A /* UIImage+MSUtil.h */,
+				BC123CC71D2DFD5E0039F60A /* UIImage+MSUtil.m */,
 			);
 			path = "UIImage+MSExtension";
 			sourceTree = "<group>";
@@ -613,6 +648,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				BC41D1011D1D090A00AA3695 /* ViewController.m in Sources */,
+				BC123CC51D2DFD030039F60A /* UIColor+MSUtil.m in Sources */,
+				BC123CCC1D2DFFE80039F60A /* UIView+MSUtil.m in Sources */,
 				BC321C191D22700F0092A91B /* ZCApiRunner.m in Sources */,
 				BC321C171D22700F0092A91B /* ZCApiAction.m in Sources */,
 				BC321BF51D22634B0092A91B /* MSTabBarControllerConfig.m in Sources */,
@@ -630,6 +667,7 @@
 				BC321C201D2270630092A91B /* MSNetworking.m in Sources */,
 				BCA6A74C1D2B4E64007F3B5E /* NSDate+MSExtension.m in Sources */,
 				BCA6A7551D2B898A007F3B5E /* UIDevice+AuthorizationStatus.m in Sources */,
+				BC123CC81D2DFD5E0039F60A /* UIImage+MSUtil.m in Sources */,
 				BC321C1B1D22700F0092A91B /* ZCChainProcessor.m in Sources */,
 				BC7D285B1D2CD58A00901080 /* NSString+Code.m in Sources */,
 				BC321C1C1D22700F0092A91B /* ZCNetworking.m in Sources */,
@@ -776,6 +814,7 @@
 			baseConfigurationReference = DEA20A85AE9AE2803FBDE810 /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/$(PRODUCT_NAME)/MSPrefixHeader.pch";
 				INFOPLIST_FILE = MyTemplateProject/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -789,6 +828,7 @@
 			baseConfigurationReference = 57424E2B3DCFE57E1F81A07E /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/$(PRODUCT_NAME)/MSPrefixHeader.pch";
 				INFOPLIST_FILE = MyTemplateProject/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

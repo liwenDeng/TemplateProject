@@ -19,25 +19,16 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
-//    self.window = [[UIWindow alloc]initWithFrame:[UIScreen mainScreen].bounds];
-//    self.window.backgroundColor = [UIColor whiteColor];
-//    
-//    MSTabBarControllerConfig *tabBarConfig = [[MSTabBarControllerConfig alloc]init];
-//    MSBaseTabBarController *tabBarVC = tabBarConfig.tabBarController;
-//    [self.window setRootViewController:tabBarVC];
-//    
-//    
-//    [self.window makeKeyAndVisible];
+    self.window = [[UIWindow alloc]initWithFrame:[UIScreen mainScreen].bounds];
+    self.window.backgroundColor = [UIColor whiteColor];
     
-    NSString *cache = [MSFileUtil ms_cacheDir];
-    NSString *doc = [MSFileUtil ms_docDir];
-    NSString *s = @"[self.window setRootViewController:tabBarVC];[self.window setRootViewController:tabBarVC];[self.window setRootViewController:tabBarVC];[self.window setRootViewController:tabBarVC];[self.window setRootViewController:tabBarVC];[self.window setRootViewController:tabBarVC];";
-    NSData *data = [s dataUsingEncoding:NSUTF8StringEncoding];
-    NSString *abcPath = [MSFileUtil ms_docPathWithFileName:@"abc.txt" createPathIfNotExists:YES];
-    [MSFileUtil ms_appendData:data path:abcPath];
+    MSTabBarControllerConfig *tabBarConfig = [[MSTabBarControllerConfig alloc]init];
+    MSBaseTabBarController *tabBarVC = tabBarConfig.tabBarController;
+    [self.window setRootViewController:tabBarVC];
     
-    unsigned long long size = [MSFileUtil ms_fileSizeForDir:doc];
-    NSLog(@"cache");
+    
+    [self.window makeKeyAndVisible];
+
     return YES;
 }
 
@@ -61,6 +52,10 @@
 
 - (void)applicationWillTerminate:(UIApplication *)application {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+}
+
+- (void)application:(UIApplication *)application didReceiveLocalNotification:(UILocalNotification *)notification {
+    NSLog(@"接收到本地PUSH");
 }
 
 @end
