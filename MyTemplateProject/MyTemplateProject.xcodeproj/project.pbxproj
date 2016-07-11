@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		18AFAE9D1D3140DA0015577F /* APIDemo.js in Resources */ = {isa = PBXBuildFile; fileRef = 18AFAE9C1D3140DA0015577F /* APIDemo.js */; };
+		18C4FF361D33D59E0073B5BE /* quanmingAPI.js in Resources */ = {isa = PBXBuildFile; fileRef = 18C4FF351D33D59E0073B5BE /* quanmingAPI.js */; };
 		4579492A252AEF9340DCA664 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A91E60E0F812616746082232 /* libPods.a */; };
 		BC123CC51D2DFD030039F60A /* UIColor+MSUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = BC123CC41D2DFD030039F60A /* UIColor+MSUtil.m */; };
 		BC123CC81D2DFD5E0039F60A /* UIImage+MSUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = BC123CC71D2DFD5E0039F60A /* UIImage+MSUtil.m */; };
@@ -59,6 +61,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		18AFAE9C1D3140DA0015577F /* APIDemo.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = APIDemo.js; sourceTree = "<group>"; };
+		18C4FF351D33D59E0073B5BE /* quanmingAPI.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = quanmingAPI.js; sourceTree = "<group>"; };
 		57424E2B3DCFE57E1F81A07E /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		A91E60E0F812616746082232 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		BC123CC31D2DFD030039F60A /* UIColor+MSUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+MSUtil.h"; sourceTree = "<group>"; };
@@ -221,7 +225,9 @@
 			isa = PBXGroup;
 			children = (
 				BC321C1E1D2270630092A91B /* MSNetworking.h */,
+				18AFAE9C1D3140DA0015577F /* APIDemo.js */,
 				BC321C1F1D2270630092A91B /* MSNetworking.m */,
+				18C4FF351D33D59E0073B5BE /* quanmingAPI.js */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -572,8 +578,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				18AFAE9D1D3140DA0015577F /* APIDemo.js in Resources */,
 				BC41D1091D1D090A00AA3695 /* LaunchScreen.storyboard in Resources */,
 				BC41D1061D1D090A00AA3695 /* Assets.xcassets in Resources */,
+				18C4FF361D33D59E0073B5BE /* quanmingAPI.js in Resources */,
 				BC41D1041D1D090A00AA3695 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

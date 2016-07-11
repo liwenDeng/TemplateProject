@@ -10,7 +10,7 @@
 
 @implementation MSNetworking
 
-+ (NSURLSessionDataTask *)requestSomethingWithSuccess:(MSFailureBlock)success failure:(MSFailureBlock)failure {
++ (NSURLSessionDataTask *)requestSomethingWithSuccess:(MSSuccessBlock)success failure:(MSFailureBlock)failure {
     ZCApiAction *action = [[ZCApiAction alloc] initWithURL:@"api/api_open.php"];
     //参数
     action.params[@"a"] = @"user_login_report";
@@ -32,6 +32,61 @@
             NSLog(@"failure");
         }
     };
+    
+    return [[ZCApiRunner sharedInstance] runAction:action success:^(id object) {
+        success(object);
+    } failure:^(NSError *error) {
+        failure(error);
+    }];
+}
+
+#pragma mark - 斗鱼API
++ (NSURLSessionDataTask *)getAllDouyuLive:(NSInteger)limit offset:(NSInteger)offset WithSuccess:(MSSuccessBlock)success failure:(MSFailureBlock)failure{
+    ZCApiAction *action = [[ZCApiAction alloc]initWithURL:@"http://capi.douyucdn.cn/api/v1/live"];
+    
+    action.params[@"limit"] = @(limit);
+    action.params[@"offset"] = @(offset);
+    
+    
+    //可选属性
+//    action.showLog = YES;
+//    action.actionWillInvokeBlock = ^{
+//        NSLog(@"will start");
+//    };
+//    
+//    action.actionDidInvokeBlock = ^(BOOL isSuccess) {
+//        if (isSuccess) {
+//            NSLog(@"success");
+//        }
+//        else {
+//            NSLog(@"failure");
+//        }
+//    };
+    
+    return [[ZCApiRunner sharedInstance] runAction:action success:^(id object) {
+        success(object);
+    } failure:^(NSError *error) {
+        failure(error);
+    }];
+}
+
++ (NSURLSessionDataTask *)getDouyuColumnList:(MSSuccessBlock)success failure:(MSFailureBlock)failure {
+    ZCApiAction *action = [[ZCApiAction alloc]initWithURL:@"http://capi.douyucdn.cn/api/v1/getColumnList"];
+
+    //可选属性
+    //    action.showLog = YES;
+    //    action.actionWillInvokeBlock = ^{
+    //        NSLog(@"will start");
+    //    };
+    //
+    //    action.actionDidInvokeBlock = ^(BOOL isSuccess) {
+    //        if (isSuccess) {
+    //            NSLog(@"success");
+    //        }
+    //        else {
+    //            NSLog(@"failure");
+    //        }
+    //    };
     
     return [[ZCApiRunner sharedInstance] runAction:action success:^(id object) {
         success(object);

@@ -10,6 +10,7 @@
 #import "MSBaseTabBarController.h"
 #import "MSTabBarControllerConfig.h"
 #import "MSFileUtil.h"
+
 @interface AppDelegate ()
 
 @end
@@ -19,16 +20,23 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
-    self.window = [[UIWindow alloc]initWithFrame:[UIScreen mainScreen].bounds];
-    self.window.backgroundColor = [UIColor whiteColor];
+//    self.window = [[UIWindow alloc]initWithFrame:[UIScreen mainScreen].bounds];
+//    self.window.backgroundColor = [UIColor whiteColor];
+//    
+//    MSTabBarControllerConfig *tabBarConfig = [[MSTabBarControllerConfig alloc]init];
+//    MSBaseTabBarController *tabBarVC = tabBarConfig.tabBarController;
+//    [self.window setRootViewController:tabBarVC];
+//    
+//    
+//    [self.window makeKeyAndVisible];
     
-    MSTabBarControllerConfig *tabBarConfig = [[MSTabBarControllerConfig alloc]init];
-    MSBaseTabBarController *tabBarVC = tabBarConfig.tabBarController;
-    [self.window setRootViewController:tabBarVC];
+    [MSNetworking getDouyuColumnList:^(id object) {
+        NSLog(@"%@",[self ms_jsonStringFromDic:object]);
+    } failure:^(NSError *error) {
+        NSLog(@"ff");
+    }];
     
     
-    [self.window makeKeyAndVisible];
-
     return YES;
 }
 

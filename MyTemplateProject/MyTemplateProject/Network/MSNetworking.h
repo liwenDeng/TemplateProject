@@ -14,7 +14,19 @@ typedef void(^MSFailureBlock)(NSError *error);
 
 @interface MSNetworking : NSObject
 
-+ (NSURLSessionDataTask *)requestSomethingWithSuccess:(MSFailureBlock)success failure:(MSFailureBlock)failure;
+//(MSSuccessBlock)success failure:(MSFailureBlock)failure;
++ (NSURLSessionDataTask *)requestSomethingWithSuccess:(MSSuccessBlock)success failure:(MSFailureBlock)failure;
+
+#pragma mark - 斗鱼API
+/**
+  获取斗鱼当前全部直播
+ */
++ (NSURLSessionDataTask *)getAllDouyuLive:(NSInteger)limit offset:(NSInteger)offset WithSuccess:(MSSuccessBlock)success failure:(MSFailureBlock)failure;
+
+/**
+ 获取斗鱼分类列表
+ */
++ (NSURLSessionDataTask *)getDouyuColumnList:(MSSuccessBlock)success failure:(MSFailureBlock)failure;
 
 @end
 

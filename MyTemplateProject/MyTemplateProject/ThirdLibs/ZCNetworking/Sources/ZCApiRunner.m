@@ -119,7 +119,10 @@
     [action.params addEntriesFromDictionary:self.globleParams];
     [self showLogByAction:action];
     
-    NSString *fullURL = [self actionURL:action];
+#warning 这里使用相对url
+//    NSString *fullURL = [self actionURL:action];
+    NSString *fullURL = action.url;
+    
     !action.actionWillInvokeBlock ? : action.actionWillInvokeBlock();
     
     NSURLSessionDataTask *task;
