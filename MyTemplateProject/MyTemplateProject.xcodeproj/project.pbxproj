@@ -41,6 +41,12 @@
 		BCA6A74C1D2B4E64007F3B5E /* NSDate+MSExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = BCA6A74B1D2B4E64007F3B5E /* NSDate+MSExtension.m */; };
 		BCA6A7551D2B898A007F3B5E /* UIDevice+AuthorizationStatus.m in Sources */ = {isa = PBXBuildFile; fileRef = BCA6A7541D2B898A007F3B5E /* UIDevice+AuthorizationStatus.m */; };
 		BCA6A7591D2B8ADF007F3B5E /* NSObject+MSJSON.m in Sources */ = {isa = PBXBuildFile; fileRef = BCA6A7581D2B8ADF007F3B5E /* NSObject+MSJSON.m */; };
+		BCDE23C01D508A8300A0FB3D /* MSBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BCDE23BF1D508A8300A0FB3D /* MSBaseViewController.m */; };
+		BCDE23D41D508BAD00A0FB3D /* MSBaseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = BCDE23D31D508BAD00A0FB3D /* MSBaseModel.m */; };
+		BCDE23D71D5092BF00A0FB3D /* DYRoomModel.m in Sources */ = {isa = PBXBuildFile; fileRef = BCDE23D61D5092BF00A0FB3D /* DYRoomModel.m */; };
+		BCDE23DA1D5094C800A0FB3D /* DYHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BCDE23D91D5094C800A0FB3D /* DYHomeViewController.m */; };
+		BCDE23DD1D509B0B00A0FB3D /* DYRoomModelList.m in Sources */ = {isa = PBXBuildFile; fileRef = BCDE23DC1D509B0B00A0FB3D /* DYRoomModelList.m */; };
+		BCDE23E01D509EC700A0FB3D /* DYFaceRoomModel.m in Sources */ = {isa = PBXBuildFile; fileRef = BCDE23DF1D509EC700A0FB3D /* DYFaceRoomModel.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -131,6 +137,18 @@
 		BCA6A7541D2B898A007F3B5E /* UIDevice+AuthorizationStatus.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIDevice+AuthorizationStatus.m"; sourceTree = "<group>"; };
 		BCA6A7571D2B8ADF007F3B5E /* NSObject+MSJSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+MSJSON.h"; sourceTree = "<group>"; };
 		BCA6A7581D2B8ADF007F3B5E /* NSObject+MSJSON.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+MSJSON.m"; sourceTree = "<group>"; };
+		BCDE23BE1D508A8300A0FB3D /* MSBaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSBaseViewController.h; sourceTree = "<group>"; };
+		BCDE23BF1D508A8300A0FB3D /* MSBaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSBaseViewController.m; sourceTree = "<group>"; };
+		BCDE23D21D508BAD00A0FB3D /* MSBaseModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSBaseModel.h; sourceTree = "<group>"; };
+		BCDE23D31D508BAD00A0FB3D /* MSBaseModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSBaseModel.m; sourceTree = "<group>"; };
+		BCDE23D51D5092BF00A0FB3D /* DYRoomModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DYRoomModel.h; sourceTree = "<group>"; };
+		BCDE23D61D5092BF00A0FB3D /* DYRoomModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DYRoomModel.m; sourceTree = "<group>"; };
+		BCDE23D81D5094C800A0FB3D /* DYHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DYHomeViewController.h; sourceTree = "<group>"; };
+		BCDE23D91D5094C800A0FB3D /* DYHomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DYHomeViewController.m; sourceTree = "<group>"; };
+		BCDE23DB1D509B0B00A0FB3D /* DYRoomModelList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DYRoomModelList.h; sourceTree = "<group>"; };
+		BCDE23DC1D509B0B00A0FB3D /* DYRoomModelList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DYRoomModelList.m; sourceTree = "<group>"; };
+		BCDE23DE1D509EC700A0FB3D /* DYFaceRoomModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DYFaceRoomModel.h; sourceTree = "<group>"; };
+		BCDE23DF1D509EC700A0FB3D /* DYFaceRoomModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DYFaceRoomModel.m; sourceTree = "<group>"; };
 		DEA20A85AE9AE2803FBDE810 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -208,6 +226,10 @@
 		BC321BDA1D225B1C0092A91B /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				BCDE23C61D508B9000A0FB3D /* Home */,
+				BCDE23C21D508B9000A0FB3D /* Follow */,
+				BCDE23CA1D508B9000A0FB3D /* Live */,
+				BCDE23CE1D508B9000A0FB3D /* My */,
 			);
 			path = Modules;
 			sourceTree = "<group>";
@@ -225,8 +247,8 @@
 			isa = PBXGroup;
 			children = (
 				BC321C1E1D2270630092A91B /* MSNetworking.h */,
-				18AFAE9C1D3140DA0015577F /* APIDemo.js */,
 				BC321C1F1D2270630092A91B /* MSNetworking.m */,
+				18AFAE9C1D3140DA0015577F /* APIDemo.js */,
 				18C4FF351D33D59E0073B5BE /* quanmingAPI.js */,
 			);
 			path = Network;
@@ -260,6 +282,8 @@
 		BC321BE01D2260160092A91B /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				BCDE23D21D508BAD00A0FB3D /* MSBaseModel.h */,
+				BCDE23D31D508BAD00A0FB3D /* MSBaseModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -276,6 +300,8 @@
 			children = (
 				BC321BF01D2260920092A91B /* MSBaseTabBarController.h */,
 				BC321BF11D2260920092A91B /* MSBaseTabBarController.m */,
+				BCDE23BE1D508A8300A0FB3D /* MSBaseViewController.h */,
+				BCDE23BF1D508A8300A0FB3D /* MSBaseViewController.m */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -459,6 +485,138 @@
 				BC7D285D1D2CD62200901080 /* NSString+Util.m */,
 			);
 			path = "NSString+MSExtension";
+			sourceTree = "<group>";
+		};
+		BCDE23C21D508B9000A0FB3D /* Follow */ = {
+			isa = PBXGroup;
+			children = (
+				BCDE23C31D508B9000A0FB3D /* Controller */,
+				BCDE23C41D508B9000A0FB3D /* Model */,
+				BCDE23C51D508B9000A0FB3D /* View */,
+			);
+			path = Follow;
+			sourceTree = "<group>";
+		};
+		BCDE23C31D508B9000A0FB3D /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		BCDE23C41D508B9000A0FB3D /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		BCDE23C51D508B9000A0FB3D /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		BCDE23C61D508B9000A0FB3D /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				BCDE23C71D508B9000A0FB3D /* Controller */,
+				BCDE23C81D508B9000A0FB3D /* Model */,
+				BCDE23C91D508B9000A0FB3D /* View */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		BCDE23C71D508B9000A0FB3D /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				BCDE23D81D5094C800A0FB3D /* DYHomeViewController.h */,
+				BCDE23D91D5094C800A0FB3D /* DYHomeViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		BCDE23C81D508B9000A0FB3D /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				BCDE23D51D5092BF00A0FB3D /* DYRoomModel.h */,
+				BCDE23D61D5092BF00A0FB3D /* DYRoomModel.m */,
+				BCDE23DB1D509B0B00A0FB3D /* DYRoomModelList.h */,
+				BCDE23DC1D509B0B00A0FB3D /* DYRoomModelList.m */,
+				BCDE23DE1D509EC700A0FB3D /* DYFaceRoomModel.h */,
+				BCDE23DF1D509EC700A0FB3D /* DYFaceRoomModel.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		BCDE23C91D508B9000A0FB3D /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		BCDE23CA1D508B9000A0FB3D /* Live */ = {
+			isa = PBXGroup;
+			children = (
+				BCDE23CB1D508B9000A0FB3D /* Controller */,
+				BCDE23CC1D508B9000A0FB3D /* Model */,
+				BCDE23CD1D508B9000A0FB3D /* View */,
+			);
+			path = Live;
+			sourceTree = "<group>";
+		};
+		BCDE23CB1D508B9000A0FB3D /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		BCDE23CC1D508B9000A0FB3D /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		BCDE23CD1D508B9000A0FB3D /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		BCDE23CE1D508B9000A0FB3D /* My */ = {
+			isa = PBXGroup;
+			children = (
+				BCDE23CF1D508B9000A0FB3D /* Controller */,
+				BCDE23D01D508B9000A0FB3D /* Model */,
+				BCDE23D11D508B9000A0FB3D /* View */,
+			);
+			path = My;
+			sourceTree = "<group>";
+		};
+		BCDE23CF1D508B9000A0FB3D /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		BCDE23D01D508B9000A0FB3D /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		BCDE23D11D508B9000A0FB3D /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		CEA9ED2B1D0BE00AB04A924F /* Frameworks */ = {
@@ -661,11 +819,16 @@
 				BC321C191D22700F0092A91B /* ZCApiRunner.m in Sources */,
 				BC321C171D22700F0092A91B /* ZCApiAction.m in Sources */,
 				BC321BF51D22634B0092A91B /* MSTabBarControllerConfig.m in Sources */,
+				BCDE23E01D509EC700A0FB3D /* DYFaceRoomModel.m in Sources */,
 				BCA6A7591D2B8ADF007F3B5E /* NSObject+MSJSON.m in Sources */,
 				BC7D28621D2D00CD00901080 /* MSFileUtil.m in Sources */,
+				BCDE23DA1D5094C800A0FB3D /* DYHomeViewController.m in Sources */,
+				BCDE23C01D508A8300A0FB3D /* MSBaseViewController.m in Sources */,
 				BC7D28661D2D0E9900901080 /* UITextField+PlaceholderColor.m in Sources */,
+				BCDE23D71D5092BF00A0FB3D /* DYRoomModel.m in Sources */,
 				BC41D0FE1D1D090A00AA3695 /* AppDelegate.m in Sources */,
 				BC321BEE1D2260520092A91B /* CYLTabBarController.m in Sources */,
+				BCDE23D41D508BAD00A0FB3D /* MSBaseModel.m in Sources */,
 				BC321C181D22700F0092A91B /* ZCApiDownloadAction.m in Sources */,
 				BC321BEC1D2260520092A91B /* CYLPlusButton.m in Sources */,
 				BC321BED1D2260520092A91B /* CYLTabBar.m in Sources */,
@@ -681,6 +844,7 @@
 				BC321C1C1D22700F0092A91B /* ZCNetworking.m in Sources */,
 				BC41D0FB1D1D090A00AA3695 /* main.m in Sources */,
 				BC321C1A1D22700F0092A91B /* ZCApiUploadAction.m in Sources */,
+				BCDE23DD1D509B0B00A0FB3D /* DYRoomModelList.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

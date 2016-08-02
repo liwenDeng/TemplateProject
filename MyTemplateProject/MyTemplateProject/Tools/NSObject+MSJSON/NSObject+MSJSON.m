@@ -16,10 +16,33 @@
  */
 #define MS_USE_JSONKIT NO
 
-@implementation NSObject (MSJSON)
+@implementation NSDictionary (MSJSON)
 
-#pragma mark - jsonString <--> Data 相互转换
-- (NSString *)ms_jsonStringFromJsonData:(NSData *)jsonData {
+- (NSString *)ms_jsonString {
+    // dic --> data
+    NSData *jsonData = [self ms_jsonData];
+    // data->String
+    NSString *jsonString = [jsonData ms_jsonString];
+    return jsonString;
+}
+
+- (NSData *)ms_jsonData {
+    BOOL ret = [NSJSONSerialization isValidJSONObject:self];
+    if (!ret) {
+        NSAssert(!ret, @"不能转换成Json");
+        return nil;
+    }
+    NSError *error = nil;
+    NSData *JSONData = [NSJSONSerialization dataWithJSONObject:self options:(NSJSONWritingPrettyPrinted) error:&error];
+    NSAssert(!error, @"Dic-->jsonData转换失败");
+    return JSONData;
+}
+
+@end
+
+@implementation NSData (MSJSON)
+
+- (NSString *)ms_jsonString {
     NSString *jsonString;
     if (MS_USE_JSONKIT) {
         /**
@@ -27,16 +50,35 @@
          1.使用 NSJSONSerialization 转换成 string，在反响转换时 也需要使用 NSJSONSerialization 的方法
          */
         NSError *error = nil;
-        jsonString = [NSJSONSerialization JSONObjectWithData:jsonData options:(NSJSONReadingMutableLeaves) error:&error];
+        jsonString = [NSJSONSerialization JSONObjectWithData:self options:(NSJSONReadingMutableLeaves) error:&error];
         NSAssert(!error, @"dic-->jsonString 失败");
     }else {
         //2.使用 initWithData: ,在反向转换时需要使用 dataUsingEncoding:NSUTF8StringEncoding 方法
-        jsonString = [[NSString alloc]initWithData:jsonData encoding:NSUTF8StringEncoding];
+        jsonString = [[NSString alloc]initWithData:self encoding:NSUTF8StringEncoding];
     }
     return jsonString;
 }
 
-- (NSData *)ms_jsonDataFromJsonString:(NSString *)jsonString {
+- (NSDictionary *)ms_jsonDic {
+    NSError *error = nil;
+    NSDictionary *jsonDic = [NSJSONSerialization JSONObjectWithData:self options:(NSJSONReadingMutableContainers) error:&error];
+    NSAssert(!error, @"jsonData-->Dic转换失败");
+    return jsonDic;
+}
+
+@end
+
+@implementation NSString (MSJSON)
+
+- (NSDictionary *)ms_jsonDic {
+    //jsonString-->data
+    NSData *jsonData = [self ms_jsonData];
+    //data-->dic
+    NSDictionary *dic = [jsonData ms_jsonDic];
+    return dic;
+}
+
+- (NSData *)ms_jsonData {
     NSData *data;
     if (MS_USE_JSONKIT) {
         /**
@@ -44,65 +86,105 @@
          */
         //1.
         NSError *error = nil;
-        data = [NSJSONSerialization dataWithJSONObject:jsonString options:(NSJSONWritingPrettyPrinted) error:&error];
+        data = [NSJSONSerialization dataWithJSONObject:self options:(NSJSONWritingPrettyPrinted) error:&error];
         NSAssert(!error, @"jsonString-->data 失败");
         
     }else {
         //2.
-        data = [jsonString dataUsingEncoding:NSUTF8StringEncoding];
+        data = [self dataUsingEncoding:NSUTF8StringEncoding];
     }
     return data;
 }
 
-#pragma mark - jsonString <--> Dictionary 相互转换
-- (NSString *)ms_jsonStringFromDic:(NSDictionary *)dic {
-    // dic --> data
-    NSData *jsonData = [self ms_jsonDataFromDic:dic];
-    
-    // data->String
-    NSString *jsonString = [self ms_jsonStringFromJsonData:jsonData];
-    return jsonString;
-}
-
-- (NSDictionary *)ms_dicFromJsonString:(NSString *)jsonString {
-    
-    //jsonString-->data
-    NSData *jsonData = [self ms_jsonDataFromJsonString:jsonString];
-    
-    //data-->dic
-    NSDictionary *dic = [self ms_dicFromJsonData:jsonData];
-    
-    return dic;
-}
-
-#pragma mark - Dictionary <--> Data 相互转换
-- (NSData *)ms_jsonDataFromDic:(NSDictionary *)jsonDic {
-    if (!jsonDic) {
-        return nil;
-    }
-
-    BOOL ret = [NSJSONSerialization isValidJSONObject:jsonDic];
-    if (!ret) {
-        NSAssert(!ret, @"不能转换成Json");
-        return nil;
-    }
-    NSError *error = nil;
-    NSData *JSONData = [NSJSONSerialization dataWithJSONObject:jsonDic options:(NSJSONWritingPrettyPrinted) error:&error];
-    
-    NSAssert(!error, @"Dic-->jsonData转换失败");
-    
-    return JSONData;
-}
-
-- (NSDictionary *)ms_dicFromJsonData:(NSData *)jsonData {
-    if (!jsonData) {
-        return nil;
-    }
-    
-    NSError *error = nil;
-    NSDictionary *jsonDic = [NSJSONSerialization JSONObjectWithData:jsonData options:(NSJSONReadingMutableContainers) error:&error];
-    NSAssert(!error, @"jsonData-->Dic转换失败");
-    return jsonDic;
-}
-
 @end
+
+//@implementation NSObject (MSJSON)
+//
+//#pragma mark - jsonString <--> Data 相互转换
+//- (NSString *)ms_jsonStringFromJsonData:(NSData *)jsonData {
+//    NSString *jsonString;
+//    if (MS_USE_JSONKIT) {
+//        /**
+//         data --> jsonString 有两种方式
+//         1.使用 NSJSONSerialization 转换成 string，在反响转换时 也需要使用 NSJSONSerialization 的方法
+//         */
+//        NSError *error = nil;
+//        jsonString = [NSJSONSerialization JSONObjectWithData:jsonData options:(NSJSONReadingMutableLeaves) error:&error];
+//        NSAssert(!error, @"dic-->jsonString 失败");
+//    }else {
+//        //2.使用 initWithData: ,在反向转换时需要使用 dataUsingEncoding:NSUTF8StringEncoding 方法
+//        jsonString = [[NSString alloc]initWithData:jsonData encoding:NSUTF8StringEncoding];
+//    }
+//    return jsonString;
+//}
+//
+//- (NSData *)ms_jsonDataFromJsonString:(NSString *)jsonString {
+//    NSData *data;
+//    if (MS_USE_JSONKIT) {
+//        /**
+//         jsonString -> data 两种方式
+//         */
+//        //1.
+//        NSError *error = nil;
+//        data = [NSJSONSerialization dataWithJSONObject:jsonString options:(NSJSONWritingPrettyPrinted) error:&error];
+//        NSAssert(!error, @"jsonString-->data 失败");
+//        
+//    }else {
+//        //2.
+//        data = [jsonString dataUsingEncoding:NSUTF8StringEncoding];
+//    }
+//    return data;
+//}
+//
+//#pragma mark - jsonString <--> Dictionary 相互转换
+//- (NSString *)ms_jsonStringFromDic:(NSDictionary *)dic {
+//    // dic --> data
+//    NSData *jsonData = [self ms_jsonDataFromDic:dic];
+//    
+//    // data->String
+//    NSString *jsonString = [self ms_jsonStringFromJsonData:jsonData];
+//    return jsonString;
+//}
+//
+//- (NSDictionary *)ms_dicFromJsonString:(NSString *)jsonString {
+//    
+//    //jsonString-->data
+//    NSData *jsonData = [self ms_jsonDataFromJsonString:jsonString];
+//    
+//    //data-->dic
+//    NSDictionary *dic = [self ms_dicFromJsonData:jsonData];
+//    
+//    return dic;
+//}
+//
+//#pragma mark - Dictionary <--> Data 相互转换
+//- (NSData *)ms_jsonDataFromDic:(NSDictionary *)jsonDic {
+//    if (!jsonDic) {
+//        return nil;
+//    }
+//    
+//    BOOL ret = [NSJSONSerialization isValidJSONObject:jsonDic];
+//    if (!ret) {
+//        NSAssert(!ret, @"不能转换成Json");
+//        return nil;
+//    }
+//    NSError *error = nil;
+//    NSData *JSONData = [NSJSONSerialization dataWithJSONObject:jsonDic options:(NSJSONWritingPrettyPrinted) error:&error];
+//    
+//    NSAssert(!error, @"Dic-->jsonData转换失败");
+//    
+//    return JSONData;
+//}
+//
+//- (NSDictionary *)ms_dicFromJsonData:(NSData *)jsonData {
+//    if (!jsonData) {
+//        return nil;
+//    }
+//    
+//    NSError *error = nil;
+//    NSDictionary *jsonDic = [NSJSONSerialization JSONObjectWithData:jsonData options:(NSJSONReadingMutableContainers) error:&error];
+//    NSAssert(!error, @"jsonData-->Dic转换失败");
+//    return jsonDic;
+//}
+//
+//@end

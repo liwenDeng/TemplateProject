@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 #import "ZCApiLauncher.h"
 
-typedef void(^MSSuccessBlock)(id object);
+typedef void(^MSSuccessBlock)(NSDictionary *object);
 typedef void(^MSFailureBlock)(NSError *error);
 
 @interface MSNetworking : NSObject
@@ -27,6 +27,28 @@ typedef void(^MSFailureBlock)(NSError *error);
  获取斗鱼分类列表
  */
 + (NSURLSessionDataTask *)getDouyuColumnList:(MSSuccessBlock)success failure:(MSFailureBlock)failure;
+
+/**
+ 获取斗鱼顶部tabbar分类
+ */
++ (NSURLSessionDataTask *)getDouyuTopBarInfos:(MSSuccessBlock)success failure:(MSFailureBlock)failure;
+
+//================================================================================
+/**
+ 1.获取斗鱼首页最热数据
+ * 返回是DYRoomModel 数组
+ */
++ (NSURLSessionDataTask *)getDouyuHomeHotInfos:(MSSuccessBlock)success failure:(MSFailureBlock)failure;
+
+/**
+ 2.获取斗鱼首页颜值数据
+ */
++ (NSURLSessionDataTask *)getDouyuHomeFaceInfos:(MSSuccessBlock)success failure:(MSFailureBlock)failure;
+
+/**
+ 3.获取斗鱼首页热门分类房间列表数据
+ */
++ (NSURLSessionDataTask *)getDouyuHomeCategoryInfos:(MSSuccessBlock)success failure:(MSFailureBlock)failure;
 
 @end
 

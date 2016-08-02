@@ -20,5 +20,6 @@
 #import "msconsts.h"
 #import "MSNetworking.h"
 #import "NSObject+MSJSON.h"
+#import <YYModel.h>
 
 #endif /* MSPrefixHeader_pch */

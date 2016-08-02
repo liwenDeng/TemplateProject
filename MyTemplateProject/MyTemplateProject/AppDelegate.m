@@ -30,12 +30,11 @@
 //    
 //    [self.window makeKeyAndVisible];
     
-    [MSNetworking getDouyuColumnList:^(id object) {
-        NSLog(@"%@",[self ms_jsonStringFromDic:object]);
+    [MSNetworking getDouyuHomePageInfos:^(NSDictionary *object) {
+        NSLog(@"%@",object.ms_jsonString);
     } failure:^(NSError *error) {
-        NSLog(@"ff");
+        NSLog(@"failue");
     }];
-    
     
     return YES;
 }

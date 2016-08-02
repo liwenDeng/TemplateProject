@@ -95,6 +95,56 @@
     }];
 }
 
+//1.
++ (NSURLSessionDataTask *)getDouyuHomeHotInfos:(MSSuccessBlock)success failure:(MSFailureBlock)failure {
+    
+    //http://capi.douyucdn.cn/api/v1/getbigDataRoom?aid=android1&client_sys=android&time=1468074120&token=5082405_b1c24e33bf3db5b4&auth=8885837426ded0275f826f300dbd6487
+    ZCApiAction *action = [[ZCApiAction alloc]initWithURL:@"http://capi.douyucdn.cn/api/v1/getbigDataRoom"];
+    action.params[@"aid"] = @"android1";
+    action.params[@"client_sys"] = @"android";
+    NSTimeInterval time = [[NSDate date]timeIntervalSince1970];
+    action.params[@"time"] = [NSString stringWithFormat:@"%f",time];
+    
+    return [[ZCApiRunner sharedInstance] runAction:action success:^(id object) {
+        success(object);
+    } failure:^(NSError *error) {
+        failure(error);
+    }];
+}
+
+//2.
++ (NSURLSessionDataTask *)getDouyuHomeFaceInfos:(MSSuccessBlock)success failure:(MSFailureBlock)failure {
+    //http://capi.douyucdn.cn/api/v1/getVerticalRoom?aid=android1&client_sys=android&limit=4&offset=0&time=1468074120&auth=461dc91817f22ef364459445078c38e5
+    ZCApiAction *action = [[ZCApiAction alloc]initWithURL:@"http://capi.douyucdn.cn/api/v1/getVerticalRoom"];
+    action.params[@"aid"] = @"android1";
+    action.params[@"client_sys"] = @"android";
+    NSTimeInterval time = [[NSDate date]timeIntervalSince1970];
+    action.params[@"time"] = [NSString stringWithFormat:@"%f",time];
+    action.params[@"limit"] = @"4";
+    action.params[@"offset"]= @"0";
+    
+    return [[ZCApiRunner sharedInstance] runAction:action success:^(id object) {
+        success(object);
+    } failure:^(NSError *error) {
+        failure(error);
+    }];
+}
+
+//3.
++ (NSURLSessionDataTask *)getDouyuHomeCategoryInfos:(MSSuccessBlock)success failure:(MSFailureBlock)failure {
+    //http://capi.douyucdn.cn/api/v1/getHotCate?aid=android1&client_sys=android&time=1470127800&token=&auth=106ce60e97ada8b26345b7c7d742f8eb
+    ZCApiAction *action = [[ZCApiAction alloc]initWithURL:@"http://capi.douyucdn.cn/api/v1/getHotCate"];
+    action.params[@"aid"] = @"android1";
+    action.params[@"client_sys"] = @"android";
+    NSTimeInterval time = [[NSDate date]timeIntervalSince1970];
+    action.params[@"time"] = [NSString stringWithFormat:@"%f",time];
+    return [[ZCApiRunner sharedInstance] runAction:action success:^(id object) {
+        success(object);
+    } failure:^(NSError *error) {
+        failure(error);
+    }];
+}
+
 @end
 
 /**

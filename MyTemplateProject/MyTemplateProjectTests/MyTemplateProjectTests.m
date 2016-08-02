@@ -7,6 +7,8 @@
 //
 
 #import <XCTest/XCTest.h>
+#import "MSNetworking.h"
+#import "NSObject+MSJSON.h"
 
 @interface MyTemplateProjectTests : XCTestCase
 
@@ -34,6 +36,10 @@
     [self measureBlock:^{
         // Put the code you want to measure the time of here.
     }];
+}
+
+- (void)testDoyuHome {
+
 }
 
 @end
