@@ -7,7 +7,7 @@
 //
 
 #import "MSTabBarControllerConfig.h"
-
+#import "DYHomeViewController.h"
 //#pragma mark -HideTabBarMethod
 //@interface CYLBaseNavigationController : UINavigationController
 //
@@ -101,7 +101,7 @@
 
 
 - (NSArray *)viewControllers {
-    UIViewController *vc1 = [[UIViewController alloc]init];
+    DYHomeViewController *vc1 = [[DYHomeViewController alloc]init];
     UINavigationController *navi1 = [[UINavigationController alloc]initWithRootViewController:vc1];
     vc1.navigationItem.title = @"首页";
     

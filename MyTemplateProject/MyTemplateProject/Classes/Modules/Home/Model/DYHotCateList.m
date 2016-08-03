@@ -6,12 +6,20 @@
 //  Copyright © 2016年 dengliwen. All rights reserved.
 //
 
-#import "DYRoomModelList.h"
+#import "DYHotCateList.h"
 
-@implementation DYRoomModelList
+@implementation DYHotCate
 
 + (NSDictionary *)modelContainerPropertyGenericClass {
     return @{@"room_list" : [DYRoomModel class]};
 }
+
+@end
+
+@implementation DYHotCateList
+
+//+ (NSDictionary *)modelContainerPropertyGenericClass {
+//    return @{@"data": [NSArray class]};
+//}
 
 @end

@@ -38,17 +38,17 @@ typedef void(^MSFailureBlock)(NSError *error);
  1.获取斗鱼首页最热数据
  * 返回是DYRoomModel 数组
  */
-+ (NSURLSessionDataTask *)getDouyuHomeHotInfos:(MSSuccessBlock)success failure:(MSFailureBlock)failure;
++ (NSURLSessionDataTask *)getDouyuBigDataInfos:(MSSuccessBlock)success failure:(MSFailureBlock)failure;
 
 /**
  2.获取斗鱼首页颜值数据
  */
-+ (NSURLSessionDataTask *)getDouyuHomeFaceInfos:(MSSuccessBlock)success failure:(MSFailureBlock)failure;
++ (NSURLSessionDataTask *)getDouyuFaceInfos:(MSSuccessBlock)success failure:(MSFailureBlock)failure;
 
 /**
- 3.获取斗鱼首页热门分类房间列表数据
+ 3.获取斗鱼首页热门分类房间列表数据 getHotCate
  */
-+ (NSURLSessionDataTask *)getDouyuHomeCategoryInfos:(MSSuccessBlock)success failure:(MSFailureBlock)failure;
++ (NSURLSessionDataTask *)getDouyuHotCateListInfos:(MSSuccessBlock)success failure:(MSFailureBlock)failure;
 
 @end
 

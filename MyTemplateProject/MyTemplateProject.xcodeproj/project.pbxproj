@@ -41,12 +41,16 @@
 		BCA6A74C1D2B4E64007F3B5E /* NSDate+MSExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = BCA6A74B1D2B4E64007F3B5E /* NSDate+MSExtension.m */; };
 		BCA6A7551D2B898A007F3B5E /* UIDevice+AuthorizationStatus.m in Sources */ = {isa = PBXBuildFile; fileRef = BCA6A7541D2B898A007F3B5E /* UIDevice+AuthorizationStatus.m */; };
 		BCA6A7591D2B8ADF007F3B5E /* NSObject+MSJSON.m in Sources */ = {isa = PBXBuildFile; fileRef = BCA6A7581D2B8ADF007F3B5E /* NSObject+MSJSON.m */; };
+		BCC7ADD01D519C690024DB6F /* DYBaseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = BCC7ADCF1D519C690024DB6F /* DYBaseModel.m */; };
 		BCDE23C01D508A8300A0FB3D /* MSBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BCDE23BF1D508A8300A0FB3D /* MSBaseViewController.m */; };
 		BCDE23D41D508BAD00A0FB3D /* MSBaseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = BCDE23D31D508BAD00A0FB3D /* MSBaseModel.m */; };
 		BCDE23D71D5092BF00A0FB3D /* DYRoomModel.m in Sources */ = {isa = PBXBuildFile; fileRef = BCDE23D61D5092BF00A0FB3D /* DYRoomModel.m */; };
 		BCDE23DA1D5094C800A0FB3D /* DYHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BCDE23D91D5094C800A0FB3D /* DYHomeViewController.m */; };
-		BCDE23DD1D509B0B00A0FB3D /* DYRoomModelList.m in Sources */ = {isa = PBXBuildFile; fileRef = BCDE23DC1D509B0B00A0FB3D /* DYRoomModelList.m */; };
+		BCDE23DD1D509B0B00A0FB3D /* DYHotCateList.m in Sources */ = {isa = PBXBuildFile; fileRef = BCDE23DC1D509B0B00A0FB3D /* DYHotCateList.m */; };
 		BCDE23E01D509EC700A0FB3D /* DYFaceRoomModel.m in Sources */ = {isa = PBXBuildFile; fileRef = BCDE23DF1D509EC700A0FB3D /* DYFaceRoomModel.m */; };
+		BCEC39521D51E40900EB399E /* DYBigDataList.m in Sources */ = {isa = PBXBuildFile; fileRef = BCEC39511D51E40900EB399E /* DYBigDataList.m */; };
+		BCEC39551D51EB9900EB399E /* DYRoomCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BCEC39541D51EB9900EB399E /* DYRoomCell.m */; };
+		BCEC39581D51EBD100EB399E /* DYSectionHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = BCEC39571D51EBD100EB399E /* DYSectionHeaderView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -137,6 +141,8 @@
 		BCA6A7541D2B898A007F3B5E /* UIDevice+AuthorizationStatus.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIDevice+AuthorizationStatus.m"; sourceTree = "<group>"; };
 		BCA6A7571D2B8ADF007F3B5E /* NSObject+MSJSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+MSJSON.h"; sourceTree = "<group>"; };
 		BCA6A7581D2B8ADF007F3B5E /* NSObject+MSJSON.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+MSJSON.m"; sourceTree = "<group>"; };
+		BCC7ADCE1D519C690024DB6F /* DYBaseModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DYBaseModel.h; sourceTree = "<group>"; };
+		BCC7ADCF1D519C690024DB6F /* DYBaseModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DYBaseModel.m; sourceTree = "<group>"; };
 		BCDE23BE1D508A8300A0FB3D /* MSBaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSBaseViewController.h; sourceTree = "<group>"; };
 		BCDE23BF1D508A8300A0FB3D /* MSBaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSBaseViewController.m; sourceTree = "<group>"; };
 		BCDE23D21D508BAD00A0FB3D /* MSBaseModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSBaseModel.h; sourceTree = "<group>"; };
@@ -145,10 +151,16 @@
 		BCDE23D61D5092BF00A0FB3D /* DYRoomModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DYRoomModel.m; sourceTree = "<group>"; };
 		BCDE23D81D5094C800A0FB3D /* DYHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DYHomeViewController.h; sourceTree = "<group>"; };
 		BCDE23D91D5094C800A0FB3D /* DYHomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DYHomeViewController.m; sourceTree = "<group>"; };
-		BCDE23DB1D509B0B00A0FB3D /* DYRoomModelList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DYRoomModelList.h; sourceTree = "<group>"; };
-		BCDE23DC1D509B0B00A0FB3D /* DYRoomModelList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DYRoomModelList.m; sourceTree = "<group>"; };
+		BCDE23DB1D509B0B00A0FB3D /* DYHotCateList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DYHotCateList.h; sourceTree = "<group>"; };
+		BCDE23DC1D509B0B00A0FB3D /* DYHotCateList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DYHotCateList.m; sourceTree = "<group>"; };
 		BCDE23DE1D509EC700A0FB3D /* DYFaceRoomModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DYFaceRoomModel.h; sourceTree = "<group>"; };
 		BCDE23DF1D509EC700A0FB3D /* DYFaceRoomModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DYFaceRoomModel.m; sourceTree = "<group>"; };
+		BCEC39501D51E40900EB399E /* DYBigDataList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DYBigDataList.h; sourceTree = "<group>"; };
+		BCEC39511D51E40900EB399E /* DYBigDataList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DYBigDataList.m; sourceTree = "<group>"; };
+		BCEC39531D51EB9900EB399E /* DYRoomCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DYRoomCell.h; sourceTree = "<group>"; };
+		BCEC39541D51EB9900EB399E /* DYRoomCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DYRoomCell.m; sourceTree = "<group>"; };
+		BCEC39561D51EBD100EB399E /* DYSectionHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DYSectionHeaderView.h; sourceTree = "<group>"; };
+		BCEC39571D51EBD100EB399E /* DYSectionHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DYSectionHeaderView.m; sourceTree = "<group>"; };
 		DEA20A85AE9AE2803FBDE810 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -282,6 +294,7 @@
 		BC321BE01D2260160092A91B /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				BCC7ADCD1D519C530024DB6F /* DYModel */,
 				BCDE23D21D508BAD00A0FB3D /* MSBaseModel.h */,
 				BCDE23D31D508BAD00A0FB3D /* MSBaseModel.m */,
 			);
@@ -487,6 +500,15 @@
 			path = "NSString+MSExtension";
 			sourceTree = "<group>";
 		};
+		BCC7ADCD1D519C530024DB6F /* DYModel */ = {
+			isa = PBXGroup;
+			children = (
+				BCC7ADCE1D519C690024DB6F /* DYBaseModel.h */,
+				BCC7ADCF1D519C690024DB6F /* DYBaseModel.m */,
+			);
+			path = DYModel;
+			sourceTree = "<group>";
+		};
 		BCDE23C21D508B9000A0FB3D /* Follow */ = {
 			isa = PBXGroup;
 			children = (
@@ -542,8 +564,10 @@
 			children = (
 				BCDE23D51D5092BF00A0FB3D /* DYRoomModel.h */,
 				BCDE23D61D5092BF00A0FB3D /* DYRoomModel.m */,
-				BCDE23DB1D509B0B00A0FB3D /* DYRoomModelList.h */,
-				BCDE23DC1D509B0B00A0FB3D /* DYRoomModelList.m */,
+				BCEC39501D51E40900EB399E /* DYBigDataList.h */,
+				BCEC39511D51E40900EB399E /* DYBigDataList.m */,
+				BCDE23DB1D509B0B00A0FB3D /* DYHotCateList.h */,
+				BCDE23DC1D509B0B00A0FB3D /* DYHotCateList.m */,
 				BCDE23DE1D509EC700A0FB3D /* DYFaceRoomModel.h */,
 				BCDE23DF1D509EC700A0FB3D /* DYFaceRoomModel.m */,
 			);
@@ -553,6 +577,10 @@
 		BCDE23C91D508B9000A0FB3D /* View */ = {
 			isa = PBXGroup;
 			children = (
+				BCEC39531D51EB9900EB399E /* DYRoomCell.h */,
+				BCEC39541D51EB9900EB399E /* DYRoomCell.m */,
+				BCEC39561D51EBD100EB399E /* DYSectionHeaderView.h */,
+				BCEC39571D51EBD100EB399E /* DYSectionHeaderView.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -819,10 +847,14 @@
 				BC321C191D22700F0092A91B /* ZCApiRunner.m in Sources */,
 				BC321C171D22700F0092A91B /* ZCApiAction.m in Sources */,
 				BC321BF51D22634B0092A91B /* MSTabBarControllerConfig.m in Sources */,
+				BCC7ADD01D519C690024DB6F /* DYBaseModel.m in Sources */,
+				BCEC39551D51EB9900EB399E /* DYRoomCell.m in Sources */,
 				BCDE23E01D509EC700A0FB3D /* DYFaceRoomModel.m in Sources */,
 				BCA6A7591D2B8ADF007F3B5E /* NSObject+MSJSON.m in Sources */,
+				BCEC39581D51EBD100EB399E /* DYSectionHeaderView.m in Sources */,
 				BC7D28621D2D00CD00901080 /* MSFileUtil.m in Sources */,
 				BCDE23DA1D5094C800A0FB3D /* DYHomeViewController.m in Sources */,
+				BCEC39521D51E40900EB399E /* DYBigDataList.m in Sources */,
 				BCDE23C01D508A8300A0FB3D /* MSBaseViewController.m in Sources */,
 				BC7D28661D2D0E9900901080 /* UITextField+PlaceholderColor.m in Sources */,
 				BCDE23D71D5092BF00A0FB3D /* DYRoomModel.m in Sources */,
@@ -844,7 +876,7 @@
 				BC321C1C1D22700F0092A91B /* ZCNetworking.m in Sources */,
 				BC41D0FB1D1D090A00AA3695 /* main.m in Sources */,
 				BC321C1A1D22700F0092A91B /* ZCApiUploadAction.m in Sources */,
-				BCDE23DD1D509B0B00A0FB3D /* DYRoomModelList.m in Sources */,
+				BCDE23DD1D509B0B00A0FB3D /* DYHotCateList.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -11,3 +11,11 @@
 @implementation DYFaceRoomModel
 
 @end
+
+@implementation DYFaceList
+
++ (NSDictionary *)modelContainerPropertyGenericClass {
+    return @{@"data": [DYFaceRoomModel class]};
+}
+
+@end

@@ -6,11 +6,11 @@
 //  Copyright © 2016年 dengliwen. All rights reserved.
 //
 
-#import "MSBaseModel.h"
+#import "DYBaseModel.h"
 /**
  *  首页颜值Model
  */
-@interface DYFaceRoomModel : MSBaseModel
+@interface DYFaceRoomModel : NSObject
 
 @property (nonatomic, copy) NSString *room_id;
 @property (nonatomic, copy) NSString *nickname;
@@ -32,5 +32,9 @@
 @property (nonatomic, copy) NSString *specific_status;
 @property (nonatomic, assign) NSInteger isVertical;
 @property (nonatomic, copy) NSString *cate_id;
+
+@end
+
+@interface DYFaceList : DYBaseModel
 
 @end

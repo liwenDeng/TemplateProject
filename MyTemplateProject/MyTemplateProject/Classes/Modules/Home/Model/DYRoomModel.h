@@ -10,7 +10,7 @@
 /**
  *  单个房间Model
  */
-@interface DYRoomModel : MSBaseModel
+@interface DYRoomModel : NSObject
 
 @property (nonatomic, copy) NSString *room_id;
 @property (nonatomic, copy) NSString *room_name;
