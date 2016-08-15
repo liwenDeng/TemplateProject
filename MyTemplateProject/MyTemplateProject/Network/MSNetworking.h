@@ -50,5 +50,9 @@ typedef void(^MSFailureBlock)(NSError *error);
  */
 + (NSURLSessionDataTask *)getDouyuHotCateListInfos:(MSSuccessBlock)success failure:(MSFailureBlock)failure;
 
+/**
+ *  4.获取斗鱼房间详细信息
+ */
++ (NSURLSessionDataTask *)getDouyuRoomLiveInfo:(NSString *)roomId success:(MSSuccessBlock)success failure:(MSFailureBlock)failure;
 @end
 

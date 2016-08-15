@@ -10,4 +10,8 @@
 
 @interface DYSectionHeaderView : UICollectionReusableView
 
+- (void)fillWithTagName:(NSString *)tagName;
+
++ (CGSize)sectionHeaderViewSize;
+
 @end

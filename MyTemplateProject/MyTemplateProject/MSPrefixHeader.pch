@@ -23,5 +23,6 @@
 #import <YYModel.h>
 #import <Masonry.h>
 #import <UIImageView+WebCache.h>
+#import "UIColor+MSUtil.h"
 
 #endif /* MSPrefixHeader_pch */

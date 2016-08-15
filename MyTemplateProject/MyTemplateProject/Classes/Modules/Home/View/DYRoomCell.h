@@ -6,10 +6,9 @@
 //  Copyright © 2016年 dengliwen. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
-#import "DYRoomModel.h"
-@interface DYRoomCell : UICollectionViewCell
+#import "DYBaseRoomCell.h"
 
-- (void)fillWithRoomModel:(DYRoomModel *)roomModel;
+@interface DYRoomCell : DYBaseRoomCell
+
 
 @end

@@ -7,6 +7,7 @@
 //
 
 #import "MSNetworking.h"
+#import "NSString+Code.h"
 
 @implementation MSNetworking
 
@@ -143,6 +144,28 @@
     } failure:^(NSError *error) {
         failure(error);
     }];
+}
+
++(NSURLSessionDataTask *)getDouyuRoomLiveInfo:(NSString *)roomId success:(MSSuccessBlock)success failure:(MSFailureBlock)failure {
+
+//    NSString *baseURL = @"http://capi.douyucdn.cn/api/v1/room/";
+//    NSString *urlMid = @"?aid=ios&client_sys=ios&ne=1&support_pwd=1&time=";
+//    NSInteger time = 1471226580;//eil([[NSDate date] timeIntervalSince1970]);
+//    NSString *auth = [NSString stringWithFormat:@"room/%@%@%ld1231",roomId,urlMid,(long)time];
+//    
+//    NSString *authMd5 = [auth ms_md5];
+//    NSString *requestString = [NSString stringWithFormat:@"%@%@%@%ld&auth=%@",baseURL,roomId,urlMid,(long)time,authMd5];
+//    
+//    ZCApiAction *action = [[ZCApiAction alloc]initWithURL:requestString];
+//    
+//    return [[ZCApiRunner sharedInstance] runAction:action success:^(id object) {
+//        success(object);
+//    } failure:^(NSError *error) {
+//        failure(error);
+//    }];
+//
+    
+    return nil;
 }
 
 @end

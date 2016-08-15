@@ -38,6 +38,11 @@
 		BC7D285E1D2CD62200901080 /* NSString+Util.m in Sources */ = {isa = PBXBuildFile; fileRef = BC7D285D1D2CD62200901080 /* NSString+Util.m */; };
 		BC7D28621D2D00CD00901080 /* MSFileUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = BC7D28611D2D00CD00901080 /* MSFileUtil.m */; };
 		BC7D28661D2D0E9900901080 /* UITextField+PlaceholderColor.m in Sources */ = {isa = PBXBuildFile; fileRef = BC7D28651D2D0E9900901080 /* UITextField+PlaceholderColor.m */; };
+		BC95C2331D5DACE800EF36AE /* UIImage+RoundedCorner.m in Sources */ = {isa = PBXBuildFile; fileRef = BC95C2301D5DACE800EF36AE /* UIImage+RoundedCorner.m */; };
+		BC95C2341D5DACE800EF36AE /* UIView+RoundedCorner.m in Sources */ = {isa = PBXBuildFile; fileRef = BC95C2321D5DACE800EF36AE /* UIView+RoundedCorner.m */; };
+		BC95C2371D5DB02A00EF36AE /* UIImageView+CornerRadius.m in Sources */ = {isa = PBXBuildFile; fileRef = BC95C2361D5DB02A00EF36AE /* UIImageView+CornerRadius.m */; };
+		BC95C23A1D5DB64C00EF36AE /* DYBaseRoomCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BC95C2391D5DB64C00EF36AE /* DYBaseRoomCell.m */; };
+		BC95C23D1D5DB78A00EF36AE /* DYFaceRoomCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BC95C23C1D5DB78A00EF36AE /* DYFaceRoomCell.m */; };
 		BCA6A74C1D2B4E64007F3B5E /* NSDate+MSExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = BCA6A74B1D2B4E64007F3B5E /* NSDate+MSExtension.m */; };
 		BCA6A7551D2B898A007F3B5E /* UIDevice+AuthorizationStatus.m in Sources */ = {isa = PBXBuildFile; fileRef = BCA6A7541D2B898A007F3B5E /* UIDevice+AuthorizationStatus.m */; };
 		BCA6A7591D2B8ADF007F3B5E /* NSObject+MSJSON.m in Sources */ = {isa = PBXBuildFile; fileRef = BCA6A7581D2B8ADF007F3B5E /* NSObject+MSJSON.m */; };
@@ -135,6 +140,16 @@
 		BC7D28611D2D00CD00901080 /* MSFileUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSFileUtil.m; sourceTree = "<group>"; };
 		BC7D28641D2D0E9900901080 /* UITextField+PlaceholderColor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITextField+PlaceholderColor.h"; sourceTree = "<group>"; };
 		BC7D28651D2D0E9900901080 /* UITextField+PlaceholderColor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITextField+PlaceholderColor.m"; sourceTree = "<group>"; };
+		BC95C22F1D5DACE800EF36AE /* UIImage+RoundedCorner.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+RoundedCorner.h"; sourceTree = "<group>"; };
+		BC95C2301D5DACE800EF36AE /* UIImage+RoundedCorner.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+RoundedCorner.m"; sourceTree = "<group>"; };
+		BC95C2311D5DACE800EF36AE /* UIView+RoundedCorner.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+RoundedCorner.h"; sourceTree = "<group>"; };
+		BC95C2321D5DACE800EF36AE /* UIView+RoundedCorner.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+RoundedCorner.m"; sourceTree = "<group>"; };
+		BC95C2351D5DB02A00EF36AE /* UIImageView+CornerRadius.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImageView+CornerRadius.h"; sourceTree = "<group>"; };
+		BC95C2361D5DB02A00EF36AE /* UIImageView+CornerRadius.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+CornerRadius.m"; sourceTree = "<group>"; };
+		BC95C2381D5DB64C00EF36AE /* DYBaseRoomCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DYBaseRoomCell.h; sourceTree = "<group>"; };
+		BC95C2391D5DB64C00EF36AE /* DYBaseRoomCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DYBaseRoomCell.m; sourceTree = "<group>"; };
+		BC95C23B1D5DB78A00EF36AE /* DYFaceRoomCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DYFaceRoomCell.h; sourceTree = "<group>"; };
+		BC95C23C1D5DB78A00EF36AE /* DYFaceRoomCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DYFaceRoomCell.m; sourceTree = "<group>"; };
 		BCA6A74A1D2B4E64007F3B5E /* NSDate+MSExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+MSExtension.h"; sourceTree = "<group>"; };
 		BCA6A74B1D2B4E64007F3B5E /* NSDate+MSExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+MSExtension.m"; sourceTree = "<group>"; };
 		BCA6A7531D2B898A007F3B5E /* UIDevice+AuthorizationStatus.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIDevice+AuthorizationStatus.h"; sourceTree = "<group>"; };
@@ -211,8 +226,11 @@
 		BC123CC91D2DFFD50039F60A /* UIView+MSUtil */ = {
 			isa = PBXGroup;
 			children = (
+				BC95C22E1D5DACE800EF36AE /* JMRoundedCorner */,
 				BC123CCA1D2DFFE80039F60A /* UIView+MSUtil.h */,
 				BC123CCB1D2DFFE80039F60A /* UIView+MSUtil.m */,
+				BC95C2351D5DB02A00EF36AE /* UIImageView+CornerRadius.h */,
+				BC95C2361D5DB02A00EF36AE /* UIImageView+CornerRadius.m */,
 			);
 			path = "UIView+MSUtil";
 			sourceTree = "<group>";
@@ -453,6 +471,17 @@
 			path = "UITextField+MSExtension";
 			sourceTree = "<group>";
 		};
+		BC95C22E1D5DACE800EF36AE /* JMRoundedCorner */ = {
+			isa = PBXGroup;
+			children = (
+				BC95C22F1D5DACE800EF36AE /* UIImage+RoundedCorner.h */,
+				BC95C2301D5DACE800EF36AE /* UIImage+RoundedCorner.m */,
+				BC95C2311D5DACE800EF36AE /* UIView+RoundedCorner.h */,
+				BC95C2321D5DACE800EF36AE /* UIView+RoundedCorner.m */,
+			);
+			path = JMRoundedCorner;
+			sourceTree = "<group>";
+		};
 		BCA6A7461D2B4DB7007F3B5E /* NSDate+MSExtension */ = {
 			isa = PBXGroup;
 			children = (
@@ -577,8 +606,12 @@
 		BCDE23C91D508B9000A0FB3D /* View */ = {
 			isa = PBXGroup;
 			children = (
+				BC95C2381D5DB64C00EF36AE /* DYBaseRoomCell.h */,
+				BC95C2391D5DB64C00EF36AE /* DYBaseRoomCell.m */,
 				BCEC39531D51EB9900EB399E /* DYRoomCell.h */,
 				BCEC39541D51EB9900EB399E /* DYRoomCell.m */,
+				BC95C23B1D5DB78A00EF36AE /* DYFaceRoomCell.h */,
+				BC95C23C1D5DB78A00EF36AE /* DYFaceRoomCell.m */,
 				BCEC39561D51EBD100EB399E /* DYSectionHeaderView.h */,
 				BCEC39571D51EBD100EB399E /* DYSectionHeaderView.m */,
 			);
@@ -843,7 +876,9 @@
 			files = (
 				BC41D1011D1D090A00AA3695 /* ViewController.m in Sources */,
 				BC123CC51D2DFD030039F60A /* UIColor+MSUtil.m in Sources */,
+				BC95C2371D5DB02A00EF36AE /* UIImageView+CornerRadius.m in Sources */,
 				BC123CCC1D2DFFE80039F60A /* UIView+MSUtil.m in Sources */,
+				BC95C2331D5DACE800EF36AE /* UIImage+RoundedCorner.m in Sources */,
 				BC321C191D22700F0092A91B /* ZCApiRunner.m in Sources */,
 				BC321C171D22700F0092A91B /* ZCApiAction.m in Sources */,
 				BC321BF51D22634B0092A91B /* MSTabBarControllerConfig.m in Sources */,
@@ -861,7 +896,9 @@
 				BC41D0FE1D1D090A00AA3695 /* AppDelegate.m in Sources */,
 				BC321BEE1D2260520092A91B /* CYLTabBarController.m in Sources */,
 				BCDE23D41D508BAD00A0FB3D /* MSBaseModel.m in Sources */,
+				BC95C2341D5DACE800EF36AE /* UIView+RoundedCorner.m in Sources */,
 				BC321C181D22700F0092A91B /* ZCApiDownloadAction.m in Sources */,
+				BC95C23A1D5DB64C00EF36AE /* DYBaseRoomCell.m in Sources */,
 				BC321BEC1D2260520092A91B /* CYLPlusButton.m in Sources */,
 				BC321BED1D2260520092A91B /* CYLTabBar.m in Sources */,
 				BC7D285E1D2CD62200901080 /* NSString+Util.m in Sources */,
@@ -870,6 +907,7 @@
 				BC321C201D2270630092A91B /* MSNetworking.m in Sources */,
 				BCA6A74C1D2B4E64007F3B5E /* NSDate+MSExtension.m in Sources */,
 				BCA6A7551D2B898A007F3B5E /* UIDevice+AuthorizationStatus.m in Sources */,
+				BC95C23D1D5DB78A00EF36AE /* DYFaceRoomCell.m in Sources */,
 				BC123CC81D2DFD5E0039F60A /* UIImage+MSUtil.m in Sources */,
 				BC321C1B1D22700F0092A91B /* ZCChainProcessor.m in Sources */,
 				BC7D285B1D2CD58A00901080 /* NSString+Code.m in Sources */,

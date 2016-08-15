@@ -7,19 +7,19 @@
 //
 
 #import "DYHomeViewController.h"
-
+#import <MJRefresh.h>
 #import "DYBigDataList.h"
 #import "DYFaceRoomModel.h"
 #import "DYHotCateList.h"
 
 #import "DYRoomCell.h"
+#import "DYFaceRoomCell.h"
 #import "DYSectionHeaderView.h"
 
 #define kCellId @"DYRoomCell"
+#define kFaceCellId @"DYFaceRoomCell"
 #define kSectionId @"DYSectionHeaderView"
 
-#define kItemWidth (kSCREEN_WIDTH - 20) / 2.0
-#define kItemHeight (kItemWidth * 9.0 / 16.0)
 /**
  *  斗鱼首页-推荐栏目下VC
  */
@@ -40,26 +40,34 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    self.view.backgroundColor = [UIColor whiteColor];
     [self setupSubviews];
     [self requestData];
 }
 
 - (void)setupSubviews {
     UICollectionViewFlowLayout *layout = [[UICollectionViewFlowLayout alloc]init];
-    _rommCollectionView = [[UICollectionView alloc]initWithFrame:self.view.frame collectionViewLayout:layout];
-    layout.itemSize = CGSizeMake(kItemWidth, kItemHeight);
+    self.rommCollectionView = [[UICollectionView alloc]initWithFrame:self.view.frame collectionViewLayout:layout];
+    layout.minimumInteritemSpacing = 10;
+    layout.minimumLineSpacing = 0;
+    layout.sectionInset = UIEdgeInsetsMake(0, 10, 0, 10);
+    
     [self.view addSubview:_rommCollectionView];
-    _rommCollectionView.delegate = self;
-    _rommCollectionView.dataSource = self;
-    
-    [_rommCollectionView registerClass:[DYRoomCell class] forCellWithReuseIdentifier:kCellId];
-    [_rommCollectionView registerClass:[DYSectionHeaderView class] forSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:kSectionId];
+    self.rommCollectionView.backgroundColor = [UIColor colorWithRed:243 green:241 blue:244 alpha:1];
+    self.rommCollectionView.delegate = self;
+    self.rommCollectionView.dataSource = self;
+    self.rommCollectionView.backgroundColor = [UIColor whiteColor];
+    [self.rommCollectionView registerClass:[DYRoomCell class] forCellWithReuseIdentifier:kCellId];
+    [self.rommCollectionView registerClass:[DYFaceRoomCell class] forCellWithReuseIdentifier:kFaceCellId];
+    [self.rommCollectionView registerClass:[DYSectionHeaderView class] forSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:kSectionId];
 
+    //refresh header
+    self.rommCollectionView.mj_header = [MJRefreshNormalHeader headerWithRefreshingTarget:self refreshingAction:@selector(requestData)];
     
-    _bigDataList = [NSMutableArray array];
-    _faceList = [NSMutableArray array];
-    _hotCateList = [NSMutableArray array];
-    _sectionList = [NSMutableArray array];
+    self.bigDataList = [NSMutableArray array];
+    self.faceList = [NSMutableArray array];
+    self.hotCateList = [NSMutableArray array];
+    self.sectionList = [NSMutableArray array];
 }
 
 - (void)requestData {
@@ -81,10 +89,10 @@
     dispatch_group_enter(group);
     //获取颜值
     [MSNetworking getDouyuFaceInfos:^(NSDictionary *object) {
-//        DYFaceList *list = [DYFaceList yy_modelWithDictionary:object];
-//        if (list.error) return ;
-//        NSLog(@"2.获取颜值成功");
-//        self.faceList = [NSMutableArray arrayWithArray:list.data];
+        DYFaceList *list = [DYFaceList yy_modelWithDictionary:object];
+        if (list.error) return ;
+        NSLog(@"2.获取颜值成功");
+        self.faceList = [NSMutableArray arrayWithArray:list.data];
         dispatch_group_leave(group);
     } failure:^(NSError *error) {
         dispatch_group_leave(group);
@@ -96,7 +104,13 @@
         DYHotCateList *list = [DYHotCateList yy_modelWithDictionary:object];
         if (list.error) return ;
         NSLog(@"3.获取热门成功");
-        self.hotCateList = [NSMutableArray arrayWithArray:list.data];
+        NSMutableArray *hotListDics = [NSMutableArray arrayWithArray:list.data];
+        NSMutableArray *hotCateLists = [NSMutableArray array];
+        for (NSDictionary *dic in hotListDics) {
+            DYHotCate *hotCate = [DYHotCate yy_modelWithDictionary:dic];
+            [hotCateLists addObject:hotCate];
+        }
+        self.hotCateList = [NSMutableArray arrayWithArray:hotCateLists];
         dispatch_group_leave(group);
     } failure:^(NSError *error) {
         dispatch_group_leave(group);
@@ -107,22 +121,39 @@
         if (self.bigDataList.count > 0) [_sectionList addObject:self.bigDataList];
         if (self.faceList.count > 0) [_sectionList addObject:self.faceList];
         if (self.hotCateList.count > 0) [_sectionList addObjectsFromArray:self.hotCateList];
+        [self.rommCollectionView.mj_header endRefreshing];
         [self.rommCollectionView reloadData];
     });
 }
 
 #pragma mark - UICollectionViewDataSource
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
-    NSArray *array = self.sectionList[section];
-    return array.count;
+    if (self.sectionList.count > section) {
+        NSObject *roomList = self.sectionList[section];
+        if ([roomList isKindOfClass:[NSArray class]]) {
+            return ((NSArray *)roomList).count;
+        }
+        else if ([roomList isMemberOfClass:[DYHotCate class]]) {
+            return ((DYHotCate *)roomList).room_list.count;
+        }
+        else
+            return 0;
+    }else {
+        return 0;
+    }
 }
 
-// The cell that is returned must be retrieved from a call to -dequeueReusableCellWithReuseIdentifier:forIndexPath:
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
-    DYRoomCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:kCellId forIndexPath:indexPath];
-    if (!cell) {
-        cell = [[DYRoomCell alloc]init];
+    DYRoomModel *roomModel = [self getRoomModelAtIndexPath:indexPath];;
+    DYBaseRoomCell *cell = nil;
+    if ([roomModel.game_name isEqualToString:@"颜值"]) {
+        cell = [collectionView dequeueReusableCellWithReuseIdentifier:kFaceCellId forIndexPath:indexPath];
     }
+    else {
+        cell = [collectionView dequeueReusableCellWithReuseIdentifier:kCellId forIndexPath:indexPath];
+    }
+    
+    [cell fillWithRoomModel:roomModel adIndexPath:indexPath];
     return cell;
 }
 
@@ -131,21 +162,58 @@
     return self.sectionList.count;
 }
 
-// The view that is returned must be retrieved from a call to -dequeueReusableSupplementaryViewOfKind:withReuseIdentifier:forIndexPath:
 - (UICollectionReusableView *)collectionView:(UICollectionView *)collectionView viewForSupplementaryElementOfKind:(NSString *)kind atIndexPath:(NSIndexPath *)indexPath {
     DYSectionHeaderView *sectionView = [collectionView dequeueReusableSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:kSectionId forIndexPath:indexPath];
     if (!sectionView) {
         sectionView = [[DYSectionHeaderView alloc]init];
     }
+    
+    DYRoomModel *roomModel = [self getRoomModelAtIndexPath:indexPath];
+    
+    [sectionView fillWithTagName:roomModel.game_name];
     return sectionView;
 }
 
 #pragma mark - UICollectionViewDelegate
 
+- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
+    DYRoomModel *roomModel = [self getRoomModelAtIndexPath:indexPath];
+    [MSNetworking getDouyuRoomLiveInfo:roomModel.room_id success:^(NSDictionary *object) {
+        NSLog(@"finished");
+    } failure:^(NSError *error) {
+        NSLog(@"failed");
+    }];
+}
 
 #pragma mark - UICollectionViewDelegateFlowLayout
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout referenceSizeForHeaderInSection:(NSInteger)section {
-    return CGSizeMake(kSCREEN_WIDTH, 40);
+    return [DYSectionHeaderView sectionHeaderViewSize];
 }
 
+- (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath {
+    DYRoomModel *roomModel = [self getRoomModelAtIndexPath:indexPath];
+    
+    if ([roomModel.game_name isEqualToString:@"颜值"]) {
+        return [DYFaceRoomCell cellSize];
+    }
+    else {
+        return [DYRoomCell cellSize];
+    }
+}
+
+#pragma mark - Util
+- (DYRoomModel *)getRoomModelAtIndexPath:(NSIndexPath *)indexPath {
+    DYRoomModel *roomModel = nil;
+    NSObject *roomList = self.sectionList[indexPath.section];
+    if ([roomList isKindOfClass:[NSArray class]]) {
+        roomModel = [((NSArray *)roomList) objectAtIndex:indexPath.row];
+    }
+    else if ([roomList isMemberOfClass:[DYHotCate class]]) {
+        roomModel = [((DYHotCate *)roomList).room_list objectAtIndex:indexPath.row];
+    }
+    else {
+        roomModel = [[DYRoomModel alloc]init];
+    }
+    return roomModel;
+}
 @end
