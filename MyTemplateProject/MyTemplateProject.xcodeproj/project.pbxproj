@@ -26,6 +26,7 @@
 		BC321C1B1D22700F0092A91B /* ZCChainProcessor.m in Sources */ = {isa = PBXBuildFile; fileRef = BC321C0C1D22700F0092A91B /* ZCChainProcessor.m */; };
 		BC321C1C1D22700F0092A91B /* ZCNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = BC321C0E1D22700F0092A91B /* ZCNetworking.m */; };
 		BC321C201D2270630092A91B /* MSNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = BC321C1F1D2270630092A91B /* MSNetworking.m */; };
+		BC3245221D61937100B19256 /* DYLiveRoomViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BC3245211D61937100B19256 /* DYLiveRoomViewController.m */; };
 		BC41D0FB1D1D090A00AA3695 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = BC41D0FA1D1D090A00AA3695 /* main.m */; };
 		BC41D0FE1D1D090A00AA3695 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BC41D0FD1D1D090A00AA3695 /* AppDelegate.m */; };
 		BC41D1011D1D090A00AA3695 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BC41D1001D1D090A00AA3695 /* ViewController.m */; };
@@ -116,6 +117,8 @@
 		BC321C0E1D22700F0092A91B /* ZCNetworking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZCNetworking.m; sourceTree = "<group>"; };
 		BC321C1E1D2270630092A91B /* MSNetworking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSNetworking.h; sourceTree = "<group>"; };
 		BC321C1F1D2270630092A91B /* MSNetworking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSNetworking.m; sourceTree = "<group>"; };
+		BC3245201D61937100B19256 /* DYLiveRoomViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DYLiveRoomViewController.h; sourceTree = "<group>"; };
+		BC3245211D61937100B19256 /* DYLiveRoomViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DYLiveRoomViewController.m; sourceTree = "<group>"; };
 		BC41D0F61D1D090A00AA3695 /* MyTemplateProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyTemplateProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BC41D0FA1D1D090A00AA3695 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		BC41D0FC1D1D090A00AA3695 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -584,6 +587,8 @@
 			children = (
 				BCDE23D81D5094C800A0FB3D /* DYHomeViewController.h */,
 				BCDE23D91D5094C800A0FB3D /* DYHomeViewController.m */,
+				BC3245201D61937100B19256 /* DYLiveRoomViewController.h */,
+				BC3245211D61937100B19256 /* DYLiveRoomViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -900,6 +905,7 @@
 				BC321C181D22700F0092A91B /* ZCApiDownloadAction.m in Sources */,
 				BC95C23A1D5DB64C00EF36AE /* DYBaseRoomCell.m in Sources */,
 				BC321BEC1D2260520092A91B /* CYLPlusButton.m in Sources */,
+				BC3245221D61937100B19256 /* DYLiveRoomViewController.m in Sources */,
 				BC321BED1D2260520092A91B /* CYLTabBar.m in Sources */,
 				BC7D285E1D2CD62200901080 /* NSString+Util.m in Sources */,
 				BC321BEF1D2260520092A91B /* UIViewController+CYLTabBarControllerExtention.m in Sources */,
