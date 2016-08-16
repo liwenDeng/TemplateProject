@@ -8,6 +8,8 @@
 
 #import "MSNetworking.h"
 #import "NSString+Code.h"
+#import "OCGumbo+Query.h"
+#import "OCGumbo.h"
 
 @implementation MSNetworking
 
@@ -117,6 +119,7 @@
 + (NSURLSessionDataTask *)getDouyuFaceInfos:(MSSuccessBlock)success failure:(MSFailureBlock)failure {
     //http://capi.douyucdn.cn/api/v1/getVerticalRoom?aid=android1&client_sys=android&limit=4&offset=0&time=1468074120&auth=461dc91817f22ef364459445078c38e5
     ZCApiAction *action = [[ZCApiAction alloc]initWithURL:@"http://capi.douyucdn.cn/api/v1/getVerticalRoom"];
+    
     action.params[@"aid"] = @"android1";
     action.params[@"client_sys"] = @"android";
     NSTimeInterval time = [[NSDate date]timeIntervalSince1970];
@@ -147,7 +150,7 @@
 }
 
 +(NSURLSessionDataTask *)getDouyuRoomLiveInfo:(NSString *)roomId success:(MSSuccessBlock)success failure:(MSFailureBlock)failure {
-
+//    获取auth 的算法变了，获取不到数据，这里通过对应房间的web地址来获取
 //    NSString *baseURL = @"http://capi.douyucdn.cn/api/v1/room/";
 //    NSString *urlMid = @"?aid=ios&client_sys=ios&ne=1&support_pwd=1&time=";
 //    NSInteger time = 1471226580;//eil([[NSDate date] timeIntervalSince1970]);
@@ -164,6 +167,41 @@
 //        failure(error);
 //    }];
 //
+
+    /**
+     获取video 的地址 id = dy-video-player
+     <video id="dy-video-player" class="video-js" type="application/x-mpegURL" src="http://hls1a.douyucdn.cn/live/453751rDVflbZEym_550/playlist.m3u8?wsSecret=940351d9905a4acced23eaa4bd450240&amp;wsTime=1471316312" style="margin-top: -10000px;">
+     <p>您的浏览器不支持 video 标签</p>
+     </video>
+    
+     OCGumboDocument使用： http://www.jianshu.com/p/029a5ef4e86a
+     
+     */
+    
+    NSString *urlString = [NSString stringWithFormat:@"http://m.douyu.com/%@",roomId];
+    NSURL *url = [NSURL URLWithString:urlString];
+    NSError *err = nil;
+    NSString *str = [NSString stringWithContentsOfURL:url encoding:NSUTF8StringEncoding error:&err];
+    if (err == nil)
+    {
+        NSLog(@"%@",str);
+        //解析,需要对每一个节点判断是否为nil,否则可能会导致崩溃
+        OCGumboDocument *document = [[OCGumboDocument alloc]initWithHTMLString:str];
+        OCGumboElement *videoElememt = document.Query(@"body").find(@"#dy-video-player").firstObject;
+        if (videoElememt) {
+            NSString *src = videoElememt.attr(@"src");
+            NSDictionary *dic = @{@"videoSource":src};
+            success(dic);
+        } else {
+            failure(nil);
+        }
+    }
+    else
+    {
+        NSLog(@"读取失败");
+        NSLog(@"%@",err.localizedDescription);
+        failure(err);
+    }
     
     return nil;
 }

@@ -11,7 +11,7 @@
 #import "DYBigDataList.h"
 #import "DYFaceRoomModel.h"
 #import "DYHotCateList.h"
-
+#import "DYLiveRoomViewController.h"
 #import "DYRoomCell.h"
 #import "DYFaceRoomCell.h"
 #import "DYSectionHeaderView.h"
@@ -175,14 +175,12 @@
 }
 
 #pragma mark - UICollectionViewDelegate
-
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
     DYRoomModel *roomModel = [self getRoomModelAtIndexPath:indexPath];
-    [MSNetworking getDouyuRoomLiveInfo:roomModel.room_id success:^(NSDictionary *object) {
-        NSLog(@"finished");
-    } failure:^(NSError *error) {
-        NSLog(@"failed");
-    }];
+    DYLiveRoomViewController *liveVC = [[DYLiveRoomViewController alloc]init];
+    liveVC.roomId = roomModel.room_id;
+    liveVC.hidesBottomBarWhenPushed = YES;
+    [self.navigationController pushViewController:liveVC animated:YES];
 }
 
 #pragma mark - UICollectionViewDelegateFlowLayout
