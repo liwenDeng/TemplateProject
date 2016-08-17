@@ -7,28 +7,30 @@
 //
 
 #import "DYLiveRoomViewController.h"
-//#import <IJKMediaFramework/IJKMediaFramework.h>
 #import "OCGumbo+Query.h"
 #import "OCGumbo.h"
 
-#import <AVFoundation/AVFoundation.h>
-#import <AVKit/AVKit.h>
+#import "DYRoomPlyaerView.h"
 
 @interface DYLiveRoomViewController () <UIWebViewDelegate>
 
 @property (nonatomic, strong) UIWebView *webView;
 //尝试解析videoSrc的此时，当尝试超过3次后，显示webView代替原生player
 @property (nonatomic, assign) NSInteger tryParseCount;
-
-@property (atomic, strong) NSURL *url;
-//@property (atomic, retain) id <IJKMediaPlayback> player;
-@property (weak, nonatomic) UIView *playerView;
-
-@property (nonatomic,strong)AVPlayer *avPlayer;
+@property (nonatomic, strong) DYRoomPlyaerView *playerView;
 
 @end
 
 @implementation DYLiveRoomViewController
+
+- (void)dealloc {
+    NSLog(@"room dealloc");
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    [self.navigationController setNavigationBarHidden:YES animated:animated];
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -36,8 +38,16 @@
     self.title = @"直播";
     self.tryParseCount = 0;
     
+    self.navigationItem.hidesBackButton = YES;
+    self.navigationController.interactivePopGestureRecognizer.delegate = (id) self;
+    
+    self.view.backgroundColor = [UIColor blackColor];
     [self setupWebView];
     [self setupPlayerHolderView];
+}
+
+- (UIStatusBarStyle)preferredStatusBarStyle {
+    return UIStatusBarStyleLightContent;
 }
 
 - (void)setupWebView {
@@ -60,11 +70,9 @@
  *  播放器的占位图
  */
 - (void)setupPlayerHolderView {
-    UIView *displayView = [[UIView alloc] init];
-    self.playerView = displayView;
-    self.playerView.backgroundColor = [UIColor redColor];
+
+    self.playerView = [[DYRoomPlyaerView alloc]init];
     [self.view addSubview:self.playerView];
-    
     [self.playerView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.equalTo(self.mas_topLayoutGuideBottom);
         make.left.width.equalTo(self.view);
@@ -108,8 +116,7 @@
             [self.webView stopLoading];
             ret = YES;
             //获取到了videoSrc
-//            [self loadPlayerWithVideoSrc:src];
-            [self loadAVPlayer:src];
+            [self loadPlayer:src];
         }
     }
     
@@ -124,39 +131,13 @@
     }
 }
 
-//- (void)loadPlayerWithVideoSrc:(NSString *)src {
-//    self.url = [NSURL URLWithString:src];
-//    _player = [[IJKFFMoviePlayerController alloc] initWithContentURL:self.url withOptions:nil];
-//    
-//    UIView *playerView = [self.player view];
-//    
-//    playerView.frame = self.playerView.bounds;
-//    playerView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
-//    
-//    [self.playerView insertSubview:playerView atIndex:1];
-//    [_player setScalingMode:IJKMPMovieScalingModeAspectFill];
-//    
-//    if (![self.player isPlaying]) {
-//        [self.player prepareToPlay];
-//    }
-//}
+- (void)loadPlayer:(NSString *)src {
+    [self.playerView playWithVideoSrc:src];
+//    [self rotateView];
+}
 
-- (void)loadAVPlayer:(NSString *)src {
-    NSURL *url = [NSURL URLWithString:src];
-    //设置播放的项目
-    AVPlayerItem *item = [[AVPlayerItem alloc] initWithURL:url];
-    self.avPlayer = [[AVPlayer alloc] initWithPlayerItem:item];
-    AVPlayerLayer *layer = [AVPlayerLayer playerLayerWithPlayer:self.avPlayer];
-    
-    layer.frame = CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, 300);
-    layer.backgroundColor = [UIColor cyanColor].CGColor;
-    layer.videoGravity = AVLayerVideoGravityResizeAspect;
-    //添加播放视图到self.view
-    [self.view.layer addSublayer:layer];
-    
-    [self.avPlayer play];
-    
-    
+- (void)rotateView {
+    self.playerView.transform = CGAffineTransformMakeRotation(M_PI_2);
 }
 
 @end

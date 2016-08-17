@@ -35,6 +35,10 @@
 		BC41D1091D1D090A00AA3695 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BC41D1071D1D090A00AA3695 /* LaunchScreen.storyboard */; };
 		BC41D1141D1D090A00AA3695 /* MyTemplateProjectTests.m in Sources */ = {isa = PBXBuildFile; fileRef = BC41D1131D1D090A00AA3695 /* MyTemplateProjectTests.m */; };
 		BC41D11F1D1D090A00AA3695 /* MyTemplateProjectUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = BC41D11E1D1D090A00AA3695 /* MyTemplateProjectUITests.m */; };
+		BC5F92101D64156E00254AB3 /* IJKMediaFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BC5F920F1D64156E00254AB3 /* IJKMediaFramework.framework */; };
+		BC5F92131D64383500254AB3 /* UIViewController+Navigation.m in Sources */ = {isa = PBXBuildFile; fileRef = BC5F92121D64383500254AB3 /* UIViewController+Navigation.m */; };
+		BC5F92161D6444C900254AB3 /* DYRoomPlyaerView.m in Sources */ = {isa = PBXBuildFile; fileRef = BC5F92151D6444C900254AB3 /* DYRoomPlyaerView.m */; };
+		BC5F92191D6452DA00254AB3 /* DYPlayerToolView.m in Sources */ = {isa = PBXBuildFile; fileRef = BC5F92181D6452DA00254AB3 /* DYPlayerToolView.m */; };
 		BC676CB91D62E4F200F4F1FE /* libGumbo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BC676CB41D62E4F200F4F1FE /* libGumbo.a */; };
 		BC676CBA1D62E4F300F4F1FE /* OCGumbo+Query.m in Sources */ = {isa = PBXBuildFile; fileRef = BC676CB61D62E4F200F4F1FE /* OCGumbo+Query.m */; };
 		BC676CBB1D62E4F300F4F1FE /* OCGumbo.m in Sources */ = {isa = PBXBuildFile; fileRef = BC676CB81D62E4F200F4F1FE /* OCGumbo.m */; };
@@ -151,6 +155,13 @@
 		BC41D11A1D1D090A00AA3695 /* MyTemplateProjectUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MyTemplateProjectUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		BC41D11E1D1D090A00AA3695 /* MyTemplateProjectUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MyTemplateProjectUITests.m; sourceTree = "<group>"; };
 		BC41D1201D1D090A00AA3695 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BC5F920F1D64156E00254AB3 /* IJKMediaFramework.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IJKMediaFramework.framework; path = MyTemplateProject/IJKMediaFramework.framework; sourceTree = "<group>"; };
+		BC5F92111D64383500254AB3 /* UIViewController+Navigation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+Navigation.h"; sourceTree = "<group>"; };
+		BC5F92121D64383500254AB3 /* UIViewController+Navigation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+Navigation.m"; sourceTree = "<group>"; };
+		BC5F92141D6444C900254AB3 /* DYRoomPlyaerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DYRoomPlyaerView.h; sourceTree = "<group>"; };
+		BC5F92151D6444C900254AB3 /* DYRoomPlyaerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DYRoomPlyaerView.m; sourceTree = "<group>"; };
+		BC5F92171D6452DA00254AB3 /* DYPlayerToolView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DYPlayerToolView.h; sourceTree = "<group>"; };
+		BC5F92181D6452DA00254AB3 /* DYPlayerToolView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DYPlayerToolView.m; sourceTree = "<group>"; };
 		BC676CB21D62E4F200F4F1FE /* gumbo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = gumbo.h; sourceTree = "<group>"; };
 		BC676CB31D62E4F200F4F1FE /* tag_enum.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = tag_enum.h; sourceTree = "<group>"; };
 		BC676CB41D62E4F200F4F1FE /* libGumbo.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libGumbo.a; sourceTree = "<group>"; };
@@ -226,6 +237,7 @@
 				BC676CD81D62ED4400F4F1FE /* AudioToolbox.framework in Frameworks */,
 				BC676CD61D62ED3E00F4F1FE /* AVFoundation.framework in Frameworks */,
 				BC676CD41D62ED3600F4F1FE /* CoreGraphics.framework in Frameworks */,
+				BC5F92101D64156E00254AB3 /* IJKMediaFramework.framework in Frameworks */,
 				BC676CD21D62ED2E00F4F1FE /* CoreMedia.framework in Frameworks */,
 				BC676CD01D62ED2500F4F1FE /* CoreVideo.framework in Frameworks */,
 				BC676CCE1D62ED1E00F4F1FE /* MediaPlayer.framework in Frameworks */,
@@ -387,6 +399,8 @@
 				BC321BF11D2260920092A91B /* MSBaseTabBarController.m */,
 				BCDE23BE1D508A8300A0FB3D /* MSBaseViewController.h */,
 				BCDE23BF1D508A8300A0FB3D /* MSBaseViewController.m */,
+				BC5F92111D64383500254AB3 /* UIViewController+Navigation.h */,
+				BC5F92121D64383500254AB3 /* UIViewController+Navigation.m */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -700,6 +714,10 @@
 				BC95C23C1D5DB78A00EF36AE /* DYFaceRoomCell.m */,
 				BCEC39561D51EBD100EB399E /* DYSectionHeaderView.h */,
 				BCEC39571D51EBD100EB399E /* DYSectionHeaderView.m */,
+				BC5F92141D6444C900254AB3 /* DYRoomPlyaerView.h */,
+				BC5F92151D6444C900254AB3 /* DYRoomPlyaerView.m */,
+				BC5F92171D6452DA00254AB3 /* DYPlayerToolView.h */,
+				BC5F92181D6452DA00254AB3 /* DYPlayerToolView.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -769,6 +787,7 @@
 		CEA9ED2B1D0BE00AB04A924F /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				BC5F920F1D64156E00254AB3 /* IJKMediaFramework.framework */,
 				BC676CD71D62ED4400F4F1FE /* AudioToolbox.framework */,
 				BC676CD51D62ED3E00F4F1FE /* AVFoundation.framework */,
 				BC676CD31D62ED3600F4F1FE /* CoreGraphics.framework */,
@@ -1002,6 +1021,7 @@
 				BC95C23A1D5DB64C00EF36AE /* DYBaseRoomCell.m in Sources */,
 				BC321BEC1D2260520092A91B /* CYLPlusButton.m in Sources */,
 				BC3245221D61937100B19256 /* DYLiveRoomViewController.m in Sources */,
+				BC5F92191D6452DA00254AB3 /* DYPlayerToolView.m in Sources */,
 				BC321BED1D2260520092A91B /* CYLTabBar.m in Sources */,
 				BC7D285E1D2CD62200901080 /* NSString+Util.m in Sources */,
 				BC321BEF1D2260520092A91B /* UIViewController+CYLTabBarControllerExtention.m in Sources */,
@@ -1009,6 +1029,7 @@
 				BC321C201D2270630092A91B /* MSNetworking.m in Sources */,
 				BCA6A74C1D2B4E64007F3B5E /* NSDate+MSExtension.m in Sources */,
 				BCA6A7551D2B898A007F3B5E /* UIDevice+AuthorizationStatus.m in Sources */,
+				BC5F92131D64383500254AB3 /* UIViewController+Navigation.m in Sources */,
 				BC95C23D1D5DB78A00EF36AE /* DYFaceRoomCell.m in Sources */,
 				BC123CC81D2DFD5E0039F60A /* UIImage+MSUtil.m in Sources */,
 				BC321C1B1D22700F0092A91B /* ZCChainProcessor.m in Sources */,
@@ -1017,6 +1038,7 @@
 				BC41D0FB1D1D090A00AA3695 /* main.m in Sources */,
 				BC321C1A1D22700F0092A91B /* ZCApiUploadAction.m in Sources */,
 				BCDE23DD1D509B0B00A0FB3D /* DYHotCateList.m in Sources */,
+				BC5F92161D6444C900254AB3 /* DYRoomPlyaerView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1161,6 +1183,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/MyTemplateProject/ThirdLibs/IJKmedia",
+					"$(PROJECT_DIR)/MyTemplateProject",
 				);
 				GCC_PREFIX_HEADER = "$(SRCROOT)/$(PRODUCT_NAME)/MSPrefixHeader.pch";
 				INFOPLIST_FILE = MyTemplateProject/Info.plist;
@@ -1183,6 +1206,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/MyTemplateProject/ThirdLibs/IJKmedia",
+					"$(PROJECT_DIR)/MyTemplateProject",
 				);
 				GCC_PREFIX_HEADER = "$(SRCROOT)/$(PRODUCT_NAME)/MSPrefixHeader.pch";
 				INFOPLIST_FILE = MyTemplateProject/Info.plist;
