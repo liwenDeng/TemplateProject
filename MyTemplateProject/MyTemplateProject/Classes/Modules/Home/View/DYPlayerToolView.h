@@ -10,10 +10,32 @@
  */
 #import <UIKit/UIKit.h>
 
+@class DYPlayerNomalSizeToolView;
+@class DYPlayerFullScreenSizeToolView;
+
+@protocol DYPlayerNomalSizeToolViewDelegate <NSObject>
+
+// 点击暂停/播放 按钮
+- (void)normalToolView:(DYPlayerNomalSizeToolView *)toolView willPlay:(BOOL)willPlay;
+// 点击全屏
+- (void)normalToolViewClickedFullScreenBtn:(DYPlayerNomalSizeToolView *)toolView;
+// 点击返回
+- (void)normalToolViewClickedBackBtn:(DYPlayerNomalSizeToolView *)toolView;
+
+@end
+
+@protocol DYPlayerFullScreenSizeToolView <NSObject>
+
+
+
+@end
+
 /**
  *  竖屏下的工具条
  */
 @interface DYPlayerNomalSizeToolView : UIView
+
+@property (nonatomic, weak) id<DYPlayerNomalSizeToolViewDelegate> delegate;
 
 @end
 
@@ -21,5 +43,7 @@
  *  横屏下的工具条 (全屏)
  */
 @interface DYPlayerFullScreenSizeToolView : UIView
+
+@property (nonatomic, weak) id<DYPlayerFullScreenSizeToolView> delegate;
 
 @end

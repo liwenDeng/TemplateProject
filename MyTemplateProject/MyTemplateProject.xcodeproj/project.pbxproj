@@ -35,7 +35,6 @@
 		BC41D1091D1D090A00AA3695 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BC41D1071D1D090A00AA3695 /* LaunchScreen.storyboard */; };
 		BC41D1141D1D090A00AA3695 /* MyTemplateProjectTests.m in Sources */ = {isa = PBXBuildFile; fileRef = BC41D1131D1D090A00AA3695 /* MyTemplateProjectTests.m */; };
 		BC41D11F1D1D090A00AA3695 /* MyTemplateProjectUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = BC41D11E1D1D090A00AA3695 /* MyTemplateProjectUITests.m */; };
-		BC5F92101D64156E00254AB3 /* IJKMediaFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BC5F920F1D64156E00254AB3 /* IJKMediaFramework.framework */; };
 		BC5F92131D64383500254AB3 /* UIViewController+Navigation.m in Sources */ = {isa = PBXBuildFile; fileRef = BC5F92121D64383500254AB3 /* UIViewController+Navigation.m */; };
 		BC5F92161D6444C900254AB3 /* DYRoomPlyaerView.m in Sources */ = {isa = PBXBuildFile; fileRef = BC5F92151D6444C900254AB3 /* DYRoomPlyaerView.m */; };
 		BC5F92191D6452DA00254AB3 /* DYPlayerToolView.m in Sources */ = {isa = PBXBuildFile; fileRef = BC5F92181D6452DA00254AB3 /* DYPlayerToolView.m */; };
@@ -155,7 +154,6 @@
 		BC41D11A1D1D090A00AA3695 /* MyTemplateProjectUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MyTemplateProjectUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		BC41D11E1D1D090A00AA3695 /* MyTemplateProjectUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MyTemplateProjectUITests.m; sourceTree = "<group>"; };
 		BC41D1201D1D090A00AA3695 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		BC5F920F1D64156E00254AB3 /* IJKMediaFramework.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IJKMediaFramework.framework; path = MyTemplateProject/IJKMediaFramework.framework; sourceTree = "<group>"; };
 		BC5F92111D64383500254AB3 /* UIViewController+Navigation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+Navigation.h"; sourceTree = "<group>"; };
 		BC5F92121D64383500254AB3 /* UIViewController+Navigation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+Navigation.m"; sourceTree = "<group>"; };
 		BC5F92141D6444C900254AB3 /* DYRoomPlyaerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DYRoomPlyaerView.h; sourceTree = "<group>"; };
@@ -237,7 +235,6 @@
 				BC676CD81D62ED4400F4F1FE /* AudioToolbox.framework in Frameworks */,
 				BC676CD61D62ED3E00F4F1FE /* AVFoundation.framework in Frameworks */,
 				BC676CD41D62ED3600F4F1FE /* CoreGraphics.framework in Frameworks */,
-				BC5F92101D64156E00254AB3 /* IJKMediaFramework.framework in Frameworks */,
 				BC676CD21D62ED2E00F4F1FE /* CoreMedia.framework in Frameworks */,
 				BC676CD01D62ED2500F4F1FE /* CoreVideo.framework in Frameworks */,
 				BC676CCE1D62ED1E00F4F1FE /* MediaPlayer.framework in Frameworks */,
@@ -787,7 +784,6 @@
 		CEA9ED2B1D0BE00AB04A924F /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				BC5F920F1D64156E00254AB3 /* IJKMediaFramework.framework */,
 				BC676CD71D62ED4400F4F1FE /* AudioToolbox.framework */,
 				BC676CD51D62ED3E00F4F1FE /* AVFoundation.framework */,
 				BC676CD31D62ED3600F4F1FE /* CoreGraphics.framework */,
@@ -1182,7 +1178,6 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(PROJECT_DIR)/MyTemplateProject/ThirdLibs/IJKmedia",
 					"$(PROJECT_DIR)/MyTemplateProject",
 				);
 				GCC_PREFIX_HEADER = "$(SRCROOT)/$(PRODUCT_NAME)/MSPrefixHeader.pch";
@@ -1205,7 +1200,6 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(PROJECT_DIR)/MyTemplateProject/ThirdLibs/IJKmedia",
 					"$(PROJECT_DIR)/MyTemplateProject",
 				);
 				GCC_PREFIX_HEADER = "$(SRCROOT)/$(PRODUCT_NAME)/MSPrefixHeader.pch";
