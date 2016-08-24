@@ -183,7 +183,7 @@
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
     DYRoomModel *roomModel = [self getRoomModelAtIndexPath:indexPath];
     DYLiveRoomViewController *liveVC = [[DYLiveRoomViewController alloc]init];
-    liveVC.roomId = roomModel.room_id;
+    liveVC.roomModel = roomModel;
     liveVC.hidesBottomBarWhenPushed = YES;
     [self.navigationController pushViewController:liveVC animated:YES];
 }
@@ -196,7 +196,8 @@
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath {
     DYRoomModel *roomModel = [self getRoomModelAtIndexPath:indexPath];
     
-    if ([roomModel.game_name isEqualToString:@"颜值"]) {
+    
+    if ([roomModel.game_name isEqualToString:@"颜值"] && indexPath.section == 1 ) {
         return [DYFaceRoomCell cellSize];
     }
     else {
@@ -219,4 +220,16 @@
     }
     return roomModel;
 }
+
+#pragma mark - 旋转控制
+- (BOOL)shouldAutorotate
+{
+    return NO;
+}
+
+-(UIInterfaceOrientationMask)supportedInterfaceOrientations
+{
+    return UIInterfaceOrientationMaskPortrait;
+}
+
 @end

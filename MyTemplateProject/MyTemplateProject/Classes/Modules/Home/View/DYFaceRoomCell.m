@@ -60,7 +60,12 @@
 - (void)fillWithRoomModel:(DYRoomModel *)roomModel adIndexPath:(NSIndexPath *)indexPath {
     self.titleLabel.text = roomModel.room_name;
     [self.titleLabel sizeToFit];
-    [self.iconView sd_setImageWithURL:[NSURL URLWithString:roomModel.vertical_src]];
+    if (indexPath.section == 1) {
+        [self.iconView sd_setImageWithURL:[NSURL URLWithString:roomModel.vertical_src]];
+    }else {
+        [self.iconView sd_setImageWithURL:[NSURL URLWithString:roomModel.room_src]];
+    }
+    
 }
 
 + (CGSize)cellSize {

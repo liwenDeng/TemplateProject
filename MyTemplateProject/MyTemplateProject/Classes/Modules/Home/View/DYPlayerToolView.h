@@ -24,9 +24,14 @@
 
 @end
 
-@protocol DYPlayerFullScreenSizeToolView <NSObject>
+@protocol DYPlayerFullScreenSizeToolViewDelegate <NSObject>
 
-
+// 点击暂停/播放 按钮
+- (void)fullSizeToolView:(DYPlayerFullScreenSizeToolView *)toolView willPlay:(BOOL)willPlay;
+// 点击返回非全屏
+- (void)fullSizeToolViewClickedBackBtn:(DYPlayerFullScreenSizeToolView *)toolView;
+// 点击刷新按钮
+- (void)fullSizeToolViewClickedRefreshBtn:(DYPlayerFullScreenSizeToolView *)toolView;
 
 @end
 
@@ -44,6 +49,6 @@
  */
 @interface DYPlayerFullScreenSizeToolView : UIView
 
-@property (nonatomic, weak) id<DYPlayerFullScreenSizeToolView> delegate;
+@property (nonatomic, weak) id<DYPlayerFullScreenSizeToolViewDelegate> delegate;
 
 @end

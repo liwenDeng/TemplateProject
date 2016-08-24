@@ -28,7 +28,7 @@
 @property (nonatomic, copy) NSString *show_status;
 @property (nonatomic, copy) NSString *specific_catalog;
 @property (nonatomic, assign) NSInteger ranktype;
-@property (nonatomic, assign) NSInteger isVertical;
+@property (nonatomic, assign) NSInteger isVertical; //是否需要垂直全屏显示
 @property (nonatomic, copy) NSString *cate_id;
 @property (nonatomic, copy) NSString *specific_status;
 @property (nonatomic, copy) NSString *vod_quality;

@@ -21,11 +21,26 @@ typedef enum : NSUInteger {
     PlayerViewRotateFullScreenSize,//全屏
 } PlayerViewRotateState;
 
+@class DYRoomPlyaerView;
+@protocol DYRoomPlyaerViewDelegate <NSObject>
+
+/**
+ *  全屏旋转
+ */
+- (void)dyPlayerView:(DYRoomPlyaerView*)view rotateState:(PlayerViewRotateState)state;
+- (void)dyPlayerViewBackButtonClicked:(DYRoomPlyaerView *)view;
+- (void)dyPlayerViewRefreshButtonClicked:(DYRoomPlyaerView *)view;
+
+@end
+
 @interface DYRoomPlyaerView : UIView
 
 @property (nonatomic, assign) PlayerViewLockState lockState;//锁屏状态
 @property (nonatomic, assign) PlayerViewRotateState rotateState;  //是否全屏
+@property (nonatomic, weak) id<DYRoomPlyaerViewDelegate> delegate;
 
 - (void)playWithVideoSrc:(NSString *)src;
+
+- (void)showNomalToolView:(BOOL)show;
 
 @end

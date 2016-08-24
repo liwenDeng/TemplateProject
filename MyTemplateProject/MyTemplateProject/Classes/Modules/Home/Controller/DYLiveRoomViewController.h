@@ -7,11 +7,12 @@
 //
 
 #import "MSBaseViewController.h"
+#import "DYRoomModel.h"
 /**
  *  斗鱼直播VC
  */
 @interface DYLiveRoomViewController : MSBaseViewController
 
-@property (nonatomic, copy) NSString *roomId;
+@property (nonatomic, strong) DYRoomModel *roomModel;
 
 @end

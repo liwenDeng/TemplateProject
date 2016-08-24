@@ -24,4 +24,22 @@
     // Dispose of any resources that can be recreated.
 }
 
+-(UIInterfaceOrientationMask)supportedInterfaceOrientations
+{
+    //当前支持的旋转类型
+    return UIInterfaceOrientationMaskAll;
+}
+
+- (BOOL)shouldAutorotate
+{
+    // 是否支持旋转
+    return YES;
+}
+
+-(UIInterfaceOrientation)preferredInterfaceOrientationForPresentation
+{
+    // 默认进去类型
+    return   UIInterfaceOrientationPortrait;
+}
+
 @end

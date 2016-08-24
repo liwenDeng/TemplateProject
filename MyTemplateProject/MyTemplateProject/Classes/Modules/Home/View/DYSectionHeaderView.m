@@ -16,6 +16,7 @@
 @property (nonatomic, strong) UIImageView *iconView;
 @property (nonatomic, strong) UILabel *titleLabel;
 @property (nonatomic, strong) UIButton *arrowBtn;
+@property (nonatomic, strong) NSIndexPath *indexPath;
 
 @end
 
@@ -81,12 +82,20 @@
             make.centerY.equalTo(_titleLabel);
         }];
         
+        [view addTarget:self action:@selector(moreBtnClicked:) forControlEvents:(UIControlEventTouchUpInside)];
         view;
     });
 }
 
-- (void)fillWithTagName:(NSString *)tagName {
+- (void)fillWithTagName:(NSString *)tagName atIndexPath:(NSIndexPath *)indexPath {
     self.titleLabel.text = tagName;
+    self.indexPath = indexPath;
+}
+
+- (void)moreBtnClicked:(UIButton *)sender {
+    if ([self.delegate respondsToSelector:@selector(dySectionHeaderView:clickedMoreButtonAtIndexPath:)]) {
+        [self.delegate dySectionHeaderView:self clickedMoreButtonAtIndexPath:self.indexPath];
+    }
 }
 
 + (CGSize)sectionHeaderViewSize {

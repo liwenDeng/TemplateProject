@@ -8,6 +8,7 @@
 
 #import "MSTabBarControllerConfig.h"
 #import "DYHomeViewController.h"
+#import "MSBaseNavigationController.h"
 //#pragma mark -HideTabBarMethod
 //@interface CYLBaseNavigationController : UINavigationController
 //
@@ -102,19 +103,19 @@
 
 - (NSArray *)viewControllers {
     DYHomeViewController *vc1 = [[DYHomeViewController alloc]init];
-    UINavigationController *navi1 = [[UINavigationController alloc]initWithRootViewController:vc1];
+    MSBaseNavigationController *navi1 = [[MSBaseNavigationController alloc]initWithRootViewController:vc1];
     vc1.navigationItem.title = @"首页";
     
     UIViewController *vc2 = [[UIViewController alloc]init];
-    UINavigationController *navi2 = [[UINavigationController alloc]initWithRootViewController:vc2];
+    MSBaseNavigationController *navi2 = [[MSBaseNavigationController alloc]initWithRootViewController:vc2];
     vc2.navigationItem.title = @"首页1";
     
     UIViewController *vc3 = [[UIViewController alloc]init];
-    UINavigationController *navi3 = [[UINavigationController alloc]initWithRootViewController:vc3];
+    MSBaseNavigationController *navi3 = [[MSBaseNavigationController alloc]initWithRootViewController:vc3];
     vc3.navigationItem.title = @"首页2";
     
     UIViewController *vc4 = [[UIViewController alloc]init];
-    UINavigationController *navi4 = [[UINavigationController alloc]initWithRootViewController:vc4];
+    MSBaseNavigationController *navi4 = [[MSBaseNavigationController alloc]initWithRootViewController:vc4];
     vc4.navigationItem.title = @"首页3";
     
     NSArray *viewControllers = @[navi1,

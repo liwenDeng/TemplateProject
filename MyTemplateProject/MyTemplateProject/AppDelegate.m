@@ -9,7 +9,6 @@
 #import "AppDelegate.h"
 #import "MSBaseTabBarController.h"
 #import "MSTabBarControllerConfig.h"
-
 @interface AppDelegate ()
 
 @end
@@ -19,6 +18,24 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    
+//    /**
+//     http://capi.douyucdn.cn/api/v1/room/453751?aid=ios&client_sys=ios&ne=1&support_pwd=1&time=1471851600&auth=91355a5a457cec7bb5a9986e90b2fb6d
+//     
+//     aid	ios
+//     client_sys	ios
+//     ne	1
+//     support_pwd	1
+//     time	1471851600
+//     auth	91355a5a457cec7bb5a9986e90b2fb6d
+//     */
+//    NSString *device = @"RjYwMjUxMkRFMjQwNDMyNDhEMzA2MjlCQ0VENTlCQ0R8Mi4yOTA=";
+//    NSString *swf_secret = @"bLFlashflowlad92";
+//    NSString *lap_secret = @"A12Svb&%1UUmf@hC";
+//    NSString *swf_sign = [NSString stringWithFormat:@"%@%@%@",@"453751",swf_secret,@"1471851600"].ms_md5;
+//    NSString *l_sign = [NSString stringWithFormat:@"%@%@%@%@",@"453751",device,lap_secret,@"1471851600"].ms_md5;
+//    
+
     self.window = [[UIWindow alloc]initWithFrame:[UIScreen mainScreen].bounds];
     self.window.backgroundColor = [UIColor whiteColor];
     

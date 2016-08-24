@@ -54,6 +54,7 @@
 		BC676CD41D62ED3600F4F1FE /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BC676CD31D62ED3600F4F1FE /* CoreGraphics.framework */; };
 		BC676CD61D62ED3E00F4F1FE /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BC676CD51D62ED3E00F4F1FE /* AVFoundation.framework */; };
 		BC676CD81D62ED4400F4F1FE /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BC676CD71D62ED4400F4F1FE /* AudioToolbox.framework */; };
+		BC71DF981D6C0A5B003D0291 /* MSBaseNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = BC71DF971D6C0A5B003D0291 /* MSBaseNavigationController.m */; };
 		BC7D285B1D2CD58A00901080 /* NSString+Code.m in Sources */ = {isa = PBXBuildFile; fileRef = BC7D285A1D2CD58A00901080 /* NSString+Code.m */; };
 		BC7D285E1D2CD62200901080 /* NSString+Util.m in Sources */ = {isa = PBXBuildFile; fileRef = BC7D285D1D2CD62200901080 /* NSString+Util.m */; };
 		BC7D28621D2D00CD00901080 /* MSFileUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = BC7D28611D2D00CD00901080 /* MSFileUtil.m */; };
@@ -180,6 +181,8 @@
 		BC676CD31D62ED3600F4F1FE /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		BC676CD51D62ED3E00F4F1FE /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		BC676CD71D62ED4400F4F1FE /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		BC71DF961D6C0A5B003D0291 /* MSBaseNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSBaseNavigationController.h; sourceTree = "<group>"; };
+		BC71DF971D6C0A5B003D0291 /* MSBaseNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSBaseNavigationController.m; sourceTree = "<group>"; };
 		BC7D28591D2CD58A00901080 /* NSString+Code.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Code.h"; sourceTree = "<group>"; };
 		BC7D285A1D2CD58A00901080 /* NSString+Code.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Code.m"; sourceTree = "<group>"; };
 		BC7D285C1D2CD62200901080 /* NSString+Util.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Util.h"; sourceTree = "<group>"; };
@@ -398,6 +401,8 @@
 				BCDE23BF1D508A8300A0FB3D /* MSBaseViewController.m */,
 				BC5F92111D64383500254AB3 /* UIViewController+Navigation.h */,
 				BC5F92121D64383500254AB3 /* UIViewController+Navigation.m */,
+				BC71DF961D6C0A5B003D0291 /* MSBaseNavigationController.h */,
+				BC71DF971D6C0A5B003D0291 /* MSBaseNavigationController.m */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -1008,6 +1013,7 @@
 				BCEC39521D51E40900EB399E /* DYBigDataList.m in Sources */,
 				BCDE23C01D508A8300A0FB3D /* MSBaseViewController.m in Sources */,
 				BC7D28661D2D0E9900901080 /* UITextField+PlaceholderColor.m in Sources */,
+				BC71DF981D6C0A5B003D0291 /* MSBaseNavigationController.m in Sources */,
 				BCDE23D71D5092BF00A0FB3D /* DYRoomModel.m in Sources */,
 				BC41D0FE1D1D090A00AA3695 /* AppDelegate.m in Sources */,
 				BC321BEE1D2260520092A91B /* CYLTabBarController.m in Sources */,
@@ -1179,6 +1185,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/MyTemplateProject",
+					"$(PROJECT_DIR)",
 				);
 				GCC_PREFIX_HEADER = "$(SRCROOT)/$(PRODUCT_NAME)/MSPrefixHeader.pch";
 				INFOPLIST_FILE = MyTemplateProject/Info.plist;
@@ -1201,6 +1208,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/MyTemplateProject",
+					"$(PROJECT_DIR)",
 				);
 				GCC_PREFIX_HEADER = "$(SRCROOT)/$(PRODUCT_NAME)/MSPrefixHeader.pch";
 				INFOPLIST_FILE = MyTemplateProject/Info.plist;

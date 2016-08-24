@@ -10,6 +10,7 @@
 #import "NSString+Code.h"
 #import "OCGumbo+Query.h"
 #import "OCGumbo.h"
+#import <AFNetworking.h>
 
 @implementation MSNetworking
 
@@ -153,9 +154,11 @@
 //    获取auth 的算法变了，获取不到数据，这里通过对应房间的web地址来获取
 //    NSString *baseURL = @"http://capi.douyucdn.cn/api/v1/room/";
 //    NSString *urlMid = @"?aid=ios&client_sys=ios&ne=1&support_pwd=1&time=";
-//    NSInteger time = 1471226580;//eil([[NSDate date] timeIntervalSince1970]);
-//    NSString *auth = [NSString stringWithFormat:@"room/%@%@%ld1231",roomId,urlMid,(long)time];
+//    NSInteger time = ceil([[NSDate date] timeIntervalSince1970]);
 //    
+//    NSString *Secret = @"bLFlashflowlad92";
+//    
+//    NSString *auth = [NSString stringWithFormat:@"%@%@%ld",roomId,Secret,time/60000];//[NSString stringWithFormat:@"room/%@%@%ld1231",roomId,urlMid,(long)time];
 //    NSString *authMd5 = [auth ms_md5];
 //    NSString *requestString = [NSString stringWithFormat:@"%@%@%@%ld&auth=%@",baseURL,roomId,urlMid,(long)time,authMd5];
 //    
@@ -167,7 +170,89 @@
 //        failure(error);
 //    }];
 //
+    
+//    NSString *user_agent = @"Mozilla/5.0";
+    
+    //http://www.douyu.com/swf_api/room/{0}?cdn=&nofan=yes&_t={1}&sign={2}
+//    NSString *swf_url = @"http://www.douyu.com/swf_api/room/";
+//    NSString *swf_secret = @"bLFlashflowlad92";
+    
+    
+    //http://www.douyu.com/lapi/live/getPlay/{0}
+//    NSString *lap_url = @"http://www.douyu.com/lapi/live/getPlay/";
+//    NSString *lap_secret = @"A12Svb&%1UUmf@hC";//A12Svb&%1UUmf@hC
+    
+//================
+//    NSInteger ts = ceil([[NSDate date]timeIntervalSince1970] / (60));
+//    NSString *uid = [[[UIDevice currentDevice] identifierForVendor] UUIDString];
+//    NSMutableString *did = [NSMutableString stringWithString:uid];
+//    [did replaceOccurrencesOfString:@"-" withString:@"" options:(NSCaseInsensitiveSearch) range:NSMakeRange(0, did.length)];
+//    NSString *did = @"C986B5FEF7D141FEBE63938C54E17DD1";
+    
+//    NSString *swf_sign = [NSString stringWithFormat:@"%@%@%ld",roomId,swf_secret,ts].ms_md5;
+//    NSString *l_sign = [NSString stringWithFormat:@"%@%@%@%ld",roomId,did,lap_secret,ts].ms_md5;
+    
 
+//    NSString *sign = [NSString stringWithFormat:@"%@%@%@%ld",roomId,uuid,s,(long)time].ms_md5;
+    
+    // swf request http://www.douyu.com/swf_api/room/{0}?cdn=&nofan=yes&_t={1}&sign={2}
+//    NSString *swf_requestUrl = [NSString stringWithFormat:@"%@%@?cdn=&nofan=yes&_t=%ld&sign=%@",swf_url,roomId,ts,swf_sign];
+//    ZCApiAction *action = [[ZCApiAction alloc]initWithURL:swf_requestUrl];
+//    [action setHeaders:@{@"User-Agent":user_agent}];
+//    
+////    [action setHttpMethod:HttpPost];
+//     [[ZCApiRunner sharedInstance] runAction:action success:^(id object) {
+//        success(object);
+//    } failure:^(NSError *error) {
+//        failure(error);
+//    }];
+    
+    // lap_request http://www.douyu.com/lapi/live/getPlay/{0}
+    
+//    NSString *lap_requestUrl = [NSString stringWithFormat:@"%@%@",lap_url,roomId];
+    
+    
+//    ZCApiAction *action1 = [[ZCApiAction alloc]initWithURL:lap_requestUrl];
+//    [action1 setHeaders:@{@"cdn":@"tct",@"rate":@"0",@"tt":@(ts),@"did":did,@"sign":l_sign}];
+//    action1.showLog = YES;
+//    action1.params[@"cdn"] = @"ws";
+//    action1.params[@"rate"] = @"0";
+//    action1.params[@"tt"] = @(ts);
+//    action1.params[@"did"] = @"C986B5FEF7D141FEBE63938C54E17DD1";
+//    action1.params[@"sign"] = l_sign;
+    
+//    action1.headers = @{@"User-Agent":user_agent};
+//    [action1.headers setValue:user_agent forKey:@"User-Agent"];
+//    [action1 setHttpMethod:HttpPost];
+//    [[ZCApiRunner sharedInstance] addValue:user_agent forHeaderKey:@"User-Agent"];
+    
+//    [[ZCApiRunner sharedInstance] runAction:action1 success:^(id object) {
+//        success(object);
+//    } failure:^(NSError *error) {
+//        failure(error);
+//    }];
+    
+    NSString *lap_url = @"http://www.douyu.com/lapi/live/getPlay/";
+    NSString *lap_secret = @"A12Svb&%1UUmf@hC";//A12Svb&%1UUmf@hC
+    NSString *did = [[[UIDevice currentDevice] identifierForVendor] UUIDString];
+    NSInteger ts = ceil([[NSDate date]timeIntervalSince1970] / (60));
+    NSString *l_sign = [NSString stringWithFormat:@"%@%@%@%ld",roomId,did,lap_secret,ts].ms_md5;
+    NSString *lap_requestUrl = [NSString stringWithFormat:@"%@%@",lap_url,roomId];
+    NSDictionary *params = @{@"cdn":@"ws",
+                             @"rate":@"0",
+                             @"tt":[NSString stringWithFormat:@"%ld",ts],
+                             @"did":did,
+                             @"sign":l_sign};
+    
+    
+//    [[AFHTTPSessionManager manager].requestSerializer setValue:user_agent forHTTPHeaderField:@"User-Agent"];
+    return [[AFHTTPSessionManager manager]POST:lap_requestUrl parameters:params success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+        success(responseObject);
+    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+        NSLog(@"error");
+    }];
+
+    
     /**
      获取video 的地址 id = dy-video-player
      <video id="dy-video-player" class="video-js" type="application/x-mpegURL" src="http://hls1a.douyucdn.cn/live/453751rDVflbZEym_550/playlist.m3u8?wsSecret=940351d9905a4acced23eaa4bd450240&amp;wsTime=1471316312" style="margin-top: -10000px;">
@@ -178,32 +263,32 @@
      
      */
     
-    NSString *urlString = [NSString stringWithFormat:@"http://m.douyu.com/%@",roomId];
-    NSURL *url = [NSURL URLWithString:urlString];
-    NSError *err = nil;
-    NSString *str = [NSString stringWithContentsOfURL:url encoding:NSUTF8StringEncoding error:&err];
-    if (err == nil)
-    {
-        NSLog(@"%@",str);
-        //解析,需要对每一个节点判断是否为nil,否则可能会导致崩溃
-        OCGumboDocument *document = [[OCGumboDocument alloc]initWithHTMLString:str];
-        OCGumboElement *videoElememt = document.Query(@"body").find(@"#dy-video-player").firstObject;
-        if (videoElememt) {
-            NSString *src = videoElememt.attr(@"src");
-            NSDictionary *dic = @{@"videoSource":src};
-            success(dic);
-        } else {
-            failure(nil);
-        }
-    }
-    else
-    {
-        NSLog(@"读取失败");
-        NSLog(@"%@",err.localizedDescription);
-        failure(err);
-    }
-    
-    return nil;
+//    NSString *urlString = [NSString stringWithFormat:@"http://m.douyu.com/%@",roomId];
+//    NSURL *url = [NSURL URLWithString:urlString];
+//    NSError *err = nil;
+//    NSString *str = [NSString stringWithContentsOfURL:url encoding:NSUTF8StringEncoding error:&err];
+//    if (err == nil)
+//    {
+//        NSLog(@"%@",str);
+//        //解析,需要对每一个节点判断是否为nil,否则可能会导致崩溃
+//        OCGumboDocument *document = [[OCGumboDocument alloc]initWithHTMLString:str];
+//        OCGumboElement *videoElememt = document.Query(@"body").find(@"#dy-video-player").firstObject;
+//        if (videoElememt) {
+//            NSString *src = videoElememt.attr(@"src");
+//            NSDictionary *dic = @{@"videoSource":src};
+//            success(dic);
+//        } else {
+//            failure(nil);
+//        }
+//    }
+//    else
+//    {
+//        NSLog(@"读取失败");
+//        NSLog(@"%@",err.localizedDescription);
+//        failure(err);
+//    }
+//    
+//    return nil;
 }
 
 @end

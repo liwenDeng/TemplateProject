@@ -36,6 +36,8 @@
 @property (nonatomic, strong) DYToolBtn *fullSizeBtn;//全屏
 @property (nonatomic, strong) DYToolBtn *backButton;
 
+@property (nonatomic, assign) NSInteger hideCount;
+
 @end
 
 @implementation DYPlayerNomalSizeToolView
@@ -43,6 +45,10 @@
 - (instancetype)initWithFrame:(CGRect)frame {
     if (self = [super initWithFrame:frame]) {
         [self setupSubViews];
+        
+        self.hideCount = 0;
+        //监听Hidden 改变
+        [self addObserver:self forKeyPath:@"hidden" options:(NSKeyValueObservingOptionNew) context:nil];
     }
     return self;
 }
@@ -127,6 +133,27 @@
     }
 }
 
+#pragma mark - AutoHidden
+- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary<NSString *,id> *)change context:(void *)context {
+    if ([keyPath isEqualToString:@"hidden"]) {
+        if (self.hidden == NO) {
+            self.hideCount ++;
+            [self performSelector:@selector(willHidden:) withObject:@(self.hideCount) afterDelay:8];
+            NSLog(@"hidden changed");
+        }
+    }
+}
+
+- (void)willHidden:(NSNumber*)count {
+    if (self.hideCount == [count integerValue] ) {
+        [self setHidden:YES];
+    }
+}
+
+- (void)dealloc {
+    [self removeObserver:self forKeyPath:@"hidden"];
+}
+
 @end
 
 @interface DYPlayerFullScreenSizeToolView ()
@@ -134,6 +161,7 @@
 @property (nonatomic, strong) DYToolBtn *pauseBtn;//暂停
 @property (nonatomic, strong) DYToolBtn *refreshBtn;//刷新
 @property (nonatomic, strong) DYToolBtn *backButton;//返回到非全屏状态
+@property (nonatomic, assign) NSInteger hideCount;
 
 @end
 
@@ -142,6 +170,10 @@
 - (instancetype)initWithFrame:(CGRect)frame {
     if (self = [super initWithFrame:frame]) {
         [self setupSubViews];
+        
+        //监听Hidden 改变
+        self.hideCount = 0;
+        [self addObserver:self forKeyPath:@"hidden" options:(NSKeyValueObservingOptionNew) context:nil];
     }
     return self;
 }
@@ -208,16 +240,44 @@
 }
 
 - (void)backBtnClicked:(DYToolBtn *)btn {
-
+    if ([self.delegate respondsToSelector:@selector(fullSizeToolViewClickedBackBtn:)]) {
+        [self.delegate fullSizeToolViewClickedBackBtn:self];
+    }
 }
 
 - (void)pauseBtnClicked:(DYToolBtn *)btn {
     btn.selected = !btn.selected;
+    if ([self.delegate respondsToSelector:@selector(fullSizeToolView:willPlay:)]) {
+        [self.delegate fullSizeToolView:self willPlay:!btn.selected];
+    }
 
 }
 
 - (void)refreshBtnClicked:(DYToolBtn *)btn {
-    
+    if ([self.delegate respondsToSelector:@selector(fullSizeToolViewClickedRefreshBtn:)]) {
+        [self.delegate fullSizeToolViewClickedRefreshBtn:self];
+    }
+}
+
+#pragma mark - AutoHidden
+- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary<NSString *,id> *)change context:(void *)context {
+    if ([keyPath isEqualToString:@"hidden"]) {
+        if (self.hidden == NO) {
+            self.hideCount ++;
+            [self performSelector:@selector(willHidden:) withObject:@(self.hideCount) afterDelay:8];
+            NSLog(@"hidden changed");
+        }
+    }
+}
+
+- (void)willHidden:(NSNumber*)count {
+    if (self.hideCount == [count integerValue] ) {
+        [self setHidden:YES];
+    }
+}
+
+- (void)dealloc {
+    [self removeObserver:self forKeyPath:@"hidden"];
 }
 
 @end
