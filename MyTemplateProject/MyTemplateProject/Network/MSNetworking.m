@@ -45,7 +45,11 @@
 }
 
 #pragma mark - 斗鱼API
-+ (NSURLSessionDataTask *)getAllDouyuLive:(NSInteger)limit offset:(NSInteger)offset WithSuccess:(MSSuccessBlock)success failure:(MSFailureBlock)failure{
++ (NSURLSessionDataTask *)getAllDouyuLiveLimit:(NSInteger)limit offset:(NSInteger)offset WithSuccess:(MSSuccessBlock)success failure:(MSFailureBlock)failure{
+    
+    //第一次 http://capi.douyucdn.cn/api/v1/live?limit=20&client_sys=ios&offset=0
+    //上拉一次 http://capi.douyucdn.cn/api/v1/live?limit=20&client_sys=ios&offset=20
+    //上拉2次 http://capi.douyucdn.cn/api/v1/live?limit=20&client_sys=ios&offset=40
     ZCApiAction *action = [[ZCApiAction alloc]initWithURL:@"http://capi.douyucdn.cn/api/v1/live"];
     
     action.params[@"limit"] = @(limit);
@@ -76,7 +80,6 @@
 
 + (NSURLSessionDataTask *)getDouyuColumnList:(MSSuccessBlock)success failure:(MSFailureBlock)failure {
     ZCApiAction *action = [[ZCApiAction alloc]initWithURL:@"http://capi.douyucdn.cn/api/v1/getColumnList"];
-
     //可选属性
     //    action.showLog = YES;
     //    action.actionWillInvokeBlock = ^{
@@ -101,7 +104,6 @@
 
 //1.
 + (NSURLSessionDataTask *)getDouyuBigDataInfos:(MSSuccessBlock)success failure:(MSFailureBlock)failure {
-    
     //http://capi.douyucdn.cn/api/v1/getbigDataRoom?aid=android1&client_sys=android&time=1468074120&token=5082405_b1c24e33bf3db5b4&auth=8885837426ded0275f826f300dbd6487
     ZCApiAction *action = [[ZCApiAction alloc]initWithURL:@"http://capi.douyucdn.cn/api/v1/getbigDataRoom"];
     action.params[@"aid"] = @"android1";
@@ -149,6 +151,35 @@
         failure(error);
     }];
 }
+
+// 4.获取分类房间列表
++ (NSURLSessionDataTask *)getDouyuLiveCateId:(NSInteger)cateId limit:(NSInteger)limit offset:(NSInteger)offset WithSuccess:(MSSuccessBlock)success failure:(MSFailureBlock)failure {
+    //http://capi.douyucdn.cn/api/v1/live/1?limit=20&client_sys=ios&offset=0
+    NSString *url = [NSString stringWithFormat:@"http://capi.douyucdn.cn/api/v1/live/%ld",(long)cateId];
+    ZCApiAction *action = [[ZCApiAction alloc]initWithURL:url];
+    action.params[@"limit"] = @(limit);
+    action.params[@"offset"] = @(offset);
+    return [[ZCApiRunner sharedInstance] runAction:action success:^(id object) {
+        success(object);
+    } failure:^(NSError *error) {
+        failure(error);
+    }];
+}
+
+// 5.获取颜值类房间列表
++ (NSURLSessionDataTask *)getFaceRoomListLimit:(NSInteger)limit offset:(NSInteger)offset WithSuccess:(MSSuccessBlock)success failure:(MSFailureBlock)failure {
+    //http://capi.douyucdn.cn/api/v1/getVerticalRoom?limit=20&client_sys=ios&offset=0
+    ZCApiAction *action = [[ZCApiAction alloc]initWithURL:@"http://capi.douyucdn.cn/api/v1/getVerticalRoom"];
+    action.params[@"limit"] = @(limit);
+    action.params[@"offset"] = @(offset);
+    action.params[@"client_sys"] = @"ios";
+    return [[ZCApiRunner sharedInstance] runAction:action success:^(id object) {
+        success(object);
+    } failure:^(NSError *error) {
+        failure(error);
+    }];
+}
+
 
 +(NSURLSessionDataTask *)getDouyuRoomLiveInfo:(NSString *)roomId success:(MSSuccessBlock)success failure:(MSFailureBlock)failure {
 //    获取auth 的算法变了，获取不到数据，这里通过对应房间的web地址来获取
@@ -289,6 +320,88 @@
 //    }
 //    
 //    return nil;
+}
+
+// 登陆
+// 5.获取颜值类房间列表
++ (NSURLSessionDataTask *)loginDYUserName:(NSString *)userName password:(NSString*)password success:(MSSuccessBlock)success failure:(MSFailureBlock)failure {
+    /**
+     data =     {
+     avatar =         {
+     big = "http://apic.douyucdn.cn/upload/avatar/default/04_big.jpg?rltime";
+     middle = "http://apic.douyucdn.cn/upload/avatar/default/04_middle.jpg?rltime";
+     small = "http://apic.douyucdn.cn/upload/avatar/default/04_small.jpg?rltime";
+     };
+     email = "45117****@qq.com";
+     "email_status" = 0;
+     follow = 10;
+     gold = "0.0";
+     gold1 = 0;
+     groupid = 1;
+     "has_room" = 0;
+     "ident_status" = 0;
+     "ios_gold_switch" = 1;
+     "is_own_room" = 0;
+     lastlogin = 1471782641;
+     level =         {
+     current =             {
+     lv = 1;
+     mpic = "cn01.png";
+     name = "\U83dc\U9e1f";
+     pic = "user1.gif";
+     "pic_url" = "https://staticlive.douyucdn.cn/common/douyu/images/classimg/user1.gif?v=v48756";
+     score = 0;
+     };
+     next =             {
+     lv = 2;
+     mpic = "brass05.png";
+     name = "\U9ec4\U94dc5";
+     pic = "user2.gif";
+     "pic_url" = "https://staticlive.douyucdn.cn/common/douyu/images/classimg/user2.gif?v=v48756";
+     score = 100;
+     };
+     };
+     "mobile_phone" = "008*********8602";
+     nickname = "\U4eca\U665a\U6bb4\U6253\U5c0f\U5b66\U751f";
+     "phone_status" = 1;
+     qq = "";
+     score = 0;
+     token = "5082405_cf63edf938eb4d3f";
+     "token_exp" = 1472973355;
+     uid = 5082405;
+     userlevel =         {
+     "cur_score" = 0;
+     "is_full" = 0;
+     lv = 1;
+     "next_level_score" = 10;
+     };
+     username = "qq_6xWf7gTn";
+     };
+     error = 0;
+     */
+    //http://capi.douyucdn.cn/api/v1/login?username=<user_name>&password=<password_md5>
+    ZCApiAction *action = [[ZCApiAction alloc]initWithURL:@"http://capi.douyucdn.cn/api/v1/login"];
+    action.params[@"username"] = userName;
+    action.params[@"password"] =[password ms_md5];
+    action.params[@"client_sys"] = @"ios";
+    return [[ZCApiRunner sharedInstance] runAction:action success:^(id object) {
+        success(object);
+    } failure:^(NSError *error) {
+        failure(error);
+    }];
+}
+
++ (NSURLSessionDataTask *)getDYWatchHistroy:(NSArray *)roomIds success:(MSSuccessBlock)success failure:(MSFailureBlock)failure {
+    // http://capi.douyucdn.cn/api/v1/room_batch?client_sys=ios
+    // 参数ids: 房间号数组，根据返回房间信息的 show_status":  是否等于1判断是否在直播
+    ZCApiAction *action = [[ZCApiAction alloc]initWithURL:@"http://capi.douyucdn.cn/api/v1/room_batch"];
+    action.params[@"ids"] = roomIds;
+    action.params[@"client_sys"] = @"ios";
+    return [[ZCApiRunner sharedInstance] runAction:action success:^(id object) {
+        success(object);
+    } failure:^(NSError *error) {
+        failure(error);
+    }];
 }
 
 @end

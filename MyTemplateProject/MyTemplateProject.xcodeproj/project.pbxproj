@@ -10,6 +10,12 @@
 		18AFAE9D1D3140DA0015577F /* APIDemo.js in Resources */ = {isa = PBXBuildFile; fileRef = 18AFAE9C1D3140DA0015577F /* APIDemo.js */; };
 		18C4FF361D33D59E0073B5BE /* quanmingAPI.js in Resources */ = {isa = PBXBuildFile; fileRef = 18C4FF351D33D59E0073B5BE /* quanmingAPI.js */; };
 		4579492A252AEF9340DCA664 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A91E60E0F812616746082232 /* libPods.a */; };
+		BC028F8A1D6E944A00F3419E /* MSAllLiveViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BC028F891D6E944A00F3419E /* MSAllLiveViewController.m */; };
+		BC028F8D1D6E946B00F3419E /* DYAllLiveViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BC028F8C1D6E946B00F3419E /* DYAllLiveViewController.m */; };
+		BC028F901D6E94FB00F3419E /* MSLiveCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = BC028F8F1D6E94FB00F3419E /* MSLiveCollectionView.m */; };
+		BC028F931D6EC84200F3419E /* DYDetailLiveViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BC028F921D6EC84200F3419E /* DYDetailLiveViewController.m */; };
+		BC028F961D6ECF5B00F3419E /* MSMyCenterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BC028F951D6ECF5B00F3419E /* MSMyCenterViewController.m */; };
+		BC028F9A1D6EDC5F00F3419E /* DYLiveApis.js in Resources */ = {isa = PBXBuildFile; fileRef = BC028F991D6EDC5F00F3419E /* DYLiveApis.js */; };
 		BC123CC51D2DFD030039F60A /* UIColor+MSUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = BC123CC41D2DFD030039F60A /* UIColor+MSUtil.m */; };
 		BC123CC81D2DFD5E0039F60A /* UIImage+MSUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = BC123CC71D2DFD5E0039F60A /* UIImage+MSUtil.m */; };
 		BC123CCC1D2DFFE80039F60A /* UIView+MSUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = BC123CCB1D2DFFE80039F60A /* UIView+MSUtil.m */; };
@@ -101,6 +107,17 @@
 		18C4FF351D33D59E0073B5BE /* quanmingAPI.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = quanmingAPI.js; sourceTree = "<group>"; };
 		57424E2B3DCFE57E1F81A07E /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		A91E60E0F812616746082232 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		BC028F881D6E944A00F3419E /* MSAllLiveViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSAllLiveViewController.h; sourceTree = "<group>"; };
+		BC028F891D6E944A00F3419E /* MSAllLiveViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSAllLiveViewController.m; sourceTree = "<group>"; };
+		BC028F8B1D6E946B00F3419E /* DYAllLiveViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DYAllLiveViewController.h; sourceTree = "<group>"; };
+		BC028F8C1D6E946B00F3419E /* DYAllLiveViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DYAllLiveViewController.m; sourceTree = "<group>"; };
+		BC028F8E1D6E94FB00F3419E /* MSLiveCollectionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSLiveCollectionView.h; sourceTree = "<group>"; };
+		BC028F8F1D6E94FB00F3419E /* MSLiveCollectionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSLiveCollectionView.m; sourceTree = "<group>"; };
+		BC028F911D6EC84200F3419E /* DYDetailLiveViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DYDetailLiveViewController.h; sourceTree = "<group>"; };
+		BC028F921D6EC84200F3419E /* DYDetailLiveViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DYDetailLiveViewController.m; sourceTree = "<group>"; };
+		BC028F941D6ECF5B00F3419E /* MSMyCenterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSMyCenterViewController.h; sourceTree = "<group>"; };
+		BC028F951D6ECF5B00F3419E /* MSMyCenterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSMyCenterViewController.m; sourceTree = "<group>"; };
+		BC028F991D6EDC5F00F3419E /* DYLiveApis.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = DYLiveApis.js; sourceTree = "<group>"; };
 		BC123CC31D2DFD030039F60A /* UIColor+MSUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+MSUtil.h"; sourceTree = "<group>"; };
 		BC123CC41D2DFD030039F60A /* UIColor+MSUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+MSUtil.m"; sourceTree = "<group>"; };
 		BC123CC61D2DFD5E0039F60A /* UIImage+MSUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+MSUtil.h"; sourceTree = "<group>"; };
@@ -344,6 +361,7 @@
 				BC321C1E1D2270630092A91B /* MSNetworking.h */,
 				BC321C1F1D2270630092A91B /* MSNetworking.m */,
 				18AFAE9C1D3140DA0015577F /* APIDemo.js */,
+				BC028F991D6EDC5F00F3419E /* DYLiveApis.js */,
 				18C4FF351D33D59E0073B5BE /* quanmingAPI.js */,
 			);
 			path = Network;
@@ -388,6 +406,8 @@
 		BC321BE11D2260160092A91B /* View */ = {
 			isa = PBXGroup;
 			children = (
+				BC028F8E1D6E94FB00F3419E /* MSLiveCollectionView.h */,
+				BC028F8F1D6E94FB00F3419E /* MSLiveCollectionView.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -686,6 +706,8 @@
 				BCDE23D91D5094C800A0FB3D /* DYHomeViewController.m */,
 				BC3245201D61937100B19256 /* DYLiveRoomViewController.h */,
 				BC3245211D61937100B19256 /* DYLiveRoomViewController.m */,
+				BC028F911D6EC84200F3419E /* DYDetailLiveViewController.h */,
+				BC028F921D6EC84200F3419E /* DYDetailLiveViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -737,6 +759,10 @@
 		BCDE23CB1D508B9000A0FB3D /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				BC028F881D6E944A00F3419E /* MSAllLiveViewController.h */,
+				BC028F891D6E944A00F3419E /* MSAllLiveViewController.m */,
+				BC028F8B1D6E946B00F3419E /* DYAllLiveViewController.h */,
+				BC028F8C1D6E946B00F3419E /* DYAllLiveViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -768,6 +794,8 @@
 		BCDE23CF1D508B9000A0FB3D /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				BC028F941D6ECF5B00F3419E /* MSMyCenterViewController.h */,
+				BC028F951D6ECF5B00F3419E /* MSMyCenterViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -916,6 +944,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BC028F9A1D6EDC5F00F3419E /* DYLiveApis.js in Resources */,
 				18AFAE9D1D3140DA0015577F /* APIDemo.js in Resources */,
 				BC41D1091D1D090A00AA3695 /* LaunchScreen.storyboard in Resources */,
 				BC41D1061D1D090A00AA3695 /* Assets.xcassets in Resources */,
@@ -993,9 +1022,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BC028F901D6E94FB00F3419E /* MSLiveCollectionView.m in Sources */,
 				BC41D1011D1D090A00AA3695 /* ViewController.m in Sources */,
 				BC123CC51D2DFD030039F60A /* UIColor+MSUtil.m in Sources */,
 				BC95C2371D5DB02A00EF36AE /* UIImageView+CornerRadius.m in Sources */,
+				BC028F8D1D6E946B00F3419E /* DYAllLiveViewController.m in Sources */,
 				BC123CCC1D2DFFE80039F60A /* UIView+MSUtil.m in Sources */,
 				BC95C2331D5DACE800EF36AE /* UIImage+RoundedCorner.m in Sources */,
 				BC321C191D22700F0092A91B /* ZCApiRunner.m in Sources */,
@@ -1017,9 +1048,11 @@
 				BCDE23D71D5092BF00A0FB3D /* DYRoomModel.m in Sources */,
 				BC41D0FE1D1D090A00AA3695 /* AppDelegate.m in Sources */,
 				BC321BEE1D2260520092A91B /* CYLTabBarController.m in Sources */,
+				BC028F8A1D6E944A00F3419E /* MSAllLiveViewController.m in Sources */,
 				BCDE23D41D508BAD00A0FB3D /* MSBaseModel.m in Sources */,
 				BC95C2341D5DACE800EF36AE /* UIView+RoundedCorner.m in Sources */,
 				BC321C181D22700F0092A91B /* ZCApiDownloadAction.m in Sources */,
+				BC028F931D6EC84200F3419E /* DYDetailLiveViewController.m in Sources */,
 				BC95C23A1D5DB64C00EF36AE /* DYBaseRoomCell.m in Sources */,
 				BC321BEC1D2260520092A91B /* CYLPlusButton.m in Sources */,
 				BC3245221D61937100B19256 /* DYLiveRoomViewController.m in Sources */,
@@ -1028,6 +1061,7 @@
 				BC7D285E1D2CD62200901080 /* NSString+Util.m in Sources */,
 				BC321BEF1D2260520092A91B /* UIViewController+CYLTabBarControllerExtention.m in Sources */,
 				BC321BF21D2260920092A91B /* MSBaseTabBarController.m in Sources */,
+				BC028F961D6ECF5B00F3419E /* MSMyCenterViewController.m in Sources */,
 				BC321C201D2270630092A91B /* MSNetworking.m in Sources */,
 				BCA6A74C1D2B4E64007F3B5E /* NSDate+MSExtension.m in Sources */,
 				BCA6A7551D2B898A007F3B5E /* UIDevice+AuthorizationStatus.m in Sources */,
@@ -1103,6 +1137,7 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
@@ -1147,6 +1182,7 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
@@ -1182,6 +1218,7 @@
 			baseConfigurationReference = DEA20A85AE9AE2803FBDE810 /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_OBJC_WEAK = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/MyTemplateProject",
@@ -1205,6 +1242,7 @@
 			baseConfigurationReference = 57424E2B3DCFE57E1F81A07E /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_OBJC_WEAK = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/MyTemplateProject",

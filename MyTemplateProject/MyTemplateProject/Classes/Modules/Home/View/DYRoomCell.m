@@ -7,7 +7,7 @@
 //
 
 #import "DYRoomCell.h"
-
+#import "DYFaceRoomModel.h"
 
 @interface DYRoomCell ()
 

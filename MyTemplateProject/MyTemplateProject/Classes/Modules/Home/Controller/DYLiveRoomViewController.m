@@ -11,7 +11,7 @@
 #import "OCGumbo.h"
 
 #import "DYRoomPlyaerView.h"
-
+#import <MediaPlayer/MediaPlayer.h>
 @interface DYLiveRoomViewController () <UIWebViewDelegate,DYRoomPlyaerViewDelegate>
 
 @property (nonatomic, strong) UIWebView *webView;
@@ -46,7 +46,22 @@
     //创建播放器占位图
     [self setupPlayerHolderView];
     [self requestRoomVideoSrc];
+    [self setUpScreenControl];
+}
 
+- (void)setUpScreenControl {
+//    MPVolumeView *volume = [[MPVolumeView alloc] initWithFrame:self.view.bounds];
+//    volume.backgroundColor = [UIColor redColor];
+//    [self.view addSubview:volume];
+//    [volume showsRouteButton];
+//    [volume showsVolumeSlider];
+//    [volume sizeToFit];
+//    
+//    MPMusicPlayerController *mpc = [MPMusicPlayerController applicationMusicPlayer];
+//    mpc.volume = 0.5;
+    
+    // 设置系统屏幕亮度
+    [[UIScreen mainScreen] setBrightness:0.5];
 }
 
 // 获取播放信息

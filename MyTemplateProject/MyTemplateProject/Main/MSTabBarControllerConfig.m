@@ -7,8 +7,12 @@
 //
 
 #import "MSTabBarControllerConfig.h"
-#import "DYHomeViewController.h"
 #import "MSBaseNavigationController.h"
+
+#import "DYHomeViewController.h"
+#import "DYAllLiveViewController.h"
+#import "MSMyCenterViewController.h"
+
 //#pragma mark -HideTabBarMethod
 //@interface CYLBaseNavigationController : UINavigationController
 //
@@ -106,17 +110,17 @@
     MSBaseNavigationController *navi1 = [[MSBaseNavigationController alloc]initWithRootViewController:vc1];
     vc1.navigationItem.title = @"首页";
     
-    UIViewController *vc2 = [[UIViewController alloc]init];
+    DYAllLiveViewController *vc2 = [[DYAllLiveViewController alloc]init];
     MSBaseNavigationController *navi2 = [[MSBaseNavigationController alloc]initWithRootViewController:vc2];
-    vc2.navigationItem.title = @"首页1";
+    vc2.navigationItem.title = @"直播";
     
     UIViewController *vc3 = [[UIViewController alloc]init];
     MSBaseNavigationController *navi3 = [[MSBaseNavigationController alloc]initWithRootViewController:vc3];
     vc3.navigationItem.title = @"首页2";
     
-    UIViewController *vc4 = [[UIViewController alloc]init];
+    MSMyCenterViewController *vc4 = [[MSMyCenterViewController alloc]init];
     MSBaseNavigationController *navi4 = [[MSBaseNavigationController alloc]initWithRootViewController:vc4];
-    vc4.navigationItem.title = @"首页3";
+    vc4.navigationItem.title = @"我的";
     
     NSArray *viewControllers = @[navi1,
                                  navi2,
@@ -132,7 +136,7 @@
                                                  CYLTabBarItemSelectedImage : @"home_highlight",
                                                  };
     NSDictionary *secondTabBarItemsAttributes = @{
-                                                  CYLTabBarItemTitle : @"同城",
+                                                  CYLTabBarItemTitle : @"直播",
                                                   CYLTabBarItemImage : @"mycity_normal",
                                                   CYLTabBarItemSelectedImage : @"mycity_highlight",
                                                   };

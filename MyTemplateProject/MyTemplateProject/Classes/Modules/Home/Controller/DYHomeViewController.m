@@ -15,6 +15,8 @@
 #import "DYRoomCell.h"
 #import "DYFaceRoomCell.h"
 #import "DYSectionHeaderView.h"
+#import "MSBaseTabBarController.h"
+#import "DYDetailLiveViewController.h"
 
 #define kCellId @"DYRoomCell"
 #define kFaceCellId @"DYFaceRoomCell"
@@ -23,7 +25,7 @@
 /**
  *  斗鱼首页-推荐栏目下VC
  */
-@interface DYHomeViewController () <UICollectionViewDataSource,UICollectionViewDelegate,UICollectionViewDelegateFlowLayout>
+@interface DYHomeViewController () <UICollectionViewDataSource,UICollectionViewDelegate,UICollectionViewDelegateFlowLayout,DYSectionHeaderViewDelegate>
 
 @property (nonatomic, strong) UICollectionView *rommCollectionView;
 
@@ -172,10 +174,13 @@
     if (!sectionView) {
         sectionView = [[DYSectionHeaderView alloc]init];
     }
-    
+    sectionView.delegate = self;
     DYRoomModel *roomModel = [self getRoomModelAtIndexPath:indexPath];
-    
-    [sectionView fillWithTagName:roomModel.game_name];
+    if (indexPath.section == 0) {
+        [sectionView fillWithTagName:@"最热" atIndexPath:indexPath];
+    }else {
+        [sectionView fillWithTagName:roomModel.game_name atIndexPath:indexPath];
+    }
     return sectionView;
 }
 
@@ -195,13 +200,28 @@
 
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath {
     DYRoomModel *roomModel = [self getRoomModelAtIndexPath:indexPath];
-    
-    
     if ([roomModel.game_name isEqualToString:@"颜值"] && indexPath.section == 1 ) {
         return [DYFaceRoomCell cellSize];
     }
     else {
         return [DYRoomCell cellSize];
+    }
+}
+
+#pragma mark - DYSectionHeaderViewDelegate
+- (void)dySectionHeaderView:(DYSectionHeaderView *)sectionHeaderView clickedMoreButtonAtIndexPath:(NSIndexPath *)indexPath {
+    NSLog(@"more...");
+    if (indexPath.section == 0) {
+        //跳转到直播
+        MSBaseTabBarController *tabController = (MSBaseTabBarController *)[self cyl_tabBarController];
+        tabController.selectedIndex = 1;
+    }else {
+        //跳转到分类
+        DYRoomModel *rooModel = [self getRoomModelAtIndexPath:indexPath];
+        DYDetailLiveViewController *detailVC = [[DYDetailLiveViewController alloc]init];
+        detailVC.title = rooModel.game_name;
+        detailVC.cateId = [rooModel.cate_id integerValue];
+        [self.navigationController pushViewController:detailVC animated:YES];
     }
 }
 

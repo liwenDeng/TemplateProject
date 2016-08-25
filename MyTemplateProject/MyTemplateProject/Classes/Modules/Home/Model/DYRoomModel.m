@@ -7,7 +7,16 @@
 //
 
 #import "DYRoomModel.h"
+#import "DYBaseModel.h"
 
 @implementation DYRoomModel
+
+@end
+
+@implementation DYRoomModelList
+
++ (NSDictionary *)modelContainerPropertyGenericClass {
+    return @{@"data": [DYRoomModel class]};
+}
 
 @end

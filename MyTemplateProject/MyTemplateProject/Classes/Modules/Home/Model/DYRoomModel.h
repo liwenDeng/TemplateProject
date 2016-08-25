@@ -6,7 +6,8 @@
 //  Copyright © 2016年 dengliwen. All rights reserved.
 //
 
-#import "MSBaseModel.h"
+#import "DYBaseModel.h"
+
 /**
  *  单个房间Model
  */
@@ -32,5 +33,13 @@
 @property (nonatomic, copy) NSString *cate_id;
 @property (nonatomic, copy) NSString *specific_status;
 @property (nonatomic, copy) NSString *vod_quality;
+
+@end
+
+/**
+ *  房间列表
+ */
+@interface DYRoomModelList : DYBaseModel
+
 
 @end
