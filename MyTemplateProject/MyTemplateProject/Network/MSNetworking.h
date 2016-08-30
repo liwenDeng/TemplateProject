@@ -53,9 +53,14 @@ typedef void(^MSFailureBlock)(NSError *error);
 + (NSURLSessionDataTask *)getDouyuLiveCateId:(NSInteger)cateId limit:(NSInteger)limit offset:(NSInteger)offset WithSuccess:(MSSuccessBlock)success failure:(MSFailureBlock)failure;
 
 /**
- *  获取颜值类播放列表
+ *  5.获取颜值类播放列表
  */
 + (NSURLSessionDataTask *)getFaceRoomListLimit:(NSInteger)limit offset:(NSInteger)offset WithSuccess:(MSSuccessBlock)success failure:(MSFailureBlock)failure;
+
+/**
+ *  6.获取首页轮播图
+ */
++ (NSURLSessionDataTask *)getDouyuSlideBanners:(MSSuccessBlock)success failure:(MSFailureBlock)failure;
 
 #pragma mark - 房间信息
 /**

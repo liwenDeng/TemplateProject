@@ -61,6 +61,8 @@
 		BC676CD61D62ED3E00F4F1FE /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BC676CD51D62ED3E00F4F1FE /* AVFoundation.framework */; };
 		BC676CD81D62ED4400F4F1FE /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BC676CD71D62ED4400F4F1FE /* AudioToolbox.framework */; };
 		BC71DF981D6C0A5B003D0291 /* MSBaseNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = BC71DF971D6C0A5B003D0291 /* MSBaseNavigationController.m */; };
+		BC7A78621D75674A00B72A2E /* DYBannerList.m in Sources */ = {isa = PBXBuildFile; fileRef = BC7A78611D75674A00B72A2E /* DYBannerList.m */; };
+		BC7A78651D756BFD00B72A2E /* DYHomeHeaderBannerView.m in Sources */ = {isa = PBXBuildFile; fileRef = BC7A78641D756BFD00B72A2E /* DYHomeHeaderBannerView.m */; };
 		BC7D285B1D2CD58A00901080 /* NSString+Code.m in Sources */ = {isa = PBXBuildFile; fileRef = BC7D285A1D2CD58A00901080 /* NSString+Code.m */; };
 		BC7D285E1D2CD62200901080 /* NSString+Util.m in Sources */ = {isa = PBXBuildFile; fileRef = BC7D285D1D2CD62200901080 /* NSString+Util.m */; };
 		BC7D28621D2D00CD00901080 /* MSFileUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = BC7D28611D2D00CD00901080 /* MSFileUtil.m */; };
@@ -70,9 +72,12 @@
 		BC95C2371D5DB02A00EF36AE /* UIImageView+CornerRadius.m in Sources */ = {isa = PBXBuildFile; fileRef = BC95C2361D5DB02A00EF36AE /* UIImageView+CornerRadius.m */; };
 		BC95C23A1D5DB64C00EF36AE /* DYBaseRoomCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BC95C2391D5DB64C00EF36AE /* DYBaseRoomCell.m */; };
 		BC95C23D1D5DB78A00EF36AE /* DYFaceRoomCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BC95C23C1D5DB78A00EF36AE /* DYFaceRoomCell.m */; };
+		BC97723F1D73CFED00877E5F /* MSCircleBaseCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BC97723C1D73CFED00877E5F /* MSCircleBaseCell.m */; };
+		BC9772401D73CFED00877E5F /* MSCircleView.m in Sources */ = {isa = PBXBuildFile; fileRef = BC97723E1D73CFED00877E5F /* MSCircleView.m */; };
 		BCA6A74C1D2B4E64007F3B5E /* NSDate+MSExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = BCA6A74B1D2B4E64007F3B5E /* NSDate+MSExtension.m */; };
 		BCA6A7551D2B898A007F3B5E /* UIDevice+AuthorizationStatus.m in Sources */ = {isa = PBXBuildFile; fileRef = BCA6A7541D2B898A007F3B5E /* UIDevice+AuthorizationStatus.m */; };
 		BCA6A7591D2B8ADF007F3B5E /* NSObject+MSJSON.m in Sources */ = {isa = PBXBuildFile; fileRef = BCA6A7581D2B8ADF007F3B5E /* NSObject+MSJSON.m */; };
+		BCB198F21D7585560046F68C /* FPSLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = BCB198F11D7585560046F68C /* FPSLabel.m */; };
 		BCC7ADD01D519C690024DB6F /* DYBaseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = BCC7ADCF1D519C690024DB6F /* DYBaseModel.m */; };
 		BCDE23C01D508A8300A0FB3D /* MSBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BCDE23BF1D508A8300A0FB3D /* MSBaseViewController.m */; };
 		BCDE23D41D508BAD00A0FB3D /* MSBaseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = BCDE23D31D508BAD00A0FB3D /* MSBaseModel.m */; };
@@ -200,6 +205,10 @@
 		BC676CD71D62ED4400F4F1FE /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		BC71DF961D6C0A5B003D0291 /* MSBaseNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSBaseNavigationController.h; sourceTree = "<group>"; };
 		BC71DF971D6C0A5B003D0291 /* MSBaseNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSBaseNavigationController.m; sourceTree = "<group>"; };
+		BC7A78601D75674A00B72A2E /* DYBannerList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DYBannerList.h; sourceTree = "<group>"; };
+		BC7A78611D75674A00B72A2E /* DYBannerList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DYBannerList.m; sourceTree = "<group>"; };
+		BC7A78631D756BFD00B72A2E /* DYHomeHeaderBannerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DYHomeHeaderBannerView.h; sourceTree = "<group>"; };
+		BC7A78641D756BFD00B72A2E /* DYHomeHeaderBannerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DYHomeHeaderBannerView.m; sourceTree = "<group>"; };
 		BC7D28591D2CD58A00901080 /* NSString+Code.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Code.h"; sourceTree = "<group>"; };
 		BC7D285A1D2CD58A00901080 /* NSString+Code.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Code.m"; sourceTree = "<group>"; };
 		BC7D285C1D2CD62200901080 /* NSString+Util.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Util.h"; sourceTree = "<group>"; };
@@ -218,12 +227,18 @@
 		BC95C2391D5DB64C00EF36AE /* DYBaseRoomCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DYBaseRoomCell.m; sourceTree = "<group>"; };
 		BC95C23B1D5DB78A00EF36AE /* DYFaceRoomCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DYFaceRoomCell.h; sourceTree = "<group>"; };
 		BC95C23C1D5DB78A00EF36AE /* DYFaceRoomCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DYFaceRoomCell.m; sourceTree = "<group>"; };
+		BC97723B1D73CFED00877E5F /* MSCircleBaseCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSCircleBaseCell.h; sourceTree = "<group>"; };
+		BC97723C1D73CFED00877E5F /* MSCircleBaseCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSCircleBaseCell.m; sourceTree = "<group>"; };
+		BC97723D1D73CFED00877E5F /* MSCircleView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSCircleView.h; sourceTree = "<group>"; };
+		BC97723E1D73CFED00877E5F /* MSCircleView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSCircleView.m; sourceTree = "<group>"; };
 		BCA6A74A1D2B4E64007F3B5E /* NSDate+MSExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+MSExtension.h"; sourceTree = "<group>"; };
 		BCA6A74B1D2B4E64007F3B5E /* NSDate+MSExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+MSExtension.m"; sourceTree = "<group>"; };
 		BCA6A7531D2B898A007F3B5E /* UIDevice+AuthorizationStatus.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIDevice+AuthorizationStatus.h"; sourceTree = "<group>"; };
 		BCA6A7541D2B898A007F3B5E /* UIDevice+AuthorizationStatus.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIDevice+AuthorizationStatus.m"; sourceTree = "<group>"; };
 		BCA6A7571D2B8ADF007F3B5E /* NSObject+MSJSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+MSJSON.h"; sourceTree = "<group>"; };
 		BCA6A7581D2B8ADF007F3B5E /* NSObject+MSJSON.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+MSJSON.m"; sourceTree = "<group>"; };
+		BCB198F01D7585560046F68C /* FPSLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FPSLabel.h; sourceTree = "<group>"; };
+		BCB198F11D7585560046F68C /* FPSLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FPSLabel.m; sourceTree = "<group>"; };
 		BCC7ADCE1D519C690024DB6F /* DYBaseModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DYBaseModel.h; sourceTree = "<group>"; };
 		BCC7ADCF1D519C690024DB6F /* DYBaseModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DYBaseModel.m; sourceTree = "<group>"; };
 		BCDE23BE1D508A8300A0FB3D /* MSBaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSBaseViewController.h; sourceTree = "<group>"; };
@@ -370,6 +385,8 @@
 		BC321BDD1D225B1C0092A91B /* ThirdLibs */ = {
 			isa = PBXGroup;
 			children = (
+				BCB198EF1D7585560046F68C /* FPSLabel */,
+				BC97723A1D73CFED00877E5F /* MSCircleView */,
 				BC676CAF1D62E4F200F4F1FE /* OCGumbo */,
 				BC321BF61D22700F0092A91B /* ZCNetworking */,
 				BC321BE31D2260520092A91B /* CYLTabBarController */,
@@ -602,6 +619,17 @@
 			path = JMRoundedCorner;
 			sourceTree = "<group>";
 		};
+		BC97723A1D73CFED00877E5F /* MSCircleView */ = {
+			isa = PBXGroup;
+			children = (
+				BC97723B1D73CFED00877E5F /* MSCircleBaseCell.h */,
+				BC97723C1D73CFED00877E5F /* MSCircleBaseCell.m */,
+				BC97723D1D73CFED00877E5F /* MSCircleView.h */,
+				BC97723E1D73CFED00877E5F /* MSCircleView.m */,
+			);
+			path = MSCircleView;
+			sourceTree = "<group>";
+		};
 		BCA6A7461D2B4DB7007F3B5E /* NSDate+MSExtension */ = {
 			isa = PBXGroup;
 			children = (
@@ -647,6 +675,15 @@
 				BC7D285D1D2CD62200901080 /* NSString+Util.m */,
 			);
 			path = "NSString+MSExtension";
+			sourceTree = "<group>";
+		};
+		BCB198EF1D7585560046F68C /* FPSLabel */ = {
+			isa = PBXGroup;
+			children = (
+				BCB198F01D7585560046F68C /* FPSLabel.h */,
+				BCB198F11D7585560046F68C /* FPSLabel.m */,
+			);
+			path = FPSLabel;
 			sourceTree = "<group>";
 		};
 		BCC7ADCD1D519C530024DB6F /* DYModel */ = {
@@ -723,6 +760,8 @@
 				BCDE23DC1D509B0B00A0FB3D /* DYHotCateList.m */,
 				BCDE23DE1D509EC700A0FB3D /* DYFaceRoomModel.h */,
 				BCDE23DF1D509EC700A0FB3D /* DYFaceRoomModel.m */,
+				BC7A78601D75674A00B72A2E /* DYBannerList.h */,
+				BC7A78611D75674A00B72A2E /* DYBannerList.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -742,6 +781,8 @@
 				BC5F92151D6444C900254AB3 /* DYRoomPlyaerView.m */,
 				BC5F92171D6452DA00254AB3 /* DYPlayerToolView.h */,
 				BC5F92181D6452DA00254AB3 /* DYPlayerToolView.m */,
+				BC7A78631D756BFD00B72A2E /* DYHomeHeaderBannerView.h */,
+				BC7A78641D756BFD00B72A2E /* DYHomeHeaderBannerView.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1026,6 +1067,7 @@
 				BC41D1011D1D090A00AA3695 /* ViewController.m in Sources */,
 				BC123CC51D2DFD030039F60A /* UIColor+MSUtil.m in Sources */,
 				BC95C2371D5DB02A00EF36AE /* UIImageView+CornerRadius.m in Sources */,
+				BCB198F21D7585560046F68C /* FPSLabel.m in Sources */,
 				BC028F8D1D6E946B00F3419E /* DYAllLiveViewController.m in Sources */,
 				BC123CCC1D2DFFE80039F60A /* UIView+MSUtil.m in Sources */,
 				BC95C2331D5DACE800EF36AE /* UIImage+RoundedCorner.m in Sources */,
@@ -1048,6 +1090,7 @@
 				BCDE23D71D5092BF00A0FB3D /* DYRoomModel.m in Sources */,
 				BC41D0FE1D1D090A00AA3695 /* AppDelegate.m in Sources */,
 				BC321BEE1D2260520092A91B /* CYLTabBarController.m in Sources */,
+				BC7A78651D756BFD00B72A2E /* DYHomeHeaderBannerView.m in Sources */,
 				BC028F8A1D6E944A00F3419E /* MSAllLiveViewController.m in Sources */,
 				BCDE23D41D508BAD00A0FB3D /* MSBaseModel.m in Sources */,
 				BC95C2341D5DACE800EF36AE /* UIView+RoundedCorner.m in Sources */,
@@ -1056,10 +1099,12 @@
 				BC95C23A1D5DB64C00EF36AE /* DYBaseRoomCell.m in Sources */,
 				BC321BEC1D2260520092A91B /* CYLPlusButton.m in Sources */,
 				BC3245221D61937100B19256 /* DYLiveRoomViewController.m in Sources */,
+				BC97723F1D73CFED00877E5F /* MSCircleBaseCell.m in Sources */,
 				BC5F92191D6452DA00254AB3 /* DYPlayerToolView.m in Sources */,
 				BC321BED1D2260520092A91B /* CYLTabBar.m in Sources */,
 				BC7D285E1D2CD62200901080 /* NSString+Util.m in Sources */,
 				BC321BEF1D2260520092A91B /* UIViewController+CYLTabBarControllerExtention.m in Sources */,
+				BC9772401D73CFED00877E5F /* MSCircleView.m in Sources */,
 				BC321BF21D2260920092A91B /* MSBaseTabBarController.m in Sources */,
 				BC028F961D6ECF5B00F3419E /* MSMyCenterViewController.m in Sources */,
 				BC321C201D2270630092A91B /* MSNetworking.m in Sources */,
@@ -1068,6 +1113,7 @@
 				BC5F92131D64383500254AB3 /* UIViewController+Navigation.m in Sources */,
 				BC95C23D1D5DB78A00EF36AE /* DYFaceRoomCell.m in Sources */,
 				BC123CC81D2DFD5E0039F60A /* UIImage+MSUtil.m in Sources */,
+				BC7A78621D75674A00B72A2E /* DYBannerList.m in Sources */,
 				BC321C1B1D22700F0092A91B /* ZCChainProcessor.m in Sources */,
 				BC7D285B1D2CD58A00901080 /* NSString+Code.m in Sources */,
 				BC321C1C1D22700F0092A91B /* ZCNetworking.m in Sources */,

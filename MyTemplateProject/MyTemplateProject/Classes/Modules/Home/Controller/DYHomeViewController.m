@@ -17,7 +17,10 @@
 #import "DYSectionHeaderView.h"
 #import "MSBaseTabBarController.h"
 #import "DYDetailLiveViewController.h"
+#import "DYBannerList.h"
+#import "DYHomeHeaderBannerView.h"
 
+#define kSlideBannerId @"DYSlideBannerView" //轮播图
 #define kCellId @"DYRoomCell"
 #define kFaceCellId @"DYFaceRoomCell"
 #define kSectionId @"DYSectionHeaderView"
@@ -32,8 +35,9 @@
 @property (nonatomic, strong) NSMutableArray *bigDataList;  //最热
 @property (nonatomic, strong) NSMutableArray *faceList;    //颜值
 @property (nonatomic, strong) NSMutableArray *hotCateList; //分类
-
 @property (nonatomic, strong) NSMutableArray *sectionList;
+
+@property (nonatomic, strong) NSMutableArray *bannerList;   //轮播图
 
 @end
 
@@ -64,8 +68,11 @@
     self.rommCollectionView.delegate = self;
     self.rommCollectionView.dataSource = self;
     self.rommCollectionView.backgroundColor = [UIColor whiteColor];
+    
     [self.rommCollectionView registerClass:[DYRoomCell class] forCellWithReuseIdentifier:kCellId];
     [self.rommCollectionView registerClass:[DYFaceRoomCell class] forCellWithReuseIdentifier:kFaceCellId];
+    
+    [self.rommCollectionView registerClass:[DYHomeHeaderBannerView class] forSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:kSlideBannerId];
     [self.rommCollectionView registerClass:[DYSectionHeaderView class] forSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:kSectionId];
 
     //refresh header
@@ -75,6 +82,8 @@
     self.faceList = [NSMutableArray array];
     self.hotCateList = [NSMutableArray array];
     self.sectionList = [NSMutableArray array];
+    self.bannerList = [NSMutableArray array];
+    
 }
 
 - (void)requestData {
@@ -123,6 +132,18 @@
         dispatch_group_leave(group);
     }];
     
+    dispatch_group_enter(group);
+    //获取轮播图
+    [MSNetworking getDouyuSlideBanners:^(NSDictionary *object) {
+        DYBannerList *list = [DYBannerList yy_modelWithDictionary:object];
+        if (list.error) return ;
+        NSLog(@"4.获取轮播图成功");
+        dispatch_group_leave(group);
+        self.bannerList = [NSMutableArray arrayWithArray:list.data];
+    } failure:^(NSError *error) {
+        dispatch_group_leave(group);
+    }];
+    
     dispatch_group_notify(group, dispatch_get_main_queue(), ^{
         //所有数据请求完成;
         if (self.bigDataList.count > 0) [_sectionList addObject:self.bigDataList];
@@ -134,9 +155,18 @@
 }
 
 #pragma mark - UICollectionViewDataSource
+- (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView {
+    return self.sectionList.count + 1; //加轮播图
+}
+
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
-    if (self.sectionList.count > section) {
-        NSObject *roomList = self.sectionList[section];
+    
+    if (section == 0) {
+        return 0;
+    }
+    
+    if (self.sectionList.count > section - 1) {
+        NSObject *roomList = self.sectionList[section - 1];
         if ([roomList isKindOfClass:[NSArray class]]) {
             return ((NSArray *)roomList).count;
         }
@@ -164,24 +194,26 @@
     return cell;
 }
 
-
-- (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView {
-    return self.sectionList.count;
-}
-
 - (UICollectionReusableView *)collectionView:(UICollectionView *)collectionView viewForSupplementaryElementOfKind:(NSString *)kind atIndexPath:(NSIndexPath *)indexPath {
-    DYSectionHeaderView *sectionView = [collectionView dequeueReusableSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:kSectionId forIndexPath:indexPath];
-    if (!sectionView) {
-        sectionView = [[DYSectionHeaderView alloc]init];
-    }
-    sectionView.delegate = self;
-    DYRoomModel *roomModel = [self getRoomModelAtIndexPath:indexPath];
+    
     if (indexPath.section == 0) {
-        [sectionView fillWithTagName:@"最热" atIndexPath:indexPath];
+        DYHomeHeaderBannerView *bannerView = [collectionView dequeueReusableSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:kSlideBannerId forIndexPath:indexPath];
+        [bannerView fillWithBannerModels:self.bannerList];
+        return bannerView;
     }else {
-        [sectionView fillWithTagName:roomModel.game_name atIndexPath:indexPath];
+        DYSectionHeaderView *sectionView = [collectionView dequeueReusableSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:kSectionId forIndexPath:indexPath];
+        if (!sectionView) {
+            sectionView = [[DYSectionHeaderView alloc]init];
+        }
+        sectionView.delegate = self;
+        DYRoomModel *roomModel = [self getRoomModelAtIndexPath:indexPath];
+        if (indexPath.section == 1) {
+            [sectionView fillWithTagName:@"最热" atIndexPath:indexPath];
+        }else {
+            [sectionView fillWithTagName:roomModel.game_name atIndexPath:indexPath];
+        }
+        return sectionView;
     }
-    return sectionView;
 }
 
 #pragma mark - UICollectionViewDelegate
@@ -195,12 +227,12 @@
 
 #pragma mark - UICollectionViewDelegateFlowLayout
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout referenceSizeForHeaderInSection:(NSInteger)section {
-    return [DYSectionHeaderView sectionHeaderViewSize];
+    return section == 0 ? [DYHomeHeaderBannerView sectionHeaderViewSize] : [DYSectionHeaderView sectionHeaderViewSize];
 }
 
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath {
     DYRoomModel *roomModel = [self getRoomModelAtIndexPath:indexPath];
-    if ([roomModel.game_name isEqualToString:@"颜值"] && indexPath.section == 1 ) {
+    if ([roomModel.game_name isEqualToString:@"颜值"] && indexPath.section == 2 ) {
         return [DYFaceRoomCell cellSize];
     }
     else {
@@ -228,7 +260,7 @@
 #pragma mark - Util
 - (DYRoomModel *)getRoomModelAtIndexPath:(NSIndexPath *)indexPath {
     DYRoomModel *roomModel = nil;
-    NSObject *roomList = self.sectionList[indexPath.section];
+    NSObject *roomList = self.sectionList[indexPath.section - 1];
     if ([roomList isKindOfClass:[NSArray class]]) {
         roomModel = [((NSArray *)roomList) objectAtIndex:indexPath.row];
     }

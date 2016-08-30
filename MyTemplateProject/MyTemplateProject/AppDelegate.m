@@ -9,6 +9,8 @@
 #import "AppDelegate.h"
 #import "MSBaseTabBarController.h"
 #import "MSTabBarControllerConfig.h"
+
+#import "FPSLabel.h"
 @interface AppDelegate ()
 
 @end
@@ -42,7 +44,7 @@
     MSTabBarControllerConfig *tabBarConfig = [[MSTabBarControllerConfig alloc]init];
     MSBaseTabBarController *tabBarVC = tabBarConfig.tabBarController;
     [self.window setRootViewController:tabBarVC];
-    
+    [FPSLabel showInWindow:self.window];
     [self.window makeKeyAndVisible];
 
     return YES;

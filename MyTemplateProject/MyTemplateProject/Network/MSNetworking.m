@@ -180,6 +180,15 @@
     }];
 }
 
++ (NSURLSessionDataTask *)getDouyuSlideBanners:(MSSuccessBlock)success failure:(MSFailureBlock)failure {
+//http://capi.douyucdn.cn/api/v1/slide/6?version=2.291&client_sys=ios
+    ZCApiAction *action = [[ZCApiAction alloc]initWithURL:@"http://capi.douyucdn.cn/api/v1/slide/6?version=2.291&client_sys=ios"];
+    return [[ZCApiRunner sharedInstance] runAction:action success:^(id object) {
+        success(object);
+    } failure:^(NSError *error) {
+        failure(error);
+    }];
+}
 
 +(NSURLSessionDataTask *)getDouyuRoomLiveInfo:(NSString *)roomId success:(MSSuccessBlock)success failure:(MSFailureBlock)failure {
 //    获取auth 的算法变了，获取不到数据，这里通过对应房间的web地址来获取
