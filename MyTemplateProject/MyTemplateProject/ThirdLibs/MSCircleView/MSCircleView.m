@@ -391,6 +391,7 @@ static NSString* const  kCellIdentifier = @"MSCircleCellIdentifier";
     if ([cellClass isSubclassOfClass:[MSCircleBaseCell class]]) {
         _cellClass = cellClass;
         [_collectionView registerClass:self.cellClass  forCellWithReuseIdentifier:kCellIdentifier];
+        [_collectionView reloadData];
     } else {
         NSAssert(0, @"cellClass 必须是 MSCircleBaseCell子类");
         return;

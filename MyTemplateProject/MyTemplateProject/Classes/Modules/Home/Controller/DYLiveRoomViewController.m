@@ -67,7 +67,8 @@
 // 获取播放信息
 - (void)requestRoomVideoSrc {
     // 获取video source
-    [MSNetworking getDouyuRoomLiveInfo:self.roomModel.room_id success:^(NSDictionary *object) {
+    NSString *roomId = self.roomId ? self.roomId :self.roomModel.room_id;
+    [MSNetworking getDouyuRoomLiveInfo:roomId success:^(NSDictionary *object) {
         NSString *rtmp_live = object[@"data"][@"rtmp_live"];
         NSString *url = object[@"data"][@"rtmp_url"];
         NSString *src = [NSString stringWithFormat:@"%@/%@",url,rtmp_live];

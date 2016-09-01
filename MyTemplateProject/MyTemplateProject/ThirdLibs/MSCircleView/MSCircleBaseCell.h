@@ -12,4 +12,6 @@
 
 @property (nonatomic,strong) UIImageView* imaView;
 
+- (void)setupSubviews;
+
 @end

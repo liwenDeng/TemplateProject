@@ -11,7 +11,17 @@
 #import <UIKit/UIKit.h>
 #import "DYBannerList.h"
 
+@class DYHomeHeaderBannerView;
+
+@protocol DYHomeHeaderBannerViewDelegate <NSObject>
+
+- (void)dyHomeHeaderBanner:(DYHomeHeaderBannerView*)banner clickedAtIndex:(NSInteger)index roomId:(NSString *)roomId;
+
+@end
+
 @interface DYHomeHeaderBannerView : UICollectionReusableView
+
+@property (nonatomic, weak) id<DYHomeHeaderBannerViewDelegate> delegate;
 
 - (void)fillWithBannerModels:(NSArray *)bannerModels;
 

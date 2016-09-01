@@ -28,7 +28,7 @@
 /**
  *  斗鱼首页-推荐栏目下VC
  */
-@interface DYHomeViewController () <UICollectionViewDataSource,UICollectionViewDelegate,UICollectionViewDelegateFlowLayout,DYSectionHeaderViewDelegate>
+@interface DYHomeViewController () <UICollectionViewDataSource,UICollectionViewDelegate,UICollectionViewDelegateFlowLayout,DYSectionHeaderViewDelegate,DYHomeHeaderBannerViewDelegate>
 
 @property (nonatomic, strong) UICollectionView *rommCollectionView;
 
@@ -199,6 +199,7 @@
     if (indexPath.section == 0) {
         DYHomeHeaderBannerView *bannerView = [collectionView dequeueReusableSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:kSlideBannerId forIndexPath:indexPath];
         [bannerView fillWithBannerModels:self.bannerList];
+        bannerView.delegate = self;
         return bannerView;
     }else {
         DYSectionHeaderView *sectionView = [collectionView dequeueReusableSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:kSectionId forIndexPath:indexPath];
@@ -253,8 +254,17 @@
         DYDetailLiveViewController *detailVC = [[DYDetailLiveViewController alloc]init];
         detailVC.title = rooModel.game_name;
         detailVC.cateId = [rooModel.cate_id integerValue];
+        detailVC.hidesBottomBarWhenPushed = YES;
         [self.navigationController pushViewController:detailVC animated:YES];
     }
+}
+
+#pragma mark - DYHomeHeaderBannerViewDelegate
+- (void)dyHomeHeaderBanner:(DYHomeHeaderBannerView *)banner clickedAtIndex:(NSInteger)index roomId:(NSString *)roomId {
+    DYLiveRoomViewController *liveVC = [[DYLiveRoomViewController alloc]init];
+    liveVC.roomId = roomId;
+    liveVC.hidesBottomBarWhenPushed = YES;
+    [self.navigationController pushViewController:liveVC animated:YES];
 }
 
 #pragma mark - Util

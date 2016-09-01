@@ -13,6 +13,7 @@
  */
 @interface DYLiveRoomViewController : MSBaseViewController
 
+@property (nonatomic, copy) NSString *roomId;
 @property (nonatomic, strong) DYRoomModel *roomModel;
 
 @end

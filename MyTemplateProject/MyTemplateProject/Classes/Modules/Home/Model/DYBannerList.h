@@ -14,7 +14,7 @@
 
 @interface DYBannerModel : NSObject
 
-@property (nonatomic, assign) NSInteger roomId;
+@property (nonatomic, strong) NSString *roomId;
 @property (nonatomic, strong) NSString *title;
 @property (nonatomic, strong) NSString *pic_url; //大图
 @property (nonatomic, strong) NSString *tv_pic_url; //小图

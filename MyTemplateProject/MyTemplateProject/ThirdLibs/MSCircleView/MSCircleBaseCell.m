@@ -14,9 +14,14 @@
 {
     if (self = [super initWithFrame:frame]) {
         self.imaView = [[UIImageView alloc]initWithFrame:self.bounds];
-        [self addSubview:self.imaView];
+        [self.contentView addSubview:self.imaView];
+        [self setupSubviews];
     }
     return self;
+}
+
+- (void)setupSubviews {
+
 }
 
 @end
